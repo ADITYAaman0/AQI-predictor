@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-02-05T00:17:39.439738",
+  "config": {
+    "epochs": 50,
+    "learning_rate": 0.01,
+    "hidden_dim": 64,
+    "num_layers": 3,
+    "validation_split": 0.2,
+    "spatial_validation_distance": 50.0,
+    "min_stations": 5,
+    "target_parameter": "pm25"
+  },
+  "training_metrics": {
+    "train_rmse": 22.331414555658284,
+    "final_loss": 498.6920760566666,
+    "epochs_trained": 50,
+    "n_stations": 4,
+    "n_edges": 12
+  },
+  "validation_metrics": {
+    "error": "No valid predictions"
+  },
+  "interpolation_results": {
+    "success": false,
+    "error": "zero-size array to reduction operation minimum which has no identity"
+  },
+  "model_path": "models/gnn\\gnn_spatial_model.pth"
+}

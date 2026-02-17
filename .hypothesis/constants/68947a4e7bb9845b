@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\utils\city_detector.py
+# hypothesis_version: 6.150.3
+
+[50.0, 1000, 4326, 'country', 'distance', 'latitude', 'longitude', 'name', 'parameters', 'priority', 'state', 'station_id']

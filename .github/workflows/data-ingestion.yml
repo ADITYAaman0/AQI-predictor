@@ -1,0 +1,62 @@
+name: Automated Data Ingestion
+# Runs data ingestion as a GitHub Action instead of Celery worker
+# Free alternative to background workers
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  ingest-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests pandas psycopg2-binary python-dotenv aiohttp
+
+      - name: Run OpenAQ Data Ingestion
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+        run: |
+          python -c "
+          import os
+          import sys
+          sys.path.insert(0, os.getcwd())
+          from src.data.openaq_client import OpenAQClient
+          import asyncio
+          
+          async def ingest():
+              client = OpenAQClient()
+              data = await client.get_latest_measurements('Delhi')
+              print(f'Ingested {len(data)} measurements')
+          
+          asyncio.run(ingest())
+          "
+
+      - name: Run Weather Data Ingestion
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          OPENWEATHERMAP_API_KEY: ${{ secrets.OPENWEATHERMAP_API_KEY }}
+        run: |
+          python src/tasks/ingest_weather.py
+        continue-on-error: true
+
+      - name: Log Completion
+        run: |
+          echo "Data ingestion completed at $(date)"
+          echo "Next run in 6 hours"

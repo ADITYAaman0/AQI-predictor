@@ -1,0 +1,459 @@
+{
+  "timestamp": "2026-02-04T20:44:26.734299",
+  "weather_data": [
+    {
+      "city": "Delhi",
+      "temperature": 14.07,
+      "humidity": 72,
+      "wind_speed": 2.57,
+      "wind_direction": 250,
+      "pressure": 1020,
+      "visibility": 2.8,
+      "timestamp": "2026-02-04T15:01:03",
+      "location": [
+        28.6139,
+        77.209
+      ],
+      "source": "imd_openweather",
+      "metadata": {
+        "station_id": "CUSTOM_0",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "data_source": "openweathermap_via_imd",
+        "weather_description": "haze",
+        "cloud_cover": 0,
+        "note": "IMD weather data via OpenWeatherMap API"
+      }
+    },
+    {
+      "city": "Mumbai",
+      "temperature": 28.01,
+      "humidity": 51,
+      "wind_speed": 2.06,
+      "wind_direction": 10,
+      "pressure": 1014,
+      "visibility": 2.5,
+      "timestamp": "2026-02-04T15:13:00",
+      "location": [
+        19.076,
+        72.8777
+      ],
+      "source": "imd_openweather",
+      "metadata": {
+        "station_id": "CUSTOM_0",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "data_source": "openweathermap_via_imd",
+        "weather_description": "smoke",
+        "cloud_cover": 20,
+        "note": "IMD weather data via OpenWeatherMap API"
+      }
+    },
+    {
+      "city": "Bangalore",
+      "temperature": 22.19,
+      "humidity": 51,
+      "wind_speed": 6.71,
+      "wind_direction": 95,
+      "pressure": 1017,
+      "visibility": 6.0,
+      "timestamp": "2026-02-04T15:05:11",
+      "location": [
+        12.9716,
+        77.5946
+      ],
+      "source": "imd_openweather",
+      "metadata": {
+        "station_id": "CUSTOM_0",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "data_source": "openweathermap_via_imd",
+        "weather_description": "clear sky",
+        "cloud_cover": 1,
+        "note": "IMD weather data via OpenWeatherMap API"
+      }
+    },
+    {
+      "city": "Chennai",
+      "temperature": 25.01,
+      "humidity": 72,
+      "wind_speed": 3.09,
+      "wind_direction": 40,
+      "pressure": 1017,
+      "visibility": 6.0,
+      "timestamp": "2026-02-04T15:10:42",
+      "location": [
+        13.0827,
+        80.2707
+      ],
+      "source": "imd_openweather",
+      "metadata": {
+        "station_id": "CUSTOM_0",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "data_source": "openweathermap_via_imd",
+        "weather_description": "scattered clouds",
+        "cloud_cover": 40,
+        "note": "IMD weather data via OpenWeatherMap API"
+      }
+    },
+    {
+      "city": "Kolkata",
+      "temperature": 22.96,
+      "humidity": 49,
+      "wind_speed": 0,
+      "wind_direction": 0,
+      "pressure": 1017,
+      "visibility": 3.5,
+      "timestamp": "2026-02-04T15:12:31",
+      "location": [
+        22.5726,
+        88.3639
+      ],
+      "source": "imd_openweather",
+      "metadata": {
+        "station_id": "CUSTOM_0",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "data_source": "openweathermap_via_imd",
+        "weather_description": "haze",
+        "cloud_cover": 0,
+        "note": "IMD weather data via OpenWeatherMap API"
+      }
+    }
+  ],
+  "air_quality_data": [
+    {
+      "location": "OpenAQ Station",
+      "parameter": "unknown",
+      "value": 40.3,
+      "unit": "unknown",
+      "timestamp": "2018-02-22T04:00:00Z",
+      "source": "openaq_v3",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "OpenAQ Station",
+      "parameter": "unknown",
+      "value": 451.0,
+      "unit": "unknown",
+      "timestamp": "2018-02-22T04:00:00Z",
+      "source": "openaq_v3",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "OpenAQ Station",
+      "parameter": "unknown",
+      "value": 339.0,
+      "unit": "unknown",
+      "timestamp": "2018-02-21T21:15:00Z",
+      "source": "openaq_v3",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "OpenAQ Station",
+      "parameter": "unknown",
+      "value": 201.0,
+      "unit": "unknown",
+      "timestamp": "2018-02-21T21:15:00Z",
+      "source": "openaq_v3",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Alipur, Delhi - DPCC",
+      "parameter": "so2",
+      "value": 8.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Alipur, Delhi - DPCC",
+      "parameter": "o3",
+      "value": 33.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Anand Vihar, Delhi - DPCC",
+      "parameter": "pm25",
+      "value": 381.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Anand Vihar, Delhi - DPCC",
+      "parameter": "so2",
+      "value": 38.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Anand Vihar, Delhi - DPCC",
+      "parameter": "o3",
+      "value": 12.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Ashok Vihar, Delhi - DPCC",
+      "parameter": "no2",
+      "value": 69.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Ashok Vihar, Delhi - DPCC",
+      "parameter": "so2",
+      "value": 18.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Aya Nagar, Delhi - IMD",
+      "parameter": "co",
+      "value": 33.0,
+      "unit": "mg/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Burari Crossing, Delhi - IMD",
+      "parameter": "pm25",
+      "value": 311.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    },
+    {
+      "location": "Burari Crossing, Delhi - IMD",
+      "parameter": "no2",
+      "value": 107.0,
+      "unit": "\u00b5g/m\u00b3",
+      "timestamp": "2026-02-04T19:00:00",
+      "source": "cpcb_csv",
+      "quality_flag": "real_time"
+    }
+  ],
+  "integration_stats": {
+    "apis_tested": 2,
+    "apis_working": 2,
+    "total_data_points": 19,
+    "real_data_percentage": 100.0,
+    "cities_covered": 11,
+    "parameters_available": 10,
+    "integration_status": "excellent"
+  },
+  "api_status": {
+    "weather": {
+      "status": "success",
+      "data_points": 5,
+      "cities_covered": 5,
+      "api_calls_successful": 5,
+      "api_calls_failed": 0,
+      "sample_data": [
+        {
+          "city": "Delhi",
+          "temperature": 14.07,
+          "humidity": 72,
+          "wind_speed": 2.57,
+          "pressure": 1020,
+          "timestamp": "2026-02-04T15:01:03",
+          "source": "imd_openweather"
+        },
+        {
+          "city": "Mumbai",
+          "temperature": 28.01,
+          "humidity": 51,
+          "wind_speed": 2.06,
+          "pressure": 1014,
+          "timestamp": "2026-02-04T15:13:00",
+          "source": "imd_openweather"
+        },
+        {
+          "city": "Bangalore",
+          "temperature": 22.19,
+          "humidity": 51,
+          "wind_speed": 6.71,
+          "pressure": 1017,
+          "timestamp": "2026-02-04T15:05:11",
+          "source": "imd_openweather"
+        },
+        {
+          "city": "Chennai",
+          "temperature": 25.01,
+          "humidity": 72,
+          "wind_speed": 3.09,
+          "pressure": 1017,
+          "timestamp": "2026-02-04T15:10:42",
+          "source": "imd_openweather"
+        },
+        {
+          "city": "Kolkata",
+          "temperature": 22.96,
+          "humidity": 49,
+          "wind_speed": 0,
+          "pressure": 1017,
+          "timestamp": "2026-02-04T15:12:31",
+          "source": "imd_openweather"
+        }
+      ],
+      "message": "Successfully collected weather data from 5 cities"
+    },
+    "air_quality": {
+      "status": "success",
+      "openaq_locations": 6,
+      "cpcb_stations": 39,
+      "total_data_points": 14,
+      "working_sources": 3,
+      "parameters_available": [
+        "unknown",
+        "pm10",
+        "pm25",
+        "o3",
+        "nh3",
+        "so2",
+        "co",
+        "no2"
+      ],
+      "sample_data": [
+        {
+          "location": "OpenAQ Station",
+          "parameter": "unknown",
+          "value": 40.3,
+          "unit": "unknown",
+          "timestamp": "2018-02-22T04:00:00Z",
+          "source": "openaq_v3"
+        },
+        {
+          "location": "OpenAQ Station",
+          "parameter": "unknown",
+          "value": 451.0,
+          "unit": "unknown",
+          "timestamp": "2018-02-22T04:00:00Z",
+          "source": "openaq_v3"
+        },
+        {
+          "location": "OpenAQ Station",
+          "parameter": "unknown",
+          "value": 339.0,
+          "unit": "unknown",
+          "timestamp": "2018-02-21T21:15:00Z",
+          "source": "openaq_v3"
+        },
+        {
+          "location": "OpenAQ Station",
+          "parameter": "unknown",
+          "value": 201.0,
+          "unit": "unknown",
+          "timestamp": "2018-02-21T21:15:00Z",
+          "source": "openaq_v3"
+        },
+        {
+          "location": "Alipur, Delhi - DPCC",
+          "parameter": "so2",
+          "value": 8.0,
+          "unit": "\u00b5g/m\u00b3",
+          "timestamp": "2026-02-04T19:00:00",
+          "source": "cpcb_csv"
+        },
+        {
+          "location": "Alipur, Delhi - DPCC",
+          "parameter": "o3",
+          "value": 33.0,
+          "unit": "\u00b5g/m\u00b3",
+          "timestamp": "2026-02-04T19:00:00",
+          "source": "cpcb_csv"
+        },
+        {
+          "location": "Anand Vihar, Delhi - DPCC",
+          "parameter": "pm25",
+          "value": 381.0,
+          "unit": "\u00b5g/m\u00b3",
+          "timestamp": "2026-02-04T19:00:00",
+          "source": "cpcb_csv"
+        },
+        {
+          "location": "Anand Vihar, Delhi - DPCC",
+          "parameter": "so2",
+          "value": 38.0,
+          "unit": "\u00b5g/m\u00b3",
+          "timestamp": "2026-02-04T19:00:00",
+          "source": "cpcb_csv"
+        },
+        {
+          "location": "Anand Vihar, Delhi - DPCC",
+          "parameter": "o3",
+          "value": 12.0,
+          "unit": "\u00b5g/m\u00b3",
+          "timestamp": "2026-02-04T19:00:00",
+          "source": "cpcb_csv"
+        },
+        {
+          "location": "Ashok Vihar, Delhi - DPCC",
+          "parameter": "no2",
+          "value": 69.0,
+          "unit": "\u00b5g/m\u00b3",
+          "timestamp": "2026-02-04T19:00:00",
+          "source": "cpcb_csv"
+        }
+      ],
+      "message": "Successfully collected air quality data from 3 sources"
+    }
+  },
+  "data_quality": {
+    "total_data_points": 19,
+    "weather_points": 5,
+    "air_quality_points": 14,
+    "real_data_percentage": 100.0,
+    "parameters_covered": [
+      "unknown",
+      "humidity",
+      "temperature",
+      "o3",
+      "pm25",
+      "so2",
+      "pressure",
+      "wind_speed",
+      "co",
+      "no2"
+    ],
+    "cities_with_data": [
+      "Kolkata",
+      "Alipur, Delhi - DPCC",
+      "Bangalore",
+      "Burari Crossing, Delhi - IMD",
+      "OpenAQ Station",
+      "Delhi",
+      "Anand Vihar, Delhi - DPCC",
+      "Mumbai",
+      "Aya Nagar, Delhi - IMD",
+      "Chennai",
+      "Ashok Vihar, Delhi - DPCC"
+    ],
+    "data_freshness": {},
+    "quality_flags": {
+      "real_time": 19
+    }
+  }
+}

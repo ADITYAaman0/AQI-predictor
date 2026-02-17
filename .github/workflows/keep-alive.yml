@@ -1,0 +1,29 @@
+name: Keep Services Alive
+# Prevents Render free tier from sleeping by pinging every 10 minutes
+# Free tier services sleep after 15 minutes of inactivity
+
+on:
+  schedule:
+    # Run every 10 minutes during peak hours (6 AM - 11 PM IST)
+    - cron: '*/10 0-17 * * *'  # UTC time (IST = UTC + 5:30)
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  ping-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping API Health Endpoint
+        run: |
+          echo "Pinging API to keep it alive..."
+          curl -f ${{ secrets.API_URL }}/health || echo "API ping failed"
+        continue-on-error: true
+
+      - name: Ping Dashboard
+        run: |
+          echo "Pinging Dashboard to keep it alive..."
+          curl -f ${{ secrets.DASHBOARD_URL }} || echo "Dashboard ping failed"
+        continue-on-error: true
+
+      - name: Log Timestamp
+        run: |
+          echo "Keep-alive ping completed at $(date)"

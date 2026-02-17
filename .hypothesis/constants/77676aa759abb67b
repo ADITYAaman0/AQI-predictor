@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\notifications.py
+# hypothesis_version: 6.150.3
+
+[200, 201, 202, '587', 'AQI Predictor', 'AQIPRED', 'Authorization', 'Content-Type', 'FROM_EMAIL', 'FROM_NAME', 'From', 'Message-ID', 'SMS_API_KEY', 'SMS_API_URL', 'SMS_PROVIDER', 'SMS_SENDER_ID', 'SMTP_HOST', 'SMTP_PASSWORD', 'SMTP_PORT', 'SMTP_USERNAME', 'SMTP_USE_TLS', 'Subject', 'To', 'VAPID_EMAIL', 'VAPID_PRIVATE_KEY', 'VAPID_PUBLIC_KEY', 'X-Message-ID', 'alternative', 'apikey', 'application/json', 'aqi_alert', 'aqi_value', 'bounced', 'delivered', 'email', 'failed', 'from', 'generic', 'high', 'html', 'localhost', 'location_name', 'message', 'messageid', 'normal', 'numbers', 'pending', 'plain', 'provider', 'push', 'recipient', 'sender', 'sent', 'sms', 'source_attribution', 'status', 'subject', 'success', 'templates', 'textlocal', 'threshold', 'timestamp', 'to', 'true', 'twilio', 'xml']

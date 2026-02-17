@@ -1,0 +1,109 @@
+# Git
+.git
+.gitignore
+README.md
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.pytest_cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.cache
+.mypy_cache
+.hypothesis
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+logs/
+data/
+models/
+*.db
+*.sqlite
+*.sqlite3
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Documentation
+docs/
+*.md
+*.docx
+# Note: requirements.txt is needed for Docker build
+
+# Frontend/Dashboard (not needed for backend builds)
+# dashboard/  # Needed for Dockerfile.streamlit
+# frontend/   # Needed for Dockerfile.frontend
+node_modules/
+
+# Large data files
+*.json
+!package*.json
+*.csv
+*.txt
+!requirements.txt
+
+# Test files
+tests/
+test_*
+*_test.py
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Jupyter notebooks
+*.ipynb
+
+# Allow frontend and dashboard for their respective Dockerfiles
+!frontend/
+!dashboard/
+.ipynb_checkpoints
+
+# Environment files (will be handled separately)
+.env*
+!.env.example

@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\utils\spatial_interpolation.py
+# hypothesis_version: 6.150.3
+
+[0.1, 0.5, 1.0, 1.5, 2.0, 12.8, 12.9, 13.1, 13.2, 17.2, 17.5, 18.9, 19.3, 22.4, 22.7, 28.3, 28.9, 72.7, 72.9, 76.9, 77.4, 77.5, 77.8, 78.2, 78.6, 80.1, 80.3, 88.2, 88.5, 111.0, -180, 180, 'bangalore', 'chennai', 'delhi', 'east', 'exponential', 'gaussian', 'hyderabad', 'interpolation_method', 'kolkata', 'lat', 'lon', 'model', 'mumbai', 'n_stations', 'north', 'nugget', 'ordinary_kriging', 'parameter', 'pm25', 'range', 'sill', 'south', 'spherical', 'variogram_model', 'variogram_params', 'west']

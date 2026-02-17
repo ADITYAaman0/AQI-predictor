@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Integration Property Tests</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #007acc;
+            padding-bottom: 10px;
+        }
+        .test-info {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #007acc;
+        }
+        .run-button {
+            background: #007acc;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .run-button:hover {
+            background: #005a9e;
+        }
+        .run-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        #output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            max-height: 600px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+        .warning { color: #ff9800; }
+        .info { color: #2196F3; }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007acc;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Leaflet Integration Property Tests</h1>
+        
+        <div class="test-info">
+            <h3>Property 1: API Routing Consistency</h3>
+            <p><strong>Description:</strong> For any valid frontend data request (current AQI, forecast, spatial, or station data), 
+            the Integration Layer should correctly route the request to the corresponding existing backend endpoint and return a successful response.</p>
+            <p><strong>Validates:</strong> Requirements 1.1, 1.2, 1.3, 1.4</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 2: Data Transformation Preservation</h3>
+            <p><strong>Description:</strong> For any valid backend API response containing measurement data, 
+            the transformation should preserve all original data fields while adding proper geographic formatting.</p>
+            <p><strong>Validates:</strong> Requirements 1.5, 2.1, 2.2, 2.3, 2.4</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 3: Authentication Integration</h3>
+            <p><strong>Description:</strong> For any request requiring authentication, the Leaflet Frontend should use existing 
+            JWT tokens from the Backend API, include proper authorization headers, and handle token refresh correctly when tokens expire.</p>
+            <p><strong>Validates:</strong> Requirements 1.6, 7.1, 7.2, 7.3</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 14: Rate Limiting Compliance</h3>
+            <p><strong>Description:</strong> For any API request pattern, the Leaflet Frontend should respect existing 
+            rate limiting configured in Backend API middleware and not exceed the allowed request rates.</p>
+            <p><strong>Validates:</strong> Requirements 7.4</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 15: CORS Handling</h3>
+            <p><strong>Description:</strong> For any cross-origin request between frontend and backend, the Integration Layer 
+            should handle CORS configuration correctly to allow proper communication.</p>
+            <p><strong>Validates:</strong> Requirements 7.5</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 8: Visualization Mode Switching</h3>
+            <p><strong>Description:</strong> For any visualization mode change (markers to heatmap or current to forecast), 
+            the Leaflet Frontend should correctly render the new visualization with proper data display and interactive functionality.</p>
+            <p><strong>Validates:</strong> Requirements 4.1, 4.2, 4.4</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 9: Interactive Feature Completeness</h3>
+            <p><strong>Description:</strong> For any station marker click interaction, the Leaflet Frontend should display 
+            a detailed popup containing all required information (pollutant levels, weather, and source attribution).</p>
+            <p><strong>Validates:</strong> Requirements 4.3</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 4: Performance Requirements</h3>
+            <p><strong>Description:</strong> For any initial map load on 3G connections, the Leaflet Frontend should 
+            display the basic map within 3 seconds and fetch latest measurements from the Backend API within 5 seconds.</p>
+            <p><strong>Validates:</strong> Requirements 3.1, 9.1</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 5: Real-Time Data Updates</h3>
+            <p><strong>Description:</strong> For any running map instance, the Leaflet Frontend should automatically 
+            update visualizations every 15 minutes when new data becomes available and cache data locally to reduce API calls.</p>
+            <p><strong>Validates:</strong> Requirements 3.2, 3.4</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 6: Offline Graceful Degradation</h3>
+            <p><strong>Description:</strong> For any network connectivity loss scenario, the Leaflet Frontend should 
+            display cached data with appropriate staleness indicators and handle the offline state gracefully.</p>
+            <p><strong>Validates:</strong> Requirements 3.5</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 13: Data Usage Optimization</h3>
+            <p><strong>Description:</strong> For any mobile usage scenario, the Leaflet Frontend should minimize 
+            data usage through efficient caching and progressive loading strategies.</p>
+            <p><strong>Validates:</strong> Requirements 5.5</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 18: Caching Integration</h3>
+            <p><strong>Description:</strong> For any spatial data request, the Integration Layer should implement 
+            efficient caching using existing Redis infrastructure and include appropriate cache headers and compression in API responses.</p>
+            <p><strong>Validates:</strong> Requirements 9.2, 9.5</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 7: Animation Smoothness</h3>
+            <p><strong>Description:</strong> For any forecast animation playback, the Leaflet Frontend should smoothly 
+            transition between hourly predictions and preload next frames to ensure uninterrupted playback.</p>
+            <p><strong>Validates:</strong> Requirements 3.3, 9.3</p>
+        </div>
+
+        <div class="test-info">
+            <h3>Property 10: Filtering Functionality</h3>
+            <p><strong>Description:</strong> For any district-based filter selection, the Leaflet Frontend should 
+            correctly filter displayed data using existing city/state data from the Backend API.</p>
+            <p><strong>Validates:</strong> Requirements 4.5</p>
+        </div>
+
+        <div>
+            <button id="runAPITests" class="run-button">▶️ Run API Router Tests</button>
+            <button id="runDataTests" class="run-button">▶️ Run Data Transformer Tests</button>
+            <button id="runAuthTests" class="run-button">▶️ Run Authentication Tests</button>
+            <button id="runSecurityTests" class="run-button">▶️ Run Security Compliance Tests</button>
+            <button id="runVisualizationTests" class="run-button">▶️ Run Visualization Tests</button>
+            <button id="runPerformanceTests" class="run-button">▶️ Run Performance Tests</button>
+            <button id="runCachingTests" class="run-button">▶️ Run Caching & Offline Tests</button>
+            <button id="runAnimationTests" class="run-button">▶️ Run Animation Tests</button>
+            <button id="runFilteringTests" class="run-button">▶️ Run Filtering Tests</button>
+            <button id="runAllTests" class="run-button">🚀 Run All Tests</button>
+            <button id="clearOutput" class="run-button">🗑️ Clear Output</button>
+            <span id="loadingIndicator" style="display: none;">
+                <span class="loading"></span>Running tests...
+            </span>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script type="module">
+        import { runAPIRouterTests } from './test-api-router-properties.js';
+        import DataTransformerPropertyTests from './test-data-transformer-properties.js';
+        import { runAuthManagerTests } from './test-auth-manager-properties.js';
+        import { runSecurityComplianceTests } from './test-security-compliance-properties.js';
+        import { runVisualizationTests } from './test-visualization-properties.js';
+        import { runPerformanceTests } from './test-performance-properties.js';
+        import { runCachingOfflineTests } from './test-caching-offline-properties.js';
+        import { runAnimationTests } from './test-animation-properties.js';
+        import { runFilteringTests } from './test-filtering-properties.js';
+
+        const outputDiv = document.getElementById('output');
+        const runAPIButton = document.getElementById('runAPITests');
+        const runDataButton = document.getElementById('runDataTests');
+        const runAuthButton = document.getElementById('runAuthTests');
+        const runSecurityButton = document.getElementById('runSecurityTests');
+        const runVisualizationButton = document.getElementById('runVisualizationTests');
+        const runPerformanceButton = document.getElementById('runPerformanceTests');
+        const runCachingButton = document.getElementById('runCachingTests');
+        const runAnimationButton = document.getElementById('runAnimationTests');
+        const runFilteringButton = document.getElementById('runFilteringTests');
+        const runAllButton = document.getElementById('runAllTests');
+        const clearButton = document.getElementById('clearOutput');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+
+        // Override console methods to capture output
+        const originalConsole = {
+            log: console.log,
+            error: console.error,
+            warn: console.warn,
+            info: console.info
+        };
+
+        function captureConsole() {
+            console.log = (...args) => {
+                originalConsole.log(...args);
+                appendOutput(args.join(' '), 'info');
+            };
+            
+            console.error = (...args) => {
+                originalConsole.error(...args);
+                appendOutput(args.join(' '), 'error');
+            };
+            
+            console.warn = (...args) => {
+                originalConsole.warn(...args);
+                appendOutput(args.join(' '), 'warning');
+            };
+            
+            console.info = (...args) => {
+                originalConsole.info(...args);
+                appendOutput(args.join(' '), 'info');
+            };
+        }
+
+        function restoreConsole() {
+            Object.assign(console, originalConsole);
+        }
+
+        function appendOutput(text, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const line = `[${timestamp}] ${text}\n`;
+            
+            const span = document.createElement('span');
+            span.className = type;
+            span.textContent = line;
+            
+            outputDiv.appendChild(span);
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+
+        async function runAPIRouterTests() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting API Router Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const success = await runAPIRouterTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== API ROUTER TEST RESULT ===', 'info');
+                appendOutput(`Result: ${success ? '✅ SUCCESS' : '❌ FAILURE'}`, success ? 'success' : 'error');
+                
+                if (success) {
+                    appendOutput('🎉 Property 1: API Routing Consistency is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Property 1 failed. Review the test output above.', 'error');
+                }
+                
+                return success;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ API Router test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runDataTransformerTests() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting Data Transformer Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const tester = new DataTransformerPropertyTests();
+                const results = await tester.runAllTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== DATA TRANSFORMER TEST RESULT ===', 'info');
+                appendOutput(`Result: ${results.overallSuccess ? '✅ SUCCESS' : '❌ FAILURE'}`, results.overallSuccess ? 'success' : 'error');
+                
+                if (results.overallSuccess) {
+                    appendOutput('🎉 Property 2: Data Transformation Preservation is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Property 2 failed. Review the test output above.', 'error');
+                }
+                
+                return results.overallSuccess;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Data Transformer test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runAuthenticationTests() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting Authentication Manager Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const results = await runAuthManagerTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== AUTHENTICATION MANAGER TEST RESULT ===', 'info');
+                appendOutput(`Result: ${results.success ? '✅ SUCCESS' : '❌ FAILURE'}`, results.success ? 'success' : 'error');
+                
+                if (results.success) {
+                    appendOutput('🎉 Property 3: Authentication Integration is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Property 3 failed. Review the test output above.', 'error');
+                }
+                
+                return results.success;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Authentication Manager test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runSecurityComplianceTests() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting Security Compliance Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const results = await runSecurityComplianceTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== SECURITY COMPLIANCE TEST RESULT ===', 'info');
+                appendOutput(`Result: ${results.success ? '✅ SUCCESS' : '❌ FAILURE'}`, results.success ? 'success' : 'error');
+                
+                if (results.success) {
+                    appendOutput('🎉 Property 14: Rate Limiting Compliance is satisfied!', 'success');
+                    appendOutput('🎉 Property 15: CORS Handling is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Security compliance properties failed. Review the test output above.', 'error');
+                }
+                
+                return results.success;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Security Compliance test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runVisualizationTests() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting Visualization Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const success = await runVisualizationTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== VISUALIZATION TEST RESULT ===', 'info');
+                appendOutput(`Result: ${success ? '✅ SUCCESS' : '❌ FAILURE'}`, success ? 'success' : 'error');
+                
+                if (success) {
+                    appendOutput('🎉 Property 8: Visualization Mode Switching is satisfied!', 'success');
+                    appendOutput('🎉 Property 9: Interactive Feature Completeness is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Visualization properties failed. Review the test output above.', 'error');
+                }
+                
+                return success;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Visualization test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runPerformanceTests() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting Performance Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const success = await runPerformanceTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== PERFORMANCE TEST RESULT ===', 'info');
+                appendOutput(`Result: ${success ? '✅ SUCCESS' : '❌ FAILURE'}`, success ? 'success' : 'error');
+                
+                if (success) {
+                    appendOutput('🎉 Property 4: Performance Requirements is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Property 4 failed. Review the test output above.', 'error');
+                }
+                
+                return success;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Performance test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runCachingOfflineTests() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting Caching and Offline Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const success = await runCachingOfflineTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== CACHING & OFFLINE TEST RESULT ===', 'info');
+                appendOutput(`Result: ${success ? '✅ SUCCESS' : '❌ FAILURE'}`, success ? 'success' : 'error');
+                
+                if (success) {
+                    appendOutput('🎉 Property 5: Real-Time Data Updates is satisfied!', 'success');
+                    appendOutput('🎉 Property 6: Offline Graceful Degradation is satisfied!', 'success');
+                    appendOutput('🎉 Property 13: Data Usage Optimization is satisfied!', 'success');
+                    appendOutput('🎉 Property 18: Caching Integration is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Some caching/offline properties failed. Review the test output above.', 'error');
+                }
+                
+                return success;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Caching/Offline test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runAnimationTestsButton() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting Animation Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const success = await runAnimationTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== ANIMATION TEST RESULT ===', 'info');
+                appendOutput(`Result: ${success ? '✅ SUCCESS' : '❌ FAILURE'}`, success ? 'success' : 'error');
+                
+                if (success) {
+                    appendOutput('🎉 Property 7: Animation Smoothness is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Property 7 failed. Review the test output above.', 'error');
+                }
+                
+                return success;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Animation test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runFilteringTestsButton() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting Filtering Property Tests...', 'info');
+                appendOutput('', 'info'); // Empty line
+                
+                captureConsole();
+                const success = await runFilteringTests();
+                restoreConsole();
+                
+                appendOutput('', 'info'); // Empty line
+                appendOutput('=== FILTERING TEST RESULT ===', 'info');
+                appendOutput(`Result: ${success ? '✅ SUCCESS' : '❌ FAILURE'}`, success ? 'success' : 'error');
+                
+                if (success) {
+                    appendOutput('🎉 Property 10: Filtering Functionality is satisfied!', 'success');
+                } else {
+                    appendOutput('⚠️  Property 10 failed. Review the test output above.', 'error');
+                }
+                
+                return success;
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Filtering test execution failed: ${error.message}`, 'error');
+                return false;
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runAllTests() {
+            setButtonsDisabled(true);
+            
+            try {
+                appendOutput('🚀 Starting ALL Property Tests...', 'info');
+                appendOutput('', 'info');
+                
+                // Run API Router tests
+                const apiSuccess = await runAPIRouterTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('─'.repeat(50), 'info');
+                appendOutput('', 'info');
+                
+                // Run Data Transformer tests
+                const dataSuccess = await runDataTransformerTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('─'.repeat(50), 'info');
+                appendOutput('', 'info');
+                
+                // Run Authentication tests
+                const authSuccess = await runAuthenticationTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('─'.repeat(50), 'info');
+                appendOutput('', 'info');
+                
+                // Run Security Compliance tests
+                const securitySuccess = await runSecurityComplianceTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('─'.repeat(50), 'info');
+                appendOutput('', 'info');
+                
+                // Run Visualization tests
+                const visualizationSuccess = await runVisualizationTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('─'.repeat(50), 'info');
+                appendOutput('', 'info');
+                
+                // Run Performance tests
+                const performanceSuccess = await runPerformanceTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('─'.repeat(50), 'info');
+                appendOutput('', 'info');
+                
+                // Run Caching and Offline tests
+                const cachingSuccess = await runCachingOfflineTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('─'.repeat(50), 'info');
+                appendOutput('', 'info');
+                
+                // Run Animation tests
+                const animationSuccess = await runAnimationTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('─'.repeat(50), 'info');
+                appendOutput('', 'info');
+                
+                // Run Filtering tests
+                const filteringSuccess = await runFilteringTestsInternal();
+                
+                appendOutput('', 'info');
+                appendOutput('='.repeat(50), 'info');
+                appendOutput('=== FINAL OVERALL RESULT ===', 'info');
+                
+                const overallSuccess = apiSuccess && dataSuccess && authSuccess && securitySuccess && visualizationSuccess && performanceSuccess && cachingSuccess && animationSuccess && filteringSuccess;
+                appendOutput(`Overall Result: ${overallSuccess ? '✅ ALL TESTS PASSED' : '❌ SOME TESTS FAILED'}`, overallSuccess ? 'success' : 'error');
+                
+                if (overallSuccess) {
+                    appendOutput('🎉 All properties are satisfied!', 'success');
+                    appendOutput('✅ Property 1: API Routing Consistency', 'success');
+                    appendOutput('✅ Property 2: Data Transformation Preservation', 'success');
+                    appendOutput('✅ Property 3: Authentication Integration', 'success');
+                    appendOutput('✅ Property 4: Performance Requirements', 'success');
+                    appendOutput('✅ Property 5: Real-Time Data Updates', 'success');
+                    appendOutput('✅ Property 6: Offline Graceful Degradation', 'success');
+                    appendOutput('✅ Property 7: Animation Smoothness', 'success');
+                    appendOutput('✅ Property 8: Visualization Mode Switching', 'success');
+                    appendOutput('✅ Property 9: Interactive Feature Completeness', 'success');
+                    appendOutput('✅ Property 10: Filtering Functionality', 'success');
+                    appendOutput('✅ Property 13: Data Usage Optimization', 'success');
+                    appendOutput('✅ Property 14: Rate Limiting Compliance', 'success');
+                    appendOutput('✅ Property 15: CORS Handling', 'success');
+                    appendOutput('✅ Property 18: Caching Integration', 'success');
+                    appendOutput('✅ All requirements validated', 'success');
+                } else {
+                    appendOutput('⚠️  Some properties failed:', 'error');
+                    appendOutput(`${apiSuccess ? '✅' : '❌'} Property 1: API Routing Consistency`, apiSuccess ? 'success' : 'error');
+                    appendOutput(`${dataSuccess ? '✅' : '❌'} Property 2: Data Transformation Preservation`, dataSuccess ? 'success' : 'error');
+                    appendOutput(`${authSuccess ? '✅' : '❌'} Property 3: Authentication Integration`, authSuccess ? 'success' : 'error');
+                    appendOutput(`${performanceSuccess ? '✅' : '❌'} Property 4: Performance Requirements`, performanceSuccess ? 'success' : 'error');
+                    appendOutput(`${cachingSuccess ? '✅' : '❌'} Properties 5, 6, 13, 18: Caching & Offline`, cachingSuccess ? 'success' : 'error');
+                    appendOutput(`${animationSuccess ? '✅' : '❌'} Property 7: Animation Smoothness`, animationSuccess ? 'success' : 'error');
+                    appendOutput(`${visualizationSuccess ? '✅' : '❌'} Property 8 & 9: Visualization Features`, visualizationSuccess ? 'success' : 'error');
+                    appendOutput(`${filteringSuccess ? '✅' : '❌'} Property 10: Filtering Functionality`, filteringSuccess ? 'success' : 'error');
+                    appendOutput(`${securitySuccess ? '✅' : '❌'} Property 14 & 15: Security Compliance`, securitySuccess ? 'success' : 'error');
+                }
+                
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Test suite execution failed: ${error.message}`, 'error');
+            } finally {
+                setButtonsDisabled(false);
+            }
+        }
+
+        async function runAPIRouterTestsInternal() {
+            try {
+                captureConsole();
+                const success = await runAPIRouterTests();
+                restoreConsole();
+                return success;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ API Router tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function runDataTransformerTestsInternal() {
+            try {
+                captureConsole();
+                const tester = new DataTransformerPropertyTests();
+                const results = await tester.runAllTests();
+                restoreConsole();
+                return results.overallSuccess;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Data Transformer tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function runAuthenticationTestsInternal() {
+            try {
+                captureConsole();
+                const results = await runAuthManagerTests();
+                restoreConsole();
+                return results.success;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Authentication tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function runSecurityComplianceTestsInternal() {
+            try {
+                captureConsole();
+                const results = await runSecurityComplianceTests();
+                restoreConsole();
+                return results.success;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Security compliance tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function runVisualizationTestsInternal() {
+            try {
+                captureConsole();
+                const success = await runVisualizationTests();
+                restoreConsole();
+                return success;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Visualization tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function runPerformanceTestsInternal() {
+            try {
+                captureConsole();
+                const success = await runPerformanceTests();
+                restoreConsole();
+                return success;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Performance tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function runCachingOfflineTestsInternal() {
+            try {
+                captureConsole();
+                const success = await runCachingOfflineTests();
+                restoreConsole();
+                return success;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Caching/Offline tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function runAnimationTestsInternal() {
+            try {
+                captureConsole();
+                const success = await runAnimationTests();
+                restoreConsole();
+                return success;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Animation tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function runFilteringTestsInternal() {
+            try {
+                captureConsole();
+                const success = await runFilteringTests();
+                restoreConsole();
+                return success;
+            } catch (error) {
+                restoreConsole();
+                appendOutput(`❌ Filtering tests failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        function setButtonsDisabled(disabled) {
+            runAPIButton.disabled = disabled;
+            runDataButton.disabled = disabled;
+            runAuthButton.disabled = disabled;
+            runSecurityButton.disabled = disabled;
+            runVisualizationButton.disabled = disabled;
+            runPerformanceButton.disabled = disabled;
+            runCachingButton.disabled = disabled;
+            runAnimationButton.disabled = disabled;
+            runFilteringButton.disabled = disabled;
+            runAllButton.disabled = disabled;
+            loadingIndicator.style.display = disabled ? 'inline-block' : 'none';
+        }
+
+        function clearOutput() {
+            outputDiv.innerHTML = '';
+        }
+
+        // Event listeners
+        runAPIButton.addEventListener('click', runAPIRouterTests);
+        runDataButton.addEventListener('click', runDataTransformerTests);
+        runAuthButton.addEventListener('click', runAuthenticationTests);
+        runSecurityButton.addEventListener('click', runSecurityComplianceTests);
+        runVisualizationButton.addEventListener('click', runVisualizationTests);
+        runPerformanceButton.addEventListener('click', runPerformanceTests);
+        runCachingButton.addEventListener('click', runCachingOfflineTests);
+        runAnimationButton.addEventListener('click', runAnimationTestsButton);
+        runFilteringButton.addEventListener('click', runFilteringTestsButton);
+        runAllButton.addEventListener('click', runAllTests);
+        clearButton.addEventListener('click', clearOutput);
+
+        // Initial message
+        appendOutput('🧪 Leaflet Integration Property Tests Ready', 'info');
+        appendOutput('Available tests:', 'info');
+        appendOutput('  • Property 1: API Routing Consistency', 'info');
+        appendOutput('  • Property 2: Data Transformation Preservation', 'info');
+        appendOutput('  • Property 3: Authentication Integration', 'info');
+        appendOutput('  • Property 4: Performance Requirements', 'info');
+        appendOutput('  • Property 5: Real-Time Data Updates', 'info');
+        appendOutput('  • Property 6: Offline Graceful Degradation', 'info');
+        appendOutput('  • Property 7: Animation Smoothness', 'info');
+        appendOutput('  • Property 8: Visualization Mode Switching', 'info');
+        appendOutput('  • Property 9: Interactive Feature Completeness', 'info');
+        appendOutput('  • Property 10: Filtering Functionality', 'info');
+        appendOutput('  • Property 13: Data Usage Optimization', 'info');
+        appendOutput('  • Property 14: Rate Limiting Compliance', 'info');
+        appendOutput('  • Property 15: CORS Handling', 'info');
+        appendOutput('  • Property 18: Caching Integration', 'info');
+        appendOutput('Click a button above to start testing...', 'info');
+    </script>
+</body>
+</html>

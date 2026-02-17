@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\tasks.py
+# hypothesis_version: 6.150.3
+
+[0.0, 0.85, 0.95, 100, 404, '/active', '/api/v1/tasks', '/failures', '/health', '/statistics', '/status/{task_id}', 'Filter by task name', 'active_tasks', 'active_tasks_count', 'countdown', 'degraded', 'error', 'failed', 'healthy', 'metrics', 'next_retry_at', 'recent_failures', 'retried', 'retry_count', 'started', 'status', 'succeeded', 'success_rate', 'task_name', 'tasks', 'timestamp', 'total_execution_time', 'total_tasks_failed', 'total_tasks_retried', 'total_tasks_started', 'unhealthy']

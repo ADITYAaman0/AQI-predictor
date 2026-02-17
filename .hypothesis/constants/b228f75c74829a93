@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\models\forecaster.py
+# hypothesis_version: 6.150.3
+
+[-0.05, 0.003, 0.03, 0.05, 0.1, 0.2, 0.3, 0.7, 0.8, 0.95, 1.0, 1.15, 1.2, 1.28, 100, 1013, 'aqi', 'aqi_lower', 'aqi_upper', 'category', 'category_label', 'color', 'day_of_week', 'feature_names', 'hour', 'hour_cos', 'hour_sin', 'humidity', 'is_rush_hour', 'is_weekend', 'learning_rate', 'lower_bound', 'max_depth', 'model', 'n_estimators', 'n_features', 'n_samples', 'params', 'pm25', 'pm25_current', 'pm25_lower', 'pm25_upper', 'pollutants', 'predictions', 'pressure', 'random_state', 'rb', 'reg:squarederror', 'scaler', 'subsample', 'temperature', 'timestamp', 'timestamps', 'train_rmse', 'upper_bound', 'val_rmse', 'wb', 'wind_speed']

@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\monitoring.py
+# hypothesis_version: 6.150.3
+
+[168, 400, 1000, 1024, 3600, '.', '/', ':', 'REDIS_URL', 'X-Response-Time', 'aqi:metrics:models', 'aqi:metrics:requests', 'aqi:metrics:system', 'current_cpu_percent', 'current_disk_free_gb', 'current_system', 'error', 'error_requests', 'last_system_update', 'timestamp', 'total_requests', 'total_response_time', 'user-agent']

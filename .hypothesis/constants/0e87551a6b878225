@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\database.py
+# hypothesis_version: 6.150.3
+
+[3600, 'DATABASE_URL', 'ENVIRONMENT', 'SELECT 1', 'application_name', 'aqi_predictor_api', 'command_timeout', 'development', 'jit', 'on', 'options', 'postgresql://', 'server_settings', 'timeout']

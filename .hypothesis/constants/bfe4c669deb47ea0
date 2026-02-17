@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\schemas.py
+# hypothesis_version: 6.150.3
+
+[0.8, 1.0, -180, 128, 168, 180, 200, 500, 1800, 'India', 'admin', 'bearer', 'channels', 'csv', 'email', 'end_date', 'geojson', 'json', 'moderator', 'new_password', 'north', 'password', 'push', 'sms', 'south', 'start_date', 'user']

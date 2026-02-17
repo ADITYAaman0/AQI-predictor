@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\data\data_processor.py
+# hypothesis_version: 6.150.3
+
+[0.3, 0.4, 0.5, 1.5, 2.0, 100, 150, 200, 1000, 1013, 1020, 'Delhi', 'aqi', 'bfill', 'category', 'category_description', 'category_label', 'city', 'co', 'color', 'date', 'day_of_week', 'dominant_pollutant', 'ffill', 'health_message', 'hour', 'hour_cos', 'hour_sin', 'humidity', 'is_rush_hour', 'is_weekend', 'lag', 'last_updated', 'mean', 'month', 'no2', 'o3', 'parameter', 'pm10', 'pm10_current', 'pm25', 'pm25_current', 'pollutants', 'pressure', 'roll', 'so2', 'station_count', 'temperature', 'timestamp', 'utc', 'value', 'weather', 'wind_speed']

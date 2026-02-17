@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\cache.py
+# hypothesis_version: 6.150.3
+
+[100, 300, 1800, 3600, 86400, 'REDIS_URL', 'aof_enabled', 'arch_bits', 'attribution', 'blocked_clients', 'connected_clients', 'connected_slaves', 'connections', 'current', 'current_aqi', 'error', 'evicted_keys', 'expired_keys', 'forecast', 'hit_rate_percent', 'keyspace_hits', 'keyspace_misses', 'max_memory', 'max_memory_bytes', 'maxmemory', 'maxmemory_human', 'memory', 'os', 'performance', 'persistence', 'rdb_last_save_time', 'redis_mode', 'redis_version', 'role', 'server', 'spatial', 'stations', 'tcp_port', 'timestamp', 'unknown', 'uptime_in_seconds', 'uptime_seconds', 'used_memory', 'used_memory_bytes', 'used_memory_human', 'used_memory_lua', 'used_memory_peak', 'used_memory_rss', 'utf-8', 'weather']

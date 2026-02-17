@@ -1,0 +1,337 @@
+name: Manual Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      service:
+        description: 'Service to deploy (all for complete deployment)'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - api
+          - dashboard
+          - celery
+          - database-only
+      skip_tests:
+        description: 'Skip tests (use with caution)'
+        required: false
+        default: false
+        type: boolean
+      force_migration:
+        description: 'Force database migration even if up to date'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  validate-inputs:
+    name: Validate Deployment Inputs
+    runs-on: ubuntu-latest
+    outputs:
+      deploy_api: ${{ steps.services.outputs.deploy_api }}
+      deploy_dashboard: ${{ steps.services.outputs.deploy_dashboard }}
+      deploy_celery: ${{ steps.services.outputs.deploy_celery }}
+      deploy_database: ${{ steps.services.outputs.deploy_database }}
+    
+    steps:
+    - name: Determine services to deploy
+      id: services
+      run: |
+        SERVICE="${{ github.event.inputs.service }}"
+        
+        if [ "$SERVICE" = "all" ]; then
+          echo "deploy_api=true" >> $GITHUB_OUTPUT
+          echo "deploy_dashboard=true" >> $GITHUB_OUTPUT
+          echo "deploy_celery=true" >> $GITHUB_OUTPUT
+          echo "deploy_database=true" >> $GITHUB_OUTPUT
+        elif [ "$SERVICE" = "database-only" ]; then
+          echo "deploy_api=false" >> $GITHUB_OUTPUT
+          echo "deploy_dashboard=false" >> $GITHUB_OUTPUT
+          echo "deploy_celery=false" >> $GITHUB_OUTPUT
+          echo "deploy_database=true" >> $GITHUB_OUTPUT
+        else
+          echo "deploy_api=$( [ '$SERVICE' = 'api' ] && echo 'true' || echo 'false' )" >> $GITHUB_OUTPUT
+          echo "deploy_dashboard=$( [ '$SERVICE' = 'dashboard' ] && echo 'true' || echo 'false' )" >> $GITHUB_OUTPUT
+          echo "deploy_celery=$( [ '$SERVICE' = 'celery' ] && echo 'true' || echo 'false' )" >> $GITHUB_OUTPUT
+          echo "deploy_database=false" >> $GITHUB_OUTPUT
+        fi
+        
+        echo "🎯 Deployment plan:"
+        echo "  Environment: ${{ github.event.inputs.environment }}"
+        echo "  Service: $SERVICE"
+        echo "  Skip tests: ${{ github.event.inputs.skip_tests }}"
+        echo "  Force migration: ${{ github.event.inputs.force_migration }}"
+
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.skip_tests != 'true' }}
+    
+    services:
+      postgres:
+        image: timescale/timescaledb-ha:pg15-latest
+        env:
+          POSTGRES_DB: aqi_test
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libpq-dev libgdal-dev gdal-bin libspatialindex-dev
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest-cov
+
+    - name: Run tests
+      run: |
+        pytest tests/ -v --tb=short -x
+      env:
+        DATABASE_URL: postgresql+asyncpg://test_user:test_password@localhost:5432/aqi_test
+        REDIS_URL: redis://localhost:6379/1
+        SECRET_KEY: test_secret_key
+        ENVIRONMENT: test
+
+  database-migration:
+    name: Database Migration
+    runs-on: ubuntu-latest
+    needs: [validate-inputs, test]
+    if: ${{ always() && needs.validate-inputs.outputs.deploy_database == 'true' && (needs.test.result == 'success' || needs.test.result == 'skipped') }}
+    environment: ${{ github.event.inputs.environment }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install migration dependencies
+      run: |
+        pip install alembic psycopg2-binary sqlalchemy
+
+    - name: Run database migration
+      run: |
+        python scripts/migrate-database.py \
+          --database-url "${{ secrets.DATABASE_URL }}" \
+          --create-backup \
+          ${{ github.event.inputs.force_migration == 'true' && '--target-revision head' || '' }}
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+    - name: Validate migration
+      run: |
+        python scripts/migrate-database.py \
+          --database-url "${{ secrets.DATABASE_URL }}" \
+          --validate-only
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  build-images:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    needs: [validate-inputs, test]
+    if: ${{ always() && (needs.test.result == 'success' || needs.test.result == 'skipped') }}
+    
+    strategy:
+      matrix:
+        service: [api, streamlit, celery]
+    
+    steps:
+    - name: Skip if service not selected
+      if: ${{ (matrix.service == 'api' && needs.validate-inputs.outputs.deploy_api != 'true') || (matrix.service == 'streamlit' && needs.validate-inputs.outputs.deploy_dashboard != 'true') || (matrix.service == 'celery' && needs.validate-inputs.outputs.deploy_celery != 'true') }}
+      run: |
+        echo "Skipping ${{ matrix.service }} - not selected for deployment"
+        exit 0
+
+    - name: Checkout code
+      if: ${{ (matrix.service == 'api' && needs.validate-inputs.outputs.deploy_api == 'true') || (matrix.service == 'streamlit' && needs.validate-inputs.outputs.deploy_dashboard == 'true') || (matrix.service == 'celery' && needs.validate-inputs.outputs.deploy_celery == 'true') }}
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      if: ${{ (matrix.service == 'api' && needs.validate-inputs.outputs.deploy_api == 'true') || (matrix.service == 'streamlit' && needs.validate-inputs.outputs.deploy_dashboard == 'true') || (matrix.service == 'celery' && needs.validate-inputs.outputs.deploy_celery == 'true') }}
+      uses: docker/setup-buildx-action@v3
+
+    - name: Log in to Container Registry
+      if: ${{ (matrix.service == 'api' && needs.validate-inputs.outputs.deploy_api == 'true') || (matrix.service == 'streamlit' && needs.validate-inputs.outputs.deploy_dashboard == 'true') || (matrix.service == 'celery' && needs.validate-inputs.outputs.deploy_celery == 'true') }}
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and push image
+      if: ${{ (matrix.service == 'api' && needs.validate-inputs.outputs.deploy_api == 'true') || (matrix.service == 'streamlit' && needs.validate-inputs.outputs.deploy_dashboard == 'true') || (matrix.service == 'celery' && needs.validate-inputs.outputs.deploy_celery == 'true') }}
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ${{ matrix.service == 'api' && 'Dockerfile' || format('Dockerfile.{0}', matrix.service) }}
+        push: true
+        tags: |
+          ghcr.io/${{ github.repository }}-${{ matrix.service }}:manual-${{ github.run_number }}
+          ghcr.io/${{ github.repository }}-${{ matrix.service }}:${{ github.event.inputs.environment }}-latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+  deploy:
+    name: Deploy to ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest
+    needs: [validate-inputs, database-migration, build-images]
+    if: ${{ always() && (needs.database-migration.result == 'success' || needs.database-migration.result == 'skipped') && (needs.build-images.result == 'success' || needs.build-images.result == 'skipped') }}
+    environment: ${{ github.event.inputs.environment }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+
+    - name: Configure kubectl
+      run: |
+        mkdir -p ~/.kube
+        if [ "${{ github.event.inputs.environment }}" = "production" ]; then
+          echo "${{ secrets.PRODUCTION_KUBECONFIG }}" | base64 -d > ~/.kube/config
+          kubectl config use-context production
+          NAMESPACE="aqi-production"
+        else
+          echo "${{ secrets.STAGING_KUBECONFIG }}" | base64 -d > ~/.kube/config
+          kubectl config use-context staging
+          NAMESPACE="aqi-staging"
+        fi
+        echo "NAMESPACE=$NAMESPACE" >> $GITHUB_ENV
+
+    - name: Deploy API service
+      if: ${{ needs.validate-inputs.outputs.deploy_api == 'true' }}
+      run: |
+        # Update API deployment
+        kubectl set image deployment/aqi-api \
+          aqi-api=ghcr.io/${{ github.repository }}-api:manual-${{ github.run_number }} \
+          -n $NAMESPACE
+        
+        kubectl rollout status deployment/aqi-api -n $NAMESPACE --timeout=600s
+
+    - name: Deploy Dashboard service
+      if: ${{ needs.validate-inputs.outputs.deploy_dashboard == 'true' }}
+      run: |
+        # Update Dashboard deployment
+        kubectl set image deployment/aqi-dashboard \
+          aqi-dashboard=ghcr.io/${{ github.repository }}-streamlit:manual-${{ github.run_number }} \
+          -n $NAMESPACE
+        
+        kubectl rollout status deployment/aqi-dashboard -n $NAMESPACE --timeout=600s
+
+    - name: Deploy Celery service
+      if: ${{ needs.validate-inputs.outputs.deploy_celery == 'true' }}
+      run: |
+        # Update Celery worker deployment
+        kubectl set image deployment/aqi-celery-worker \
+          aqi-celery-worker=ghcr.io/${{ github.repository }}-celery:manual-${{ github.run_number }} \
+          -n $NAMESPACE
+        
+        kubectl rollout status deployment/aqi-celery-worker -n $NAMESPACE --timeout=600s
+        
+        # Update Celery beat deployment
+        kubectl set image deployment/aqi-celery-beat \
+          aqi-celery-beat=ghcr.io/${{ github.repository }}-celery:manual-${{ github.run_number }} \
+          -n $NAMESPACE
+        
+        kubectl rollout status deployment/aqi-celery-beat -n $NAMESPACE --timeout=600s
+
+    - name: Verify deployment
+      run: |
+        echo "🔍 Verifying deployment in $NAMESPACE..."
+        
+        # Check pod status
+        kubectl get pods -n $NAMESPACE -l app.kubernetes.io/name=aqi-predictor
+        
+        # Wait for pods to be ready
+        kubectl wait --for=condition=ready pod -l app.kubernetes.io/name=aqi-predictor -n $NAMESPACE --timeout=300s
+        
+        echo "✅ Deployment verification completed"
+
+    - name: Run post-deployment tests
+      run: |
+        # Get service URLs
+        if [ "${{ needs.validate-inputs.outputs.deploy_api }}" = "true" ]; then
+          API_URL=$(kubectl get service aqi-api -n $NAMESPACE -o jsonpath='{.status.loadBalancer.ingress[0].ip}' || echo "localhost")
+          
+          # Test API health
+          if [ "$API_URL" != "localhost" ]; then
+            curl -f http://$API_URL:8000/health || echo "API health check failed"
+          fi
+        fi
+        
+        echo "🎉 Manual deployment completed successfully!"
+
+  notify:
+    name: Notify Deployment Status
+    runs-on: ubuntu-latest
+    needs: [validate-inputs, test, database-migration, build-images, deploy]
+    if: always()
+    
+    steps:
+    - name: Deployment Summary
+      run: |
+        echo "## 📋 Manual Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Environment:** ${{ github.event.inputs.environment }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Service:** ${{ github.event.inputs.service }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Triggered by:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        echo "### Job Results:" >> $GITHUB_STEP_SUMMARY
+        echo "- Tests: ${{ needs.test.result || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- Database Migration: ${{ needs.database-migration.result || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- Build Images: ${{ needs.build-images.result || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- Deploy: ${{ needs.deploy.result || 'failed' }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ needs.deploy.result }}" = "success" ]; then
+          echo "✅ **Deployment completed successfully!**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ **Deployment failed. Check job logs for details.**" >> $GITHUB_STEP_SUMMARY
+        fi

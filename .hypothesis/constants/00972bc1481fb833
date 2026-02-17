@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\tasks\alerts.py
+# hypothesis_version: 6.150.3
+
+[0.05, 10.0, 15.0, 30.0, 45.0, 'POINT(', 'User not found', 'alerts_deleted', 'alerts_triggered', 'aqi', 'background', 'biomass', 'category', 'channels_tested', 'cleanup_old_alerts', 'cutoff_date', 'days_to_keep', 'delivered', 'dominant_pollutant', 'error', 'industrial', 'location_name', 'measurement_count', 'message', 'notifications_failed', 'notifications_sent', 'pollutant_values', 'scheduled', 'send_test_alert', 'sent', 'status', 'subscription_id', 'success', 'task', 'timestamp', 'vehicular', 'your location']

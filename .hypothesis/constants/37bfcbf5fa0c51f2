@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\tasks\task_monitor.py
+# hypothesis_version: 6.150.3
+
+[100, ':', 'FAILURE', 'PENDING', 'REDIS_URL', 'RETRY', 'REVOKED', 'STARTED', 'SUCCESS', 'TaskExecutionRecord', 'celery:task:monitor:', 'celery:task:retry:', 'celery:task:stats', 'completed_at', 'countdown', 'error', 'next_retry_at', 'retry_count', 'started_at', 'timestamp']

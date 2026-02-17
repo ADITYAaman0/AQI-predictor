@@ -1,0 +1,298 @@
+{
+  "test_results": {
+    "IMD Weather": {
+      "status": "success",
+      "cities_processed": 5,
+      "data_points": 5,
+      "sample_data": [
+        {
+          "city": "Delhi",
+          "temperature": 15.07,
+          "humidity": 67,
+          "wind_speed": 2.06,
+          "pressure": 1020,
+          "visibility": 2.8,
+          "source": "imd_openweather",
+          "timestamp": "2026-02-04T14:09:48"
+        },
+        {
+          "city": "Mumbai",
+          "temperature": 29.03,
+          "humidity": 48,
+          "wind_speed": 3.6,
+          "pressure": 1013,
+          "visibility": 2.5,
+          "source": "imd_openweather",
+          "timestamp": "2026-02-04T14:12:14"
+        }
+      ]
+    },
+    "OpenAQ Air Quality": {
+      "status": "warning",
+      "message": "No data available"
+    },
+    "CPCB Simulation": {
+      "status": "success",
+      "stations_processed": 3,
+      "data_points": 18,
+      "parameters": [
+        "so2",
+        "no2",
+        "pm25",
+        "pm10",
+        "o3",
+        "co"
+      ],
+      "sample_data": [
+        {
+          "station_id": "DL001",
+          "parameter": "pm25",
+          "value": 93.3,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL001",
+          "parameter": "pm10",
+          "value": 175.5,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL001",
+          "parameter": "no2",
+          "value": 73.1,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL001",
+          "parameter": "so2",
+          "value": 19.1,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL001",
+          "parameter": "o3",
+          "value": 107.8,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL001",
+          "parameter": "co",
+          "value": 3.45,
+          "unit": "mg/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL002",
+          "parameter": "pm25",
+          "value": 141.4,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL002",
+          "parameter": "pm10",
+          "value": 254.7,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL002",
+          "parameter": "no2",
+          "value": 84.5,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        },
+        {
+          "station_id": "DL002",
+          "parameter": "so2",
+          "value": 19.7,
+          "unit": "\u00b5g/m\u00b3",
+          "quality_flag": "estimated",
+          "source": "cpcb",
+          "timestamp": "2026-02-04T13:18:17.989803"
+        }
+      ]
+    },
+    "Comprehensive Ingestion": {
+      "status": "success",
+      "summary": {
+        "air_quality_points": 60,
+        "weather_points": 27,
+        "traffic_points": 3,
+        "total_points": 90
+      },
+      "locations_processed": 3
+    }
+  },
+  "ingested_data": {
+    "weather": [
+      {
+        "city": "Delhi",
+        "temperature": 15.07,
+        "humidity": 67,
+        "wind_speed": 2.06,
+        "pressure": 1020,
+        "visibility": 2.8,
+        "source": "imd_openweather",
+        "timestamp": "2026-02-04T14:09:48"
+      },
+      {
+        "city": "Mumbai",
+        "temperature": 29.03,
+        "humidity": 48,
+        "wind_speed": 3.6,
+        "pressure": 1013,
+        "visibility": 2.5,
+        "source": "imd_openweather",
+        "timestamp": "2026-02-04T14:12:14"
+      },
+      {
+        "city": "Bangalore",
+        "temperature": 23.13,
+        "humidity": 45,
+        "wind_speed": 6.71,
+        "pressure": 1016,
+        "visibility": 6.0,
+        "source": "imd_openweather",
+        "timestamp": "2026-02-04T14:15:32"
+      },
+      {
+        "city": "Chennai",
+        "temperature": 25.61,
+        "humidity": 71,
+        "wind_speed": 3.6,
+        "pressure": 1016,
+        "visibility": 6.0,
+        "source": "imd_openweather",
+        "timestamp": "2026-02-04T14:14:04"
+      },
+      {
+        "city": "Kolkata",
+        "temperature": 22.96,
+        "humidity": 49,
+        "wind_speed": 1.54,
+        "pressure": 1017,
+        "visibility": 3.5,
+        "source": "imd_openweather",
+        "timestamp": "2026-02-04T14:14:29"
+      }
+    ],
+    "air_quality": [
+      {
+        "station_id": "DL001",
+        "parameter": "pm25",
+        "value": 93.3,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL001",
+        "parameter": "pm10",
+        "value": 175.5,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL001",
+        "parameter": "no2",
+        "value": 73.1,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL001",
+        "parameter": "so2",
+        "value": 19.1,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL001",
+        "parameter": "o3",
+        "value": 107.8,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL001",
+        "parameter": "co",
+        "value": 3.45,
+        "unit": "mg/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL002",
+        "parameter": "pm25",
+        "value": 141.4,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL002",
+        "parameter": "pm10",
+        "value": 254.7,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL002",
+        "parameter": "no2",
+        "value": 84.5,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      },
+      {
+        "station_id": "DL002",
+        "parameter": "so2",
+        "value": 19.7,
+        "unit": "\u00b5g/m\u00b3",
+        "quality_flag": "estimated",
+        "source": "cpcb",
+        "timestamp": "2026-02-04T13:18:17.989803"
+      }
+    ],
+    "total_points": 23
+  },
+  "timestamp": "2026-02-04T14:18:23.533660"
+}

@@ -1,0 +1,223 @@
+groups:
+  - name: aqi_system_alerts
+    interval: 30s
+    rules:
+      # System Resource Alerts
+      - alert: HighCPUUsage
+        expr: aqi_system_cpu_percent > 90
+        for: 5m
+        labels:
+          severity: critical
+          component: system
+        annotations:
+          summary: "High CPU usage detected"
+          description: "CPU usage is {{ $value }}% (threshold: 90%)"
+      
+      - alert: HighMemoryUsage
+        expr: aqi_system_memory_percent > 90
+        for: 5m
+        labels:
+          severity: critical
+          component: system
+        annotations:
+          summary: "High memory usage detected"
+          description: "Memory usage is {{ $value }}% (threshold: 90%)"
+      
+      - alert: HighDiskUsage
+        expr: aqi_system_disk_usage_percent > 85
+        for: 10m
+        labels:
+          severity: warning
+          component: system
+        annotations:
+          summary: "High disk usage detected"
+          description: "Disk usage is {{ $value }}% (threshold: 85%)"
+      
+      - alert: CriticalDiskUsage
+        expr: aqi_system_disk_usage_percent > 95
+        for: 5m
+        labels:
+          severity: critical
+          component: system
+        annotations:
+          summary: "Critical disk usage detected"
+          description: "Disk usage is {{ $value }}% (threshold: 95%)"
+      
+      # API Performance Alerts
+      - alert: HighErrorRate
+        expr: |
+          (
+            sum(rate(aqi_http_requests_total{status=~"5.."}[5m]))
+            /
+            sum(rate(aqi_http_requests_total[5m]))
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+          component: api
+        annotations:
+          summary: "High API error rate"
+          description: "Error rate is {{ $value | humanizePercentage }} (threshold: 5%)"
+      
+      - alert: SlowAPIResponses
+        expr: |
+          histogram_quantile(0.95, 
+            rate(aqi_http_request_duration_seconds_bucket[5m])
+          ) > 1.0
+        for: 10m
+        labels:
+          severity: warning
+          component: api
+        annotations:
+          summary: "Slow API responses detected"
+          description: "95th percentile response time is {{ $value }}s (threshold: 1s)"
+      
+      - alert: VerySlowAPIResponses
+        expr: |
+          histogram_quantile(0.95, 
+            rate(aqi_http_request_duration_seconds_bucket[5m])
+          ) > 2.0
+        for: 5m
+        labels:
+          severity: critical
+          component: api
+        annotations:
+          summary: "Very slow API responses detected"
+          description: "95th percentile response time is {{ $value }}s (threshold: 2s)"
+      
+      # ML Model Alerts
+      - alert: ModelRMSEDegraded
+        expr: aqi_model_rmse > 25
+        for: 15m
+        labels:
+          severity: warning
+          component: ml
+        annotations:
+          summary: "Model RMSE degraded"
+          description: "Model {{ $labels.model_name }} RMSE is {{ $value }} (threshold: 25)"
+      
+      - alert: ModelAccuracyLow
+        expr: aqi_model_accuracy_percent < 70
+        for: 15m
+        labels:
+          severity: warning
+          component: ml
+        annotations:
+          summary: "Model accuracy low"
+          description: "Model {{ $labels.model_name }} accuracy is {{ $value }}% (threshold: 70%)"
+      
+      - alert: HighPredictionErrors
+        expr: rate(aqi_prediction_errors_total[5m]) > 1
+        for: 10m
+        labels:
+          severity: warning
+          component: ml
+        annotations:
+          summary: "High prediction error rate"
+          description: "Prediction errors: {{ $value }}/sec for {{ $labels.error_type }}"
+      
+      # Data Pipeline Alerts
+      - alert: DataIngestionFailures
+        expr: rate(aqi_data_ingestion_errors_total[5m]) > 0.1
+        for: 10m
+        labels:
+          severity: warning
+          component: data_pipeline
+        annotations:
+          summary: "Data ingestion failures detected"
+          description: "Ingestion errors from {{ $labels.source }}: {{ $value }}/sec"
+      
+      - alert: HighDataQualityIssues
+        expr: rate(aqi_data_quality_issues_total[5m]) > 0.5
+        for: 10m
+        labels:
+          severity: warning
+          component: data_pipeline
+        annotations:
+          summary: "High data quality issues"
+          description: "Data quality issues ({{ $labels.issue_type }}): {{ $value }}/sec"
+      
+      - alert: CeleryTaskFailures
+        expr: rate(aqi_celery_tasks_total{status="failed"}[5m]) > 0.1
+        for: 10m
+        labels:
+          severity: warning
+          component: celery
+        annotations:
+          summary: "Celery task failures detected"
+          description: "Task {{ $labels.task_name }} failures: {{ $value }}/sec"
+      
+      # Cache Alerts
+      - alert: LowCacheHitRate
+        expr: |
+          (
+            rate(aqi_cache_hits_total[5m])
+            /
+            (rate(aqi_cache_hits_total[5m]) + rate(aqi_cache_misses_total[5m]))
+          ) < 0.5
+        for: 15m
+        labels:
+          severity: warning
+          component: cache
+        annotations:
+          summary: "Low cache hit rate"
+          description: "Cache {{ $labels.cache_type }} hit rate is {{ $value | humanizePercentage }} (threshold: 50%)"
+      
+      # Database Alerts
+      - alert: HighDatabaseConnections
+        expr: aqi_db_connections_active > 80
+        for: 10m
+        labels:
+          severity: warning
+          component: database
+        annotations:
+          summary: "High number of database connections"
+          description: "Active database connections: {{ $value }} (threshold: 80)"
+      
+      - alert: SlowDatabaseQueries
+        expr: |
+          histogram_quantile(0.95, 
+            rate(aqi_db_query_duration_seconds_bucket[5m])
+          ) > 1.0
+        for: 10m
+        labels:
+          severity: warning
+          component: database
+        annotations:
+          summary: "Slow database queries detected"
+          description: "95th percentile query time is {{ $value }}s (threshold: 1s)"
+      
+      # Alert Delivery Alerts
+      - alert: AlertDeliveryFailures
+        expr: rate(aqi_alerts_failed_total[5m]) > 0.1
+        for: 10m
+        labels:
+          severity: warning
+          component: alerts
+        annotations:
+          summary: "Alert delivery failures"
+          description: "Failed to deliver {{ $labels.alert_type }} alerts via {{ $labels.channel }}: {{ $value }}/sec"
+      
+      # Service Availability
+      - alert: ServiceDown
+        expr: up{job="aqi-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: service
+        annotations:
+          summary: "AQI API service is down"
+          description: "The AQI API service has been down for more than 1 minute"
+      
+      - alert: HighRequestLatency
+        expr: |
+          histogram_quantile(0.99, 
+            rate(aqi_http_request_duration_seconds_bucket[5m])
+          ) > 3.0
+        for: 5m
+        labels:
+          severity: critical
+          component: api
+        annotations:
+          summary: "Very high request latency"
+          description: "99th percentile latency is {{ $value }}s (threshold: 3s)"

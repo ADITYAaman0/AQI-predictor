@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\models\mlflow_manager.py
+# hypothesis_version: 6.150.3
+
+['Archived', 'None', 'Production', 'Staging', 'actuals', 'adjacency_matrix', 'adjacency_matrix.npy', 'aqi-predictor', 'artifacts', 'created_timestamp', 'creation_time', 'current_stage', 'experiment_id', 'gnn', 'id', 'latest', 'latitude', 'lifecycle_stage', 'longitude', 'lstm', 'mae', 'metric_name', 'metric_value', 'metrics', 'mlflow.db', 'mlflow_version', 'mlruns', 'model', 'model_info.json', 'model_name', 'model_type', 'model_version', 'n_features', 'n_samples', 'name', 'parameters', 'period', 'prediction_mae', 'prediction_r2', 'prediction_rmse', 'prediction_samples', 'predictions', 'r2_score', 'residuals', 'rmse', 'run_id', 'run_type', 'scaler', 'scaler.pkl', 'stage', 'stations', 'stations.json', 'tags', 'target_scaler', 'target_scaler.pkl', 'training_features', 'training_period', 'training_samples', 'training_timestamp', 'unknown', 'version', 'w', 'wb', 'xgboost']

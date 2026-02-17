@@ -1,0 +1,32 @@
+🚨 AIR QUALITY ALERT - {{ location_name }}
+
+Current AQI: {{ aqi_value }}
+Your threshold: {{ threshold }}
+
+Air quality has exceeded your alert threshold!
+
+{% if source_attribution %}
+Main Pollution Sources:
+{% for source, percent in source_attribution.items() %}
+{% if percent > 10 %}
+• {{ source.replace('_', ' ').title() }}: {{ "%.1f"|format(percent) }}%
+{% endif %}
+{% endfor %}
+
+{% endif %}
+🛡️ RECOMMENDED ACTIONS:
+• Limit outdoor activities, especially strenuous exercise
+• Keep windows and doors closed
+• Use air purifiers if available
+• Wear N95 masks when going outside
+• Consider staying indoors until air quality improves
+
+Stay safe and monitor air quality updates!
+
+---
+Alert sent at: {{ timestamp }}
+This alert was triggered because the AQI ({{ aqi_value }}) exceeded your threshold of {{ threshold }}.
+
+AQI Predictor - Air Quality Monitoring & Forecasting
+Manage preferences: [link]
+Unsubscribe: [link]

@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\data\weather_client.py
+# hypothesis_version: 6.150.3
+
+[360, 1000, 1013, 1020, 5000, 10000, '%Y-%m-%d %H:%M:%S', '01d', '02d', 'Delhi', 'appid', 'city', 'deg', 'description', 'dt', 'dt_txt', 'feels_like', 'forecast', 'humidity', 'icon', 'lat', 'list', 'lon', 'main', 'metric', 'name', 'partly cloudy', 'pressure', 'q', 'speed', 'temp', 'temperature', 'timestamp', 'units', 'visibility', 'weather', 'wind', 'wind_deg', 'wind_speed', 'wind_x', 'wind_y']

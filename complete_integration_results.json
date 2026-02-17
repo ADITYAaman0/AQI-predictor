@@ -1,0 +1,1064 @@
+{
+  "start_time": "2026-02-04T19:57:42.800069",
+  "api_validation": {
+    "openweathermap": {
+      "status": "success",
+      "response_time_ms": "unknown",
+      "sample_data": {
+        "temperature": 15.07,
+        "humidity": 67,
+        "location": "Parliament House, Delhi"
+      }
+    },
+    "openaq": {
+      "status": "error",
+      "error": "HTTP 410: {\"message\": \"Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints.\"}"
+    }
+  },
+  "data_collection": {
+    "weather": [
+      {
+        "city": "Delhi",
+        "timestamp": "2026-02-04T19:57:43.663043",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "temperature": 15.07,
+        "humidity": 67,
+        "pressure": 1020,
+        "wind_speed": 2.06,
+        "wind_direction": 250,
+        "visibility": 2.8,
+        "description": "haze",
+        "source": "openweathermap_api",
+        "data_quality": "real_time",
+        "api_response_code": 200
+      },
+      {
+        "city": "Mumbai",
+        "timestamp": "2026-02-04T19:57:43.702351",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "temperature": 29.03,
+        "humidity": 48,
+        "pressure": 1013,
+        "wind_speed": 3.6,
+        "wind_direction": 340,
+        "visibility": 2.5,
+        "description": "smoke",
+        "source": "openweathermap_api",
+        "data_quality": "real_time",
+        "api_response_code": 200
+      },
+      {
+        "city": "Bangalore",
+        "timestamp": "2026-02-04T19:57:43.735957",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "temperature": 22.88,
+        "humidity": 47,
+        "pressure": 1016,
+        "wind_speed": 6.71,
+        "wind_direction": 93,
+        "visibility": 6.0,
+        "description": "clear sky",
+        "source": "openweathermap_api",
+        "data_quality": "real_time",
+        "api_response_code": 200
+      },
+      {
+        "city": "Chennai",
+        "timestamp": "2026-02-04T19:57:43.768261",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "temperature": 25.12,
+        "humidity": 72,
+        "pressure": 1016,
+        "wind_speed": 3.6,
+        "wind_direction": 30,
+        "visibility": 6.0,
+        "description": "scattered clouds",
+        "source": "openweathermap_api",
+        "data_quality": "real_time",
+        "api_response_code": 200
+      },
+      {
+        "city": "Kolkata",
+        "timestamp": "2026-02-04T19:57:43.801418",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "temperature": 22.96,
+        "humidity": 49,
+        "pressure": 1017,
+        "wind_speed": 1.54,
+        "wind_direction": 350,
+        "visibility": 3.5,
+        "description": "haze",
+        "source": "openweathermap_api",
+        "data_quality": "real_time",
+        "api_response_code": 200
+      }
+    ],
+    "air_quality": [
+      {
+        "city": "Delhi",
+        "station_id": "DL001",
+        "timestamp": "2026-02-04T19:57:43.802595",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "pm25",
+        "value": 175.0,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL001",
+        "timestamp": "2026-02-04T19:57:43.802610",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "pm10",
+        "value": 354.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL001",
+        "timestamp": "2026-02-04T19:57:43.802615",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "no2",
+        "value": 92.2,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL001",
+        "timestamp": "2026-02-04T19:57:43.802620",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "so2",
+        "value": 45.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL001",
+        "timestamp": "2026-02-04T19:57:43.802624",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "o3",
+        "value": 143.8,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL001",
+        "timestamp": "2026-02-04T19:57:43.802628",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "co",
+        "value": 6.1,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL002",
+        "timestamp": "2026-02-04T19:57:43.802633",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "pm25",
+        "value": 111.9,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL002",
+        "timestamp": "2026-02-04T19:57:43.802638",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "pm10",
+        "value": 360.4,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL002",
+        "timestamp": "2026-02-04T19:57:43.802643",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "no2",
+        "value": 102.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL002",
+        "timestamp": "2026-02-04T19:57:43.802654",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "so2",
+        "value": 40.3,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL002",
+        "timestamp": "2026-02-04T19:57:43.802660",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "o3",
+        "value": 148.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Delhi",
+        "station_id": "DL002",
+        "timestamp": "2026-02-04T19:57:43.802667",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "parameter": "co",
+        "value": 3.18,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "delhi",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH001",
+        "timestamp": "2026-02-04T19:57:43.802675",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "pm25",
+        "value": 95.4,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH001",
+        "timestamp": "2026-02-04T19:57:43.802680",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "pm10",
+        "value": 205.7,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH001",
+        "timestamp": "2026-02-04T19:57:43.802686",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "no2",
+        "value": 72.0,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH001",
+        "timestamp": "2026-02-04T19:57:43.802692",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "so2",
+        "value": 24.2,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH001",
+        "timestamp": "2026-02-04T19:57:43.802696",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "o3",
+        "value": 70.9,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH001",
+        "timestamp": "2026-02-04T19:57:43.802702",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "co",
+        "value": 2.89,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH002",
+        "timestamp": "2026-02-04T19:57:43.802708",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "pm25",
+        "value": 94.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH002",
+        "timestamp": "2026-02-04T19:57:43.802713",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "pm10",
+        "value": 114.3,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH002",
+        "timestamp": "2026-02-04T19:57:43.802719",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "no2",
+        "value": 54.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH002",
+        "timestamp": "2026-02-04T19:57:43.802726",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "so2",
+        "value": 15.2,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH002",
+        "timestamp": "2026-02-04T19:57:43.802732",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "o3",
+        "value": 84.9,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Mumbai",
+        "station_id": "MH002",
+        "timestamp": "2026-02-04T19:57:43.802738",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "parameter": "co",
+        "value": 2.34,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "mumbai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Bangalore",
+        "station_id": "KA001",
+        "timestamp": "2026-02-04T19:57:43.802743",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "parameter": "pm25",
+        "value": 44.2,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "bangalore",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Bangalore",
+        "station_id": "KA001",
+        "timestamp": "2026-02-04T19:57:43.802746",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "parameter": "pm10",
+        "value": 130.9,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "bangalore",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Bangalore",
+        "station_id": "KA001",
+        "timestamp": "2026-02-04T19:57:43.802750",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "parameter": "no2",
+        "value": 61.6,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "bangalore",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Bangalore",
+        "station_id": "KA001",
+        "timestamp": "2026-02-04T19:57:43.802753",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "parameter": "so2",
+        "value": 19.7,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "bangalore",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Bangalore",
+        "station_id": "KA001",
+        "timestamp": "2026-02-04T19:57:43.802757",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "parameter": "o3",
+        "value": 82.3,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "bangalore",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Bangalore",
+        "station_id": "KA001",
+        "timestamp": "2026-02-04T19:57:43.802760",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "parameter": "co",
+        "value": 1.59,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "bangalore",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Chennai",
+        "station_id": "TN001",
+        "timestamp": "2026-02-04T19:57:43.802764",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "parameter": "pm25",
+        "value": 61.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "chennai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Chennai",
+        "station_id": "TN001",
+        "timestamp": "2026-02-04T19:57:43.802767",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "parameter": "pm10",
+        "value": 95.8,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "chennai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Chennai",
+        "station_id": "TN001",
+        "timestamp": "2026-02-04T19:57:43.802771",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "parameter": "no2",
+        "value": 66.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "chennai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Chennai",
+        "station_id": "TN001",
+        "timestamp": "2026-02-04T19:57:43.802774",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "parameter": "so2",
+        "value": 18.4,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "chennai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Chennai",
+        "station_id": "TN001",
+        "timestamp": "2026-02-04T19:57:43.802777",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "parameter": "o3",
+        "value": 120.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "chennai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Chennai",
+        "station_id": "TN001",
+        "timestamp": "2026-02-04T19:57:43.802780",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "parameter": "co",
+        "value": 2.47,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "chennai",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Kolkata",
+        "station_id": "WB001",
+        "timestamp": "2026-02-04T19:57:43.802784",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "parameter": "pm25",
+        "value": 102.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "kolkata",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Kolkata",
+        "station_id": "WB001",
+        "timestamp": "2026-02-04T19:57:43.802789",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "parameter": "pm10",
+        "value": 150.7,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "kolkata",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Kolkata",
+        "station_id": "WB001",
+        "timestamp": "2026-02-04T19:57:43.802792",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "parameter": "no2",
+        "value": 100.6,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "kolkata",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Kolkata",
+        "station_id": "WB001",
+        "timestamp": "2026-02-04T19:57:43.802796",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "parameter": "so2",
+        "value": 49.8,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "kolkata",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Kolkata",
+        "station_id": "WB001",
+        "timestamp": "2026-02-04T19:57:43.802799",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "parameter": "o3",
+        "value": 133.7,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "kolkata",
+          "confidence_level": "medium"
+        }
+      },
+      {
+        "city": "Kolkata",
+        "station_id": "WB001",
+        "timestamp": "2026-02-04T19:57:43.802804",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "parameter": "co",
+        "value": 3.7,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated",
+        "metadata": {
+          "simulation_method": "historical_pattern_based",
+          "time_adjustment": "rush_hour_factor_applied",
+          "city_profile": "kolkata",
+          "confidence_level": "medium"
+        }
+      }
+    ]
+  },
+  "database_integration": {
+    "attempted": true,
+    "success": true,
+    "records_stored": 47,
+    "errors": [],
+    "demonstration": true,
+    "note": "This is a demonstration of database integration structure",
+    "weather_records": 5,
+    "air_quality_records": 42,
+    "storage_method": "PostgreSQL with PostGIS",
+    "table_structure": {
+      "weather_data": [
+        "id",
+        "time",
+        "location",
+        "temperature",
+        "humidity",
+        "wind_speed",
+        "pressure",
+        "source"
+      ],
+      "air_quality_measurement": [
+        "id",
+        "time",
+        "station_id",
+        "parameter",
+        "value",
+        "unit",
+        "quality_flag",
+        "source",
+        "location"
+      ]
+    }
+  },
+  "statistics": {
+    "total_data_points": 47,
+    "real_data_points": 5,
+    "simulated_points": 42,
+    "real_data_percentage": 10.64,
+    "cities_covered": 5,
+    "weather_points": 5,
+    "air_quality_points": 42,
+    "working_apis": [
+      "openweathermap"
+    ],
+    "failed_apis": [
+      "openaq"
+    ],
+    "api_success_rate": 50.0
+  },
+  "recommendations": [
+    "\u2705 OpenWeatherMap API is working perfectly - continue using for weather data",
+    "\ud83d\udd04 OpenAQ API needs migration to v3 - update integration code",
+    "\u26a0\ufe0f Focus on improving real data API connections",
+    "\ud83d\udd27 Set up automated data ingestion using Celery tasks",
+    "\ud83d\udcca Implement data quality monitoring and alerting",
+    "\ud83d\uddc4\ufe0f Configure database storage for production use",
+    "\ud83d\udd0d Add comprehensive logging and monitoring",
+    "\ud83d\udd10 Implement API key rotation and security best practices"
+  ],
+  "end_time": "2026-02-04T19:57:43.803640",
+  "next_steps": [
+    "Deploy automated ingestion schedules",
+    "Set up production database storage",
+    "Configure monitoring and alerting",
+    "Migrate to OpenAQ v3 API",
+    "Obtain valid WAQI API key for CPCB data"
+  ]
+}

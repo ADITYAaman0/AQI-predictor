@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\attribution.py
+# hypothesis_version: 6.150.3
+
+[100, 400, 404, 500, '/scenario', '/{location}', '/{location}/history', 'aqi', 'aqi_value', 'attribution', 'background', 'biomass', 'confidence', 'contribution', 'data_points', 'end', 'explanations', 'hours', 'industrial', 'location', 'max_contribution', 'mean_contribution', 'min_contribution', 'pm25', 'predicted_aqi', 'source_changes', 'source_type', 'sources', 'start', 'statistics', 'std_contribution', 'time_range', 'time_series', 'timestamp', 'total_pm25', 'vehicular']

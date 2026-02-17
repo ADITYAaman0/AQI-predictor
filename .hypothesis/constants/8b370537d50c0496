@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\models\ensemble_forecaster.py
+# hypothesis_version: 6.150.3
+
+[0.0, 0.1, 0.2, 0.4, 0.5, 0.8, 1.0, 1.28, 1.96, 10.0, 15.0, 20.0, 50.0, 80.0, 100.0, 120.0, 100, 101, 'accuracy_1h', 'accuracy_24h', 'available', 'current_weights', 'day_of_week', 'deep_learning', 'ensemble', 'ensemble_mae', 'ensemble_rmse', 'ensemble_weights', 'gnn', 'gradient_boosting', 'graph_neural_network', 'hour', 'individual_metrics', 'last_updated', 'lower_bound', 'lstm', 'mae', 'model_type', 'models', 'models/ensemble', 'moderate', 'n_samples', 'num_stations', 'performance_history', 'pm25', 'pm25_lag1', 'predictions', 'r', 'recent_performance', 'rmse', 'run_type', 'sample_count', 'trained', 'type', 'upper_bound', 'w', 'weight_update', 'weights', 'within_10_percent', 'within_20_percent', 'xgboost']

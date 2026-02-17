@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Alert - {{ location_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        .content {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid #e9ecef;
+        }
+        .alert-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .aqi-value {
+            font-size: 48px;
+            font-weight: bold;
+            color: #e17055;
+            margin: 10px 0;
+        }
+        .threshold {
+            font-size: 18px;
+            color: #636e72;
+            margin-bottom: 20px;
+        }
+        .sources {
+            background: white;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .source-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .source-item:last-child {
+            border-bottom: none;
+        }
+        .source-name {
+            font-weight: 500;
+        }
+        .source-percent {
+            font-weight: bold;
+            color: #e17055;
+        }
+        .recommendations {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .recommendations h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        .recommendations ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .recommendations li {
+            margin: 5px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        .unsubscribe {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        .unsubscribe a {
+            color: #6c757d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚨 Air Quality Alert</h1>
+        <p>{{ location_name }}</p>
+    </div>
+    
+    <div class="content">
+        <div class="alert-box">
+            <div class="aqi-value">{{ aqi_value }}</div>
+            <div class="threshold">Your threshold: {{ threshold }} AQI</div>
+            <p><strong>Air quality has exceeded your alert threshold!</strong></p>
+        </div>
+        
+        {% if source_attribution %}
+        <div class="sources">
+            <h3>🏭 Main Pollution Sources</h3>
+            {% for source, percent in source_attribution.items() %}
+                {% if percent > 10 %}
+                <div class="source-item">
+                    <span class="source-name">{{ source.replace('_', ' ').title() }}</span>
+                    <span class="source-percent">{{ "%.1f"|format(percent) }}%</span>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <div class="recommendations">
+            <h3>🛡️ Recommended Actions</h3>
+            <ul>
+                <li>Limit outdoor activities, especially strenuous exercise</li>
+                <li>Keep windows and doors closed</li>
+                <li>Use air purifiers if available</li>
+                <li>Wear N95 masks when going outside</li>
+                <li>Consider staying indoors until air quality improves</li>
+            </ul>
+        </div>
+        
+        <p><strong>Stay safe and monitor air quality updates!</strong></p>
+        
+        <p style="font-size: 14px; color: #6c757d;">
+            Alert sent at: {{ timestamp }}<br>
+            This alert was triggered because the AQI ({{ aqi_value }}) exceeded your threshold of {{ threshold }}.
+        </p>
+    </div>
+    
+    <div class="footer">
+        <p>AQI Predictor - Air Quality Monitoring & Forecasting</p>
+        <div class="unsubscribe">
+            <a href="#">Manage your alert preferences</a> | 
+            <a href="#">Unsubscribe from alerts</a>
+        </div>
+    </div>
+</body>
+</html>

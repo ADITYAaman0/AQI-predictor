@@ -1,0 +1,97 @@
+{
+  "test_timestamp": "2026-02-04T20:00:28.639934",
+  "api_key_status": "present",
+  "tests": {
+    "v2_no_key": {
+      "version": "v2",
+      "auth": "no_key",
+      "status_code": 410,
+      "status": "error",
+      "response_text": "{\"message\": \"Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints.\"}",
+      "headers": {
+        "Server": "CloudFront",
+        "Date": "Wed, 04 Feb 2026 14:30:28 GMT",
+        "Content-Length": "134",
+        "Connection": "keep-alive",
+        "Content-Type": "application/json",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 d6efd0f87db2bfe7959072fd90ed8090.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "DEL54-P1",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "pRIL99Teby0Hc32NpygRjZm6wRIBJeGRA7Zxzil2Qe_B-PijOn7cKA=="
+      }
+    },
+    "v2_with_key": {
+      "version": "v2",
+      "auth": "with_key",
+      "status_code": 410,
+      "status": "error",
+      "response_text": "{\"message\": \"Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints.\"}",
+      "headers": {
+        "Server": "CloudFront",
+        "Date": "Wed, 04 Feb 2026 14:30:28 GMT",
+        "Content-Length": "134",
+        "Connection": "keep-alive",
+        "Content-Type": "application/json",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 fa2842189abad97fd9ea7adf509a02a0.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "DEL54-P1",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "n3kTZVe_NfPrDK5q7GirEd-4wGm55DR69I9dK8f8z5iBXRgd2-7TfA=="
+      }
+    },
+    "v3_no_key": {
+      "version": "v3",
+      "auth": "no_key",
+      "status_code": 401,
+      "status": "error",
+      "response_text": "{\"message\": \"Unauthorized. A valid API key must be provided in the X-API-Key header.\"}",
+      "headers": {
+        "Server": "CloudFront",
+        "Date": "Wed, 04 Feb 2026 14:30:28 GMT",
+        "Content-Length": "86",
+        "Connection": "keep-alive",
+        "Content-Type": "application/json",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 3b9383bb84df26733dd332be59d2d9d8.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "DEL54-P1",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "MPej-wlsveWeEJwdWRHGkcTKu4eDJQwbI721szaZ8CTKGrXRp-HcYQ=="
+      }
+    },
+    "v3_with_key": {
+      "version": "v3",
+      "auth": "with_key",
+      "status_code": 404,
+      "status": "error",
+      "response_text": "{\"detail\":\"Not Found\"}",
+      "headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "22",
+        "Connection": "keep-alive",
+        "Date": "Wed, 04 Feb 2026 14:30:29 GMT",
+        "Apigw-Requestid": "YQqw8iJGIAMEPaA=",
+        "Cache-Control": "public, max-age=900",
+        "Vary": "Accept-Encoding",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 759a260478b123fc3a09cc38f7bd1b24.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "DEL54-P1",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "UstrkIOyzmdakIalaOvIzCCfMYL2L3XHR0GFXZw2Fq5Rx_u7TaCVcA=="
+      }
+    },
+    "cities_endpoint": {
+      "endpoint": "cities",
+      "version": "v3",
+      "status_code": 404,
+      "status": "error",
+      "response_text": "{\"detail\":\"Not Found\"}"
+    }
+  },
+  "summary": {
+    "total_tests": 5,
+    "working_tests": 0,
+    "working_test_names": [],
+    "recommended_approach": "OpenAQ API appears to be unavailable - use simulation fallback"
+  }
+}

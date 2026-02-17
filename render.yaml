@@ -1,0 +1,118 @@
+# Render Blueprint for AQI Predictor
+# Deploy full-stack app with PostgreSQL + Redis
+# Free tier: Services sleep after 15min inactivity
+
+services:
+  # FastAPI Backend
+  - type: web
+    name: aqi-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements-minimal.txt"
+    startCommand: "uvicorn src.api.main:app --host 0.0.0.0 --port $PORT --workers 1"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aqi-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: aqi-redis
+          type: redis
+          property: connectionString
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: info
+    healthCheckPath: /health
+    autoDeploy: true
+
+  # Streamlit Dashboard
+  - type: web
+    name: aqi-dashboard
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements-minimal.txt"
+    startCommand: "streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: API_URL
+        fromService:
+          name: aqi-api
+          type: web
+          property: host
+          envVarKey: API_URL
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aqi-db
+          property: connectionString
+    autoDeploy: true
+
+  # Celery Worker for Background Tasks
+  - type: worker
+    name: aqi-celery-worker
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements-minimal.txt"
+    startCommand: "celery -A src.tasks.celery_app worker --loglevel=info --concurrency=2 --max-tasks-per-child=1000"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aqi-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: aqi-redis
+          type: redis
+          property: connectionString
+      - key: ENVIRONMENT
+        value: production
+    autoDeploy: true
+
+  # Celery Beat Scheduler (Optional - for automated tasks)
+  - type: worker
+    name: aqi-celery-beat
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements-minimal.txt"
+    startCommand: "celery -A src.tasks.celery_app beat --loglevel=info"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aqi-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: aqi-redis
+          type: redis
+          property: connectionString
+      - key: ENVIRONMENT
+        value: production
+    autoDeploy: true
+
+databases:
+  # PostgreSQL Database (Free for 90 days)
+  - name: aqi-db
+    databaseName: aqi_predictor
+    user: aqi_user
+    region: oregon
+    plan: free  # 256 MB storage, expires after 90 days
+    ipAllowList: []  # Allow connections from all services
+
+  # Redis Cache (Free for 30 days)
+  - name: aqi-redis
+    type: redis
+    region: oregon
+    plan: free  # 25 MB storage, expires after 30 days
+    ipAllowList: []

@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\models\lstm_forecaster.py
+# hypothesis_version: 6.150.3
+
+[0.001, 0.1, 0.2, 1.0, 1.28, 100, '.h5', '.keras', '_metadata.pkl', 'batch_size', 'dropout_rate', 'epochs', 'epochs_trained', 'feature_names', 'features', 'hour', 'index', 'learning_rate', 'linear', 'loss', 'lower_bound', 'lstm', 'lstm_units', 'lstm_units_1', 'lstm_units_2', 'mae', 'mlflow_run_id', 'mse', 'n_features', 'n_samples', 'n_sequences', 'period', 'pm25', 'pm25_lag1', 'pm25_lower', 'pm25_upper', 'predictions', 'rb', 'relu', 'rmse', 'scaler', 'sequence_length', 'target_scaler', 'timestamp', 'timestamps', 'train_mae', 'train_rmse', 'uncertainty', 'unknown', 'upper_bound', 'val_loss', 'val_mae', 'wb', 'within_10_percent', 'within_20_percent']

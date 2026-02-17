@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-02-04T14:58:28.469312",
+  "api_key_configured": true,
+  "api_key_preview": "579b464db6...ba27750569",
+  "tests": {
+    "api_key_validation": {
+      "status": "error",
+      "message": "API returned error: Invalid key",
+      "details": {
+        "status": "error",
+        "data": "Invalid key"
+      }
+    }
+  },
+  "summary": {
+    "api_key_valid": false,
+    "error": "API returned error: Invalid key",
+    "recommendation": "Fix API key issue before proceeding"
+  }
+}

@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\models.py
+# hypothesis_version: 6.150.3
+
+[400, 500, '/experiments', '/models', '/retrain', '/status', '/{model_name}/best', 'Metric to compare', 'Production', 'Target stage', 'aqi_predictor_gnn', 'aqi_predictor_lstm', 'best_model', 'created_timestamp', 'current_stage', 'error', 'experiments', 'gnn', 'latest_mae', 'latest_rmse', 'latest_version', 'lineage', 'lstm', 'mae', 'message', 'metric', 'model_name', 'model_types', 'models', 'no_versions_found', 'records', 'rmse', 'stage', 'status', 'success', 'target_stage', 'task_id', 'timestamp', 'total_experiments', 'total_versions', 'version', 'versions', 'versions_to_compare', 'versions_to_keep', 'xgboost']

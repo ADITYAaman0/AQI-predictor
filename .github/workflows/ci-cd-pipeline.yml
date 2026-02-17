@@ -1,0 +1,432 @@
+name: AQI Predictor CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop, staging]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # Job 1: Code Quality and Testing
+  test:
+    name: Test and Quality Checks
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: timescale/timescaledb-ha:pg15-latest
+        env:
+          POSTGRES_DB: aqi_test
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libpq-dev libgdal-dev gdal-bin libspatialindex-dev
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest-cov pytest-xdist
+
+    - name: Set up test environment
+      run: |
+        cp .env.example .env.test
+        echo "DATABASE_URL=postgresql+asyncpg://test_user:test_password@localhost:5432/aqi_test" >> .env.test
+        echo "REDIS_URL=redis://localhost:6379/1" >> .env.test
+        echo "SECRET_KEY=test_secret_key" >> .env.test
+        echo "ENVIRONMENT=test" >> .env.test
+
+    - name: Run database migrations
+      run: |
+        export DATABASE_URL=postgresql+asyncpg://test_user:test_password@localhost:5432/aqi_test
+        alembic upgrade head
+      env:
+        DATABASE_URL: postgresql+asyncpg://test_user:test_password@localhost:5432/aqi_test
+
+    - name: Lint with flake8
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
+
+    - name: Type checking with mypy
+      run: |
+        mypy src/ --ignore-missing-imports --no-strict-optional
+      continue-on-error: true
+
+    - name: Run unit tests
+      run: |
+        pytest tests/ -v --cov=src --cov-report=xml --cov-report=html -x
+      env:
+        DATABASE_URL: postgresql+asyncpg://test_user:test_password@localhost:5432/aqi_test
+        REDIS_URL: redis://localhost:6379/1
+        SECRET_KEY: test_secret_key
+        ENVIRONMENT: test
+
+    - name: Run property-based tests
+      run: |
+        pytest tests/test_*_properties.py -v --tb=short
+      env:
+        DATABASE_URL: postgresql+asyncpg://test_user:test_password@localhost:5432/aqi_test
+        REDIS_URL: redis://localhost:6379/1
+        SECRET_KEY: test_secret_key
+        ENVIRONMENT: test
+      continue-on-error: true
+
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+
+    - name: Archive test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results
+        path: |
+          htmlcov/
+          coverage.xml
+          pytest-report.xml
+
+  # Job 2: Security Scanning
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+
+    - name: Upload Trivy scan results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+    - name: Python security check with bandit
+      run: |
+        pip install bandit
+        bandit -r src/ -f json -o bandit-report.json || true
+
+    - name: Upload security scan results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: security-results
+        path: |
+          trivy-results.sarif
+          bandit-report.json
+
+  # Job 3: Build Docker Images
+  build:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    needs: [test, security]
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    
+    strategy:
+      matrix:
+        service: [api, streamlit, celery]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Log in to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-${{ matrix.service }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=sha,prefix={{branch}}-
+          type=raw,value=latest,enable={{is_default_branch}}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ${{ matrix.service == 'api' && 'Dockerfile' || format('Dockerfile.{0}', matrix.service) }}
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        platforms: linux/amd64,linux/arm64
+
+  # Job 4: Deploy to Staging
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/develop' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'staging')
+    environment: staging
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+
+    - name: Configure kubectl for staging
+      run: |
+        mkdir -p ~/.kube
+        echo "${{ secrets.STAGING_KUBECONFIG }}" | base64 -d > ~/.kube/config
+        kubectl config use-context staging
+
+    - name: Run database migrations
+      run: |
+        kubectl create job migration-$(date +%s) --from=cronjob/db-migration -n aqi-staging
+        kubectl wait --for=condition=complete --timeout=300s job/migration-$(date +%s) -n aqi-staging
+
+    - name: Deploy to staging
+      run: |
+        # Update image tags in Kubernetes manifests
+        sed -i "s|image: ghcr.io/${{ github.repository }}-api:.*|image: ghcr.io/${{ github.repository }}-api:${{ github.ref_name }}-${{ github.sha }}|g" k8s/staging/*.yaml
+        sed -i "s|image: ghcr.io/${{ github.repository }}-streamlit:.*|image: ghcr.io/${{ github.repository }}-streamlit:${{ github.ref_name }}-${{ github.sha }}|g" k8s/staging/*.yaml
+        sed -i "s|image: ghcr.io/${{ github.repository }}-celery:.*|image: ghcr.io/${{ github.repository }}-celery:${{ github.ref_name }}-${{ github.sha }}|g" k8s/staging/*.yaml
+        
+        # Apply Kubernetes manifests
+        kubectl apply -f k8s/staging/ -n aqi-staging
+        
+        # Wait for rollout to complete
+        kubectl rollout status deployment/aqi-api -n aqi-staging --timeout=600s
+        kubectl rollout status deployment/aqi-dashboard -n aqi-staging --timeout=600s
+        kubectl rollout status deployment/aqi-celery-worker -n aqi-staging --timeout=600s
+
+    - name: Run health checks
+      run: |
+        # Wait for services to be ready
+        kubectl wait --for=condition=ready pod -l app=aqi-api -n aqi-staging --timeout=300s
+        kubectl wait --for=condition=ready pod -l app=aqi-dashboard -n aqi-staging --timeout=300s
+        
+        # Get service URLs and test health endpoints
+        API_URL=$(kubectl get service aqi-api -n aqi-staging -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+        curl -f http://$API_URL:8000/health || exit 1
+        
+        DASHBOARD_URL=$(kubectl get service aqi-dashboard -n aqi-staging -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+        curl -f http://$DASHBOARD_URL:8501/_stcore/health || exit 1
+
+    - name: Run smoke tests
+      run: |
+        # Run basic API tests against staging
+        python -m pytest tests/integration/ --staging-url=$API_URL:8000 -v
+      continue-on-error: true
+
+  # Job 5: Deploy to Production
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+
+    - name: Configure kubectl for production
+      run: |
+        mkdir -p ~/.kube
+        echo "${{ secrets.PRODUCTION_KUBECONFIG }}" | base64 -d > ~/.kube/config
+        kubectl config use-context production
+
+    - name: Create backup before deployment
+      run: |
+        # Create database backup
+        kubectl create job backup-$(date +%s) --from=cronjob/db-backup -n aqi-production
+        kubectl wait --for=condition=complete --timeout=600s job/backup-$(date +%s) -n aqi-production
+
+    - name: Run database migrations
+      run: |
+        kubectl create job migration-$(date +%s) --from=cronjob/db-migration -n aqi-production
+        kubectl wait --for=condition=complete --timeout=300s job/migration-$(date +%s) -n aqi-production
+
+    - name: Deploy to production with rolling update
+      run: |
+        # Update image tags in Kubernetes manifests
+        sed -i "s|image: ghcr.io/${{ github.repository }}-api:.*|image: ghcr.io/${{ github.repository }}-api:${{ github.ref_name }}-${{ github.sha }}|g" k8s/production/*.yaml
+        sed -i "s|image: ghcr.io/${{ github.repository }}-streamlit:.*|image: ghcr.io/${{ github.repository }}-streamlit:${{ github.ref_name }}-${{ github.sha }}|g" k8s/production/*.yaml
+        sed -i "s|image: ghcr.io/${{ github.repository }}-celery:.*|image: ghcr.io/${{ github.repository }}-celery:${{ github.ref_name }}-${{ github.sha }}|g" k8s/production/*.yaml
+        
+        # Apply Kubernetes manifests
+        kubectl apply -f k8s/production/ -n aqi-production
+        
+        # Wait for rollout to complete
+        kubectl rollout status deployment/aqi-api -n aqi-production --timeout=900s
+        kubectl rollout status deployment/aqi-dashboard -n aqi-production --timeout=900s
+        kubectl rollout status deployment/aqi-celery-worker -n aqi-production --timeout=900s
+
+    - name: Run comprehensive health checks
+      run: |
+        # Wait for services to be ready
+        kubectl wait --for=condition=ready pod -l app=aqi-api -n aqi-production --timeout=300s
+        kubectl wait --for=condition=ready pod -l app=aqi-dashboard -n aqi-production --timeout=300s
+        
+        # Get service URLs and test health endpoints
+        API_URL=$(kubectl get service aqi-api -n aqi-production -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+        curl -f http://$API_URL:8000/health || exit 1
+        curl -f http://$API_URL:8000/health/db || exit 1
+        curl -f http://$API_URL:8000/health/redis || exit 1
+        
+        DASHBOARD_URL=$(kubectl get service aqi-dashboard -n aqi-production -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+        curl -f http://$DASHBOARD_URL:8501/_stcore/health || exit 1
+
+    - name: Run production smoke tests
+      run: |
+        # Run comprehensive API tests against production
+        python -m pytest tests/integration/ --production-url=$API_URL:8000 -v --tb=short
+      continue-on-error: true
+
+    - name: Notify deployment success
+      if: success()
+      run: |
+        echo "✅ Production deployment successful!"
+        echo "API URL: http://$API_URL:8000"
+        echo "Dashboard URL: http://$DASHBOARD_URL:8501"
+
+  # Job 6: Rollback on Failure
+  rollback:
+    name: Rollback on Failure
+    runs-on: ubuntu-latest
+    needs: [deploy-staging, deploy-production]
+    if: failure() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+    environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
+    
+    steps:
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+
+    - name: Configure kubectl
+      run: |
+        mkdir -p ~/.kube
+        if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+          echo "${{ secrets.PRODUCTION_KUBECONFIG }}" | base64 -d > ~/.kube/config
+          kubectl config use-context production
+          NAMESPACE="aqi-production"
+        else
+          echo "${{ secrets.STAGING_KUBECONFIG }}" | base64 -d > ~/.kube/config
+          kubectl config use-context staging
+          NAMESPACE="aqi-staging"
+        fi
+        echo "NAMESPACE=$NAMESPACE" >> $GITHUB_ENV
+
+    - name: Rollback deployments
+      run: |
+        echo "🔄 Rolling back deployments in $NAMESPACE..."
+        kubectl rollout undo deployment/aqi-api -n $NAMESPACE
+        kubectl rollout undo deployment/aqi-dashboard -n $NAMESPACE
+        kubectl rollout undo deployment/aqi-celery-worker -n $NAMESPACE
+        
+        # Wait for rollback to complete
+        kubectl rollout status deployment/aqi-api -n $NAMESPACE --timeout=600s
+        kubectl rollout status deployment/aqi-dashboard -n $NAMESPACE --timeout=600s
+        kubectl rollout status deployment/aqi-celery-worker -n $NAMESPACE --timeout=600s
+
+    - name: Verify rollback
+      run: |
+        kubectl get pods -n $NAMESPACE
+        echo "✅ Rollback completed successfully"
+
+  # Job 7: Cleanup
+  cleanup:
+    name: Cleanup
+    runs-on: ubuntu-latest
+    needs: [deploy-staging, deploy-production, rollback]
+    if: always()
+    
+    steps:
+    - name: Clean up old Docker images
+      run: |
+        # This would typically be done by a separate cleanup job
+        echo "🧹 Cleanup job would remove old images and artifacts"
+        echo "Keeping last 10 versions of each service image"
+
+    - name: Update deployment status
+      run: |
+        if [ "${{ needs.deploy-production.result }}" == "success" ]; then
+          echo "✅ Production deployment successful"
+        elif [ "${{ needs.deploy-staging.result }}" == "success" ]; then
+          echo "✅ Staging deployment successful"
+        elif [ "${{ needs.rollback.result }}" == "success" ]; then
+          echo "🔄 Rollback completed successfully"
+        else
+          echo "❌ Deployment failed"
+        fi

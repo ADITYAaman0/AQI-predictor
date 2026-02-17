@@ -1,0 +1,896 @@
+{
+  "weather_data": [
+    {
+      "timestamp": "2026-02-04T18:53:49.655912",
+      "location": {
+        "lat": 28.6139,
+        "lon": 77.209
+      },
+      "temperature": 13.2,
+      "humidity": 65.8,
+      "wind_speed": 2.2,
+      "wind_direction": 171.0,
+      "pressure": 1004.7,
+      "precipitation": 0,
+      "visibility": 9.2,
+      "source": "imd_simulated",
+      "metadata": {
+        "station_id": "CUSTOM_0",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "season": "winter",
+        "data_source": "realistic_simulation",
+        "note": "Realistic IMD weather simulation based on regional climate patterns"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.655912",
+      "location": {
+        "lat": 19.076,
+        "lon": 72.8777
+      },
+      "temperature": 13.3,
+      "humidity": 68.8,
+      "wind_speed": 1.8,
+      "wind_direction": 128.4,
+      "pressure": 1005.4,
+      "precipitation": 0,
+      "visibility": 12.2,
+      "source": "imd_simulated",
+      "metadata": {
+        "station_id": "CUSTOM_1",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "season": "winter",
+        "data_source": "realistic_simulation",
+        "note": "Realistic IMD weather simulation based on regional climate patterns"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.655912",
+      "location": {
+        "lat": 12.9716,
+        "lon": 77.5946
+      },
+      "temperature": 14.6,
+      "humidity": 52.1,
+      "wind_speed": 2.6,
+      "wind_direction": 127.6,
+      "pressure": 1009.7,
+      "precipitation": 0,
+      "visibility": 12.8,
+      "source": "imd_simulated",
+      "metadata": {
+        "station_id": "CUSTOM_2",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "season": "winter",
+        "data_source": "realistic_simulation",
+        "note": "Realistic IMD weather simulation based on regional climate patterns"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.655912",
+      "location": {
+        "lat": 13.0827,
+        "lon": 80.2707
+      },
+      "temperature": 15.9,
+      "humidity": 56.7,
+      "wind_speed": 3.0,
+      "wind_direction": 243.3,
+      "pressure": 1022.9,
+      "precipitation": 0,
+      "visibility": 9.3,
+      "source": "imd_simulated",
+      "metadata": {
+        "station_id": "CUSTOM_3",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "season": "winter",
+        "data_source": "realistic_simulation",
+        "note": "Realistic IMD weather simulation based on regional climate patterns"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.655912",
+      "location": {
+        "lat": 22.5726,
+        "lon": 88.3639
+      },
+      "temperature": 16.5,
+      "humidity": 52.0,
+      "wind_speed": 1.6,
+      "wind_direction": 263.5,
+      "pressure": 1012.9,
+      "precipitation": 0,
+      "visibility": 13.4,
+      "source": "imd_simulated",
+      "metadata": {
+        "station_id": "CUSTOM_4",
+        "station_name": "Unknown",
+        "city": "Unknown",
+        "state": "Unknown",
+        "season": "winter",
+        "data_source": "realistic_simulation",
+        "note": "Realistic IMD weather simulation based on regional climate patterns"
+      }
+    }
+  ],
+  "air_quality_data": [
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.6469,
+        "lon": 77.3162
+      },
+      "station_id": "DL001",
+      "parameter": "pm25",
+      "value": 206.8,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Anand Vihar",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.6469,
+        "lon": 77.3162
+      },
+      "station_id": "DL001",
+      "parameter": "pm10",
+      "value": 276.7,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Anand Vihar",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.6469,
+        "lon": 77.3162
+      },
+      "station_id": "DL001",
+      "parameter": "no2",
+      "value": 88.8,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Anand Vihar",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.6469,
+        "lon": 77.3162
+      },
+      "station_id": "DL001",
+      "parameter": "so2",
+      "value": 29.3,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Anand Vihar",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.6469,
+        "lon": 77.3162
+      },
+      "station_id": "DL001",
+      "parameter": "o3",
+      "value": 116.2,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Anand Vihar",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.6469,
+        "lon": 77.3162
+      },
+      "station_id": "DL001",
+      "parameter": "co",
+      "value": 5.29,
+      "unit": "mg/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Anand Vihar",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.5706,
+        "lon": 77.1847
+      },
+      "station_id": "DL002",
+      "parameter": "pm25",
+      "value": 226.9,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "RK Puram",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.5706,
+        "lon": 77.1847
+      },
+      "station_id": "DL002",
+      "parameter": "pm10",
+      "value": 354.8,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "RK Puram",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.5706,
+        "lon": 77.1847
+      },
+      "station_id": "DL002",
+      "parameter": "no2",
+      "value": 111.4,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "RK Puram",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.5706,
+        "lon": 77.1847
+      },
+      "station_id": "DL002",
+      "parameter": "so2",
+      "value": 30.3,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "RK Puram",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.5706,
+        "lon": 77.1847
+      },
+      "station_id": "DL002",
+      "parameter": "o3",
+      "value": 158.1,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "RK Puram",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 28.5706,
+        "lon": 77.1847
+      },
+      "station_id": "DL002",
+      "parameter": "co",
+      "value": 7.21,
+      "unit": "mg/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "RK Puram",
+        "city": "Delhi",
+        "state": "Delhi",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 18.9067,
+        "lon": 72.8147
+      },
+      "station_id": "MH001",
+      "parameter": "pm25",
+      "value": 73.8,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Colaba",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 18.9067,
+        "lon": 72.8147
+      },
+      "station_id": "MH001",
+      "parameter": "pm10",
+      "value": 103.7,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Colaba",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 18.9067,
+        "lon": 72.8147
+      },
+      "station_id": "MH001",
+      "parameter": "no2",
+      "value": 36.7,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Colaba",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 18.9067,
+        "lon": 72.8147
+      },
+      "station_id": "MH001",
+      "parameter": "so2",
+      "value": 18.1,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Colaba",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 18.9067,
+        "lon": 72.8147
+      },
+      "station_id": "MH001",
+      "parameter": "o3",
+      "value": 68.2,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Colaba",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 18.9067,
+        "lon": 72.8147
+      },
+      "station_id": "MH001",
+      "parameter": "co",
+      "value": 2.8,
+      "unit": "mg/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Colaba",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 12.9165,
+        "lon": 77.6101
+      },
+      "station_id": "KA001",
+      "parameter": "pm25",
+      "value": 59.5,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "BTM Layout",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 12.9165,
+        "lon": 77.6101
+      },
+      "station_id": "KA001",
+      "parameter": "pm10",
+      "value": 85.0,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "BTM Layout",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 12.9165,
+        "lon": 77.6101
+      },
+      "station_id": "KA001",
+      "parameter": "no2",
+      "value": 35.1,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "BTM Layout",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 12.9165,
+        "lon": 77.6101
+      },
+      "station_id": "KA001",
+      "parameter": "so2",
+      "value": 11.1,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "BTM Layout",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 12.9165,
+        "lon": 77.6101
+      },
+      "station_id": "KA001",
+      "parameter": "o3",
+      "value": 47.9,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "BTM Layout",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 12.9165,
+        "lon": 77.6101
+      },
+      "station_id": "KA001",
+      "parameter": "co",
+      "value": 1.72,
+      "unit": "mg/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "BTM Layout",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 13.0067,
+        "lon": 80.2206
+      },
+      "station_id": "TN001",
+      "parameter": "pm25",
+      "value": 49.2,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Alandur Bus Depot",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 13.0067,
+        "lon": 80.2206
+      },
+      "station_id": "TN001",
+      "parameter": "pm10",
+      "value": 83.0,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Alandur Bus Depot",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 13.0067,
+        "lon": 80.2206
+      },
+      "station_id": "TN001",
+      "parameter": "no2",
+      "value": 34.4,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Alandur Bus Depot",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 13.0067,
+        "lon": 80.2206
+      },
+      "station_id": "TN001",
+      "parameter": "so2",
+      "value": 15.1,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Alandur Bus Depot",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 13.0067,
+        "lon": 80.2206
+      },
+      "station_id": "TN001",
+      "parameter": "o3",
+      "value": 80.7,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Alandur Bus Depot",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 13.0067,
+        "lon": 80.2206
+      },
+      "station_id": "TN001",
+      "parameter": "co",
+      "value": 1.85,
+      "unit": "mg/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Alandur Bus Depot",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 22.5448,
+        "lon": 88.3643
+      },
+      "station_id": "WB001",
+      "parameter": "pm25",
+      "value": 148.0,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Ballygunge",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 22.5448,
+        "lon": 88.3643
+      },
+      "station_id": "WB001",
+      "parameter": "pm10",
+      "value": 303.9,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Ballygunge",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 22.5448,
+        "lon": 88.3643
+      },
+      "station_id": "WB001",
+      "parameter": "no2",
+      "value": 84.7,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Ballygunge",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 22.5448,
+        "lon": 88.3643
+      },
+      "station_id": "WB001",
+      "parameter": "so2",
+      "value": 48.5,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Ballygunge",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 22.5448,
+        "lon": 88.3643
+      },
+      "station_id": "WB001",
+      "parameter": "o3",
+      "value": 169.4,
+      "unit": "\u00b5g/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Ballygunge",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    },
+    {
+      "timestamp": "2026-02-04T18:53:49.658794",
+      "location": {
+        "lat": 22.5448,
+        "lon": 88.3643
+      },
+      "station_id": "WB001",
+      "parameter": "co",
+      "value": 3.66,
+      "unit": "mg/m\u00b3",
+      "quality_flag": "estimated",
+      "source": "cpcb",
+      "metadata": {
+        "station_name": "Ballygunge",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "data_source": "simulated_realistic",
+        "note": "Realistic simulation based on historical patterns - CPCB API not publicly available"
+      }
+    }
+  ],
+  "api_tests": {
+    "OpenWeatherMap": {
+      "status": "no_data",
+      "message": "API key may be invalid or no data returned"
+    },
+    "OpenAQ": {
+      "status": "no_data",
+      "message": "No data returned from OpenAQ"
+    },
+    "CPCB": {
+      "status": "success",
+      "api": "CPCB",
+      "total_points": 12,
+      "real_time_points": 0,
+      "simulated_points": 12,
+      "sample_parameters": [
+        "pm10",
+        "so2",
+        "no2",
+        "pm25",
+        "o3"
+      ]
+    }
+  },
+  "integration_stats": {
+    "weather_points": 5,
+    "air_quality_points": 36,
+    "real_data_points": 0,
+    "simulated_points": 41
+  },
+  "summary": {
+    "test_timestamp": "2026-02-04T19:53:49.661850",
+    "cities_tested": 5,
+    "total_data_points": 41,
+    "real_data_points": 0,
+    "simulated_points": 41,
+    "real_data_percentage": 0.0,
+    "working_apis": [
+      "CPCB"
+    ],
+    "failed_apis": [],
+    "data_sources": {
+      "weather": [
+        "imd_simulated"
+      ],
+      "air_quality": [
+        "cpcb"
+      ]
+    }
+  }
+}

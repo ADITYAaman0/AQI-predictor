@@ -1,0 +1,609 @@
+{
+  "test_timestamp": "2026-02-04T20:29:53.018785",
+  "environment_check": {
+    "openweather_api_key": "present",
+    "openaq_api_key": "present",
+    "cpcb_api_key": "present"
+  },
+  "api_tests": {
+    "openweathermap": {
+      "status": "success",
+      "api": "OpenWeatherMap",
+      "location": "Delhi",
+      "temperature": 14.07,
+      "humidity": 72,
+      "pressure": 1020,
+      "wind_speed": 2.57,
+      "visibility": 2.8,
+      "description": "haze",
+      "timestamp": "2026-02-04T20:29:51.241735",
+      "raw_response_keys": [
+        "coord",
+        "weather",
+        "base",
+        "main",
+        "visibility",
+        "wind",
+        "clouds",
+        "dt",
+        "sys",
+        "timezone",
+        "id",
+        "name",
+        "cod"
+      ]
+    },
+    "openaq": {
+      "status": "success",
+      "api": "OpenAQ v3",
+      "locations_found": 10,
+      "sample_location": "NMA - Nima",
+      "measurements_count": 0,
+      "sample_measurements": [],
+      "timestamp": "2026-02-04T20:29:52.780950"
+    }
+  },
+  "data_collection": {
+    "weather_data": [
+      {
+        "city": "Delhi",
+        "timestamp": "2026-02-04T20:29:52.879606",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "temperature": 14.07,
+        "humidity": 72,
+        "pressure": 1020,
+        "wind_speed": 2.57,
+        "wind_direction": 250,
+        "visibility": 2.8,
+        "description": "haze",
+        "source": "openweathermap_direct",
+        "data_quality": "real_time"
+      },
+      {
+        "city": "Mumbai",
+        "timestamp": "2026-02-04T20:29:52.921735",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "temperature": 29.03,
+        "humidity": 48,
+        "pressure": 1014,
+        "wind_speed": 3.09,
+        "wind_direction": 360,
+        "visibility": 2.5,
+        "description": "smoke",
+        "source": "openweathermap_direct",
+        "data_quality": "real_time"
+      },
+      {
+        "city": "Bangalore",
+        "timestamp": "2026-02-04T20:29:52.953907",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "temperature": 22.37,
+        "humidity": 48,
+        "pressure": 1017,
+        "wind_speed": 6.71,
+        "wind_direction": 95,
+        "visibility": 6.0,
+        "description": "clear sky",
+        "source": "openweathermap_direct",
+        "data_quality": "real_time"
+      },
+      {
+        "city": "Chennai",
+        "timestamp": "2026-02-04T20:29:52.985727",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "temperature": 25.01,
+        "humidity": 72,
+        "pressure": 1017,
+        "wind_speed": 3.6,
+        "wind_direction": 30,
+        "visibility": 6.0,
+        "description": "scattered clouds",
+        "source": "openweathermap_direct",
+        "data_quality": "real_time"
+      },
+      {
+        "city": "Kolkata",
+        "timestamp": "2026-02-04T20:29:53.017126",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "temperature": 22.96,
+        "humidity": 49,
+        "pressure": 1017,
+        "wind_speed": 0,
+        "wind_direction": 0,
+        "visibility": 3.5,
+        "description": "haze",
+        "source": "openweathermap_direct",
+        "data_quality": "real_time"
+      }
+    ],
+    "air_quality_data": [
+      {
+        "city": "Delhi",
+        "timestamp": "2026-02-04T20:29:53.018445",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "station_id": "DE001",
+        "parameter": "pm25",
+        "value": 143.4,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Delhi",
+        "timestamp": "2026-02-04T20:29:53.018462",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "station_id": "DE001",
+        "parameter": "pm10",
+        "value": 135.6,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Delhi",
+        "timestamp": "2026-02-04T20:29:53.018468",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "station_id": "DE001",
+        "parameter": "no2",
+        "value": 74.9,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Delhi",
+        "timestamp": "2026-02-04T20:29:53.018474",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "station_id": "DE001",
+        "parameter": "so2",
+        "value": 15.0,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Delhi",
+        "timestamp": "2026-02-04T20:29:53.018478",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "station_id": "DE001",
+        "parameter": "o3",
+        "value": 105.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Delhi",
+        "timestamp": "2026-02-04T20:29:53.018484",
+        "location": {
+          "lat": 28.6139,
+          "lon": 77.209
+        },
+        "station_id": "DE001",
+        "parameter": "co",
+        "value": 2.81,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Mumbai",
+        "timestamp": "2026-02-04T20:29:53.018489",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "station_id": "MU001",
+        "parameter": "pm25",
+        "value": 84.0,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Mumbai",
+        "timestamp": "2026-02-04T20:29:53.018494",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "station_id": "MU001",
+        "parameter": "pm10",
+        "value": 111.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Mumbai",
+        "timestamp": "2026-02-04T20:29:53.018497",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "station_id": "MU001",
+        "parameter": "no2",
+        "value": 35.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Mumbai",
+        "timestamp": "2026-02-04T20:29:53.018502",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "station_id": "MU001",
+        "parameter": "so2",
+        "value": 22.2,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Mumbai",
+        "timestamp": "2026-02-04T20:29:53.018506",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "station_id": "MU001",
+        "parameter": "o3",
+        "value": 101.2,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Mumbai",
+        "timestamp": "2026-02-04T20:29:53.018511",
+        "location": {
+          "lat": 19.076,
+          "lon": 72.8777
+        },
+        "station_id": "MU001",
+        "parameter": "co",
+        "value": 3.05,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Bangalore",
+        "timestamp": "2026-02-04T20:29:53.018515",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "station_id": "BA001",
+        "parameter": "pm25",
+        "value": 40.2,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Bangalore",
+        "timestamp": "2026-02-04T20:29:53.018519",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "station_id": "BA001",
+        "parameter": "pm10",
+        "value": 115.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Bangalore",
+        "timestamp": "2026-02-04T20:29:53.018523",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "station_id": "BA001",
+        "parameter": "no2",
+        "value": 41.0,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Bangalore",
+        "timestamp": "2026-02-04T20:29:53.018527",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "station_id": "BA001",
+        "parameter": "so2",
+        "value": 19.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Bangalore",
+        "timestamp": "2026-02-04T20:29:53.018534",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "station_id": "BA001",
+        "parameter": "o3",
+        "value": 89.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Bangalore",
+        "timestamp": "2026-02-04T20:29:53.018539",
+        "location": {
+          "lat": 12.9716,
+          "lon": 77.5946
+        },
+        "station_id": "BA001",
+        "parameter": "co",
+        "value": 1.01,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Chennai",
+        "timestamp": "2026-02-04T20:29:53.018543",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "station_id": "CH001",
+        "parameter": "pm25",
+        "value": 40.9,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Chennai",
+        "timestamp": "2026-02-04T20:29:53.018547",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "station_id": "CH001",
+        "parameter": "pm10",
+        "value": 128.2,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Chennai",
+        "timestamp": "2026-02-04T20:29:53.018550",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "station_id": "CH001",
+        "parameter": "no2",
+        "value": 28.9,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Chennai",
+        "timestamp": "2026-02-04T20:29:53.018554",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "station_id": "CH001",
+        "parameter": "so2",
+        "value": 28.1,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Chennai",
+        "timestamp": "2026-02-04T20:29:53.018558",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "station_id": "CH001",
+        "parameter": "o3",
+        "value": 55.7,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Chennai",
+        "timestamp": "2026-02-04T20:29:53.018561",
+        "location": {
+          "lat": 13.0827,
+          "lon": 80.2707
+        },
+        "station_id": "CH001",
+        "parameter": "co",
+        "value": 2.74,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Kolkata",
+        "timestamp": "2026-02-04T20:29:53.018566",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "station_id": "KO001",
+        "parameter": "pm25",
+        "value": 88.7,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Kolkata",
+        "timestamp": "2026-02-04T20:29:53.018570",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "station_id": "KO001",
+        "parameter": "pm10",
+        "value": 185.9,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Kolkata",
+        "timestamp": "2026-02-04T20:29:53.018574",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "station_id": "KO001",
+        "parameter": "no2",
+        "value": 37.8,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Kolkata",
+        "timestamp": "2026-02-04T20:29:53.018578",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "station_id": "KO001",
+        "parameter": "so2",
+        "value": 18.6,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Kolkata",
+        "timestamp": "2026-02-04T20:29:53.018582",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "station_id": "KO001",
+        "parameter": "o3",
+        "value": 110.5,
+        "unit": "\u00b5g/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      },
+      {
+        "city": "Kolkata",
+        "timestamp": "2026-02-04T20:29:53.018585",
+        "location": {
+          "lat": 22.5726,
+          "lon": 88.3639
+        },
+        "station_id": "KO001",
+        "parameter": "co",
+        "value": 3.36,
+        "unit": "mg/m\u00b3",
+        "source": "realistic_simulation",
+        "data_quality": "estimated",
+        "quality_flag": "estimated"
+      }
+    ]
+  },
+  "statistics": {
+    "cities_processed": 5,
+    "total_data_points": 35,
+    "real_data_points": 5,
+    "simulated_points": 30,
+    "real_data_percentage": 14.29,
+    "weather_points": 5,
+    "air_quality_points": 30
+  },
+  "working_apis": [
+    "openweathermap",
+    "openaq"
+  ],
+  "failed_apis": [],
+  "recommendations": [
+    "\u2713 OpenWeatherMap API is working - use for real-time weather data",
+    "\u26a0 Focus on improving real data API connections",
+    "Consider setting up automated data ingestion schedules",
+    "Implement data quality monitoring and alerting",
+    "Set up database storage for collected data",
+    "Add data validation and anomaly detection"
+  ]
+}

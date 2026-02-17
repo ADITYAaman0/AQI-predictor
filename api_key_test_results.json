@@ -1,0 +1,23 @@
+{
+  "OpenWeatherMap": {
+    "status": "success",
+    "api": "OpenWeatherMap",
+    "test_location": "Delhi",
+    "temperature": 14.05,
+    "humidity": 72,
+    "description": "haze",
+    "timestamp": "2026-02-04T14:57:27.817423"
+  },
+  "OpenAQ": {
+    "status": "error",
+    "message": "HTTP 410"
+  },
+  "CPCB/WAQI": {
+    "status": "error",
+    "message": "Invalid key"
+  },
+  "Google Maps": {
+    "status": "warning",
+    "message": "API key not configured"
+  }
+}

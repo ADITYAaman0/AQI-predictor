@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\auth.py
+# hypothesis_version: 6.150.3
+
+['30', '7', 'Bearer', 'HS256', 'Invalid token', 'Invalid token type', 'SECRET_KEY', 'Token expired', 'User not found', 'WWW-Authenticate', 'access', 'access_token', 'admin', 'auto', 'bcrypt', 'bearer', 'email', 'exp', 'moderator', 'refresh', 'refresh_token', 'role', 'sub', 'token_type', 'type', 'user']

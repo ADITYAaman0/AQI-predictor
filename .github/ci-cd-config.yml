@@ -1,0 +1,141 @@
+# CI/CD Pipeline Configuration
+# This file contains configuration settings for the AQI Predictor CI/CD pipeline
+
+# Docker Registry Configuration
+registry:
+  url: ghcr.io
+  namespace: ${{ github.repository }}
+  
+# Service Configuration
+services:
+  api:
+    dockerfile: Dockerfile
+    target: application
+    port: 8000
+    health_endpoint: /health
+    
+  dashboard:
+    dockerfile: Dockerfile.streamlit
+    port: 8501
+    health_endpoint: /_stcore/health
+    
+  celery:
+    dockerfile: Dockerfile.celery
+    # No direct health endpoint for Celery workers
+
+# Environment Configuration
+environments:
+  staging:
+    namespace: aqi-staging
+    replicas:
+      api: 1
+      dashboard: 1
+      celery_worker: 2
+      celery_beat: 1
+    resources:
+      api:
+        requests:
+          memory: "256Mi"
+          cpu: "250m"
+        limits:
+          memory: "512Mi"
+          cpu: "500m"
+      dashboard:
+        requests:
+          memory: "256Mi"
+          cpu: "250m"
+        limits:
+          memory: "512Mi"
+          cpu: "500m"
+      celery_worker:
+        requests:
+          memory: "512Mi"
+          cpu: "250m"
+        limits:
+          memory: "1Gi"
+          cpu: "500m"
+    
+  production:
+    namespace: aqi-production
+    replicas:
+      api: 3
+      dashboard: 2
+      celery_worker: 5
+      celery_beat: 1
+    resources:
+      api:
+        requests:
+          memory: "512Mi"
+          cpu: "500m"
+        limits:
+          memory: "1Gi"
+          cpu: "1000m"
+      dashboard:
+        requests:
+          memory: "512Mi"
+          cpu: "500m"
+        limits:
+          memory: "1Gi"
+          cpu: "1000m"
+      celery_worker:
+        requests:
+          memory: "1Gi"
+          cpu: "500m"
+        limits:
+          memory: "2Gi"
+          cpu: "1000m"
+
+# Testing Configuration
+testing:
+  unit_tests:
+    timeout: 300  # 5 minutes
+    coverage_threshold: 80
+    
+  integration_tests:
+    timeout: 600  # 10 minutes
+    
+  property_tests:
+    iterations: 100
+    timeout: 900  # 15 minutes
+
+# Database Migration Configuration
+database:
+  migration_timeout: 300  # 5 minutes
+  backup_retention_days: 30
+  validation_queries:
+    - "SELECT COUNT(*) FROM air_quality_measurements"
+    - "SELECT COUNT(*) FROM weather_data"
+    - "SELECT COUNT(*) FROM predictions"
+    - "SELECT COUNT(*) FROM monitoring_stations"
+
+# Security Configuration
+security:
+  vulnerability_scan: true
+  security_headers_check: true
+  dependency_scan: true
+  
+# Monitoring Configuration
+monitoring:
+  health_check_timeout: 30
+  deployment_timeout: 600  # 10 minutes
+  rollback_timeout: 300   # 5 minutes
+  
+# Notification Configuration
+notifications:
+  slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+  email_recipients:
+    - devops@aqi-predictor.com
+    - alerts@aqi-predictor.com
+    
+# Rollback Configuration
+rollback:
+  automatic_rollback: true
+  rollback_conditions:
+    - health_check_failure
+    - deployment_timeout
+    - critical_error_rate_threshold
+  
+# Cleanup Configuration
+cleanup:
+  keep_images: 10  # Keep last 10 versions
+  cleanup_schedule: "0 2 * * 0"  # Weekly on Sunday at 2 AM

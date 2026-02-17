@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\api_keys.py
+# hypothesis_version: 6.150.3
+
+[100, '/', '/admin/all', '/{key_id}', '/{key_id}/revoke', 'API key not found', 'Create API key', 'Delete API key', 'List API keys', 'Revoke API key', 'message']

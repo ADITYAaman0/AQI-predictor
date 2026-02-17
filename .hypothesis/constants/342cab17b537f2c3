@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\alerts.py
+# hypothesis_version: 6.150.3
+
+[0.0, 0.01, 100, 101, 150, 151, 168, 200, 201, 300, 301, 365, 500, 4326, ')', '/analytics', '/failed-deliveries', '/history', '/preferences', '/subscribe', '/subscriptions', '/test-notification', 'Items per page', 'POINT(', 'Page number', 'admin', 'channels', 'count', 'default_channels', 'email', 'failed_deliveries', 'good', 'hazardous', 'is_active', 'location_name', 'max', 'max_subscriptions', 'message', 'min', 'moderate', 'period_hours', 'push', 'sms', 'subscription_id', 'supported_channels', 'task_id', 'test_message', 'threshold_ranges', 'timestamp', 'triggered_by', 'unhealthy', 'unhealthy_sensitive', 'user_id', 'very_unhealthy']

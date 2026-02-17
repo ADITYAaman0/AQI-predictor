@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Integration Test Suite</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .test-suites {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .suite-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .suite-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .suite-card h3 {
+            margin: 0 0 10px 0;
+            color: #667eea;
+            font-size: 1.3em;
+        }
+        .suite-card p {
+            margin: 0 0 20px 0;
+            color: #666;
+            line-height: 1.5;
+        }
+        .suite-card .btn {
+            width: 100%;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .suite-card .btn:hover {
+            background: #5568d3;
+        }
+        .suite-card .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .suite-card .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+        .suite-card .status.running {
+            display: block;
+            background: #fff3cd;
+            color: #856404;
+        }
+        .suite-card .status.passed {
+            display: block;
+            background: #d4edda;
+            color: #155724;
+        }
+        .suite-card .status.failed {
+            display: block;
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .run-all {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .run-all .btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .run-all .btn:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+        .run-all .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .overall-results {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: none;
+        }
+        .overall-results.visible {
+            display: block;
+        }
+        .overall-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .summary-card {
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .summary-card.total {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+        }
+        .summary-card.passed {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+        .summary-card.failed {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        .summary-card.rate {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+        }
+        .summary-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+        .summary-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .suite-results {
+            margin-top: 30px;
+        }
+        .suite-result-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .suite-result-item.passed {
+            background: #e8f5e9;
+            border-left-color: #4caf50;
+        }
+        .suite-result-item.failed {
+            background: #ffebee;
+            border-left-color: #f44336;
+        }
+        .suite-result-item h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        .suite-result-item .stats {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+        .suite-result-item .stats span {
+            font-weight: 500;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧪 Complete Integration Test Suite</h1>
+        <p>Comprehensive testing for Leaflet.js AQI Predictor Integration</p>
+    </div>
+
+    <div class="run-all">
+        <button id="run-all-btn" class="btn">▶ Run All Test Suites</button>
+    </div>
+
+    <div class="test-suites">
+        <div class="suite-card">
+            <h3>🔗 End-to-End Integration</h3>
+            <p>Tests complete data flow from backend through integration layer to frontend components.</p>
+            <button class="btn" onclick="runSuite('e2e')">Run E2E Tests</button>
+            <div class="status" id="e2e-status"></div>
+        </div>
+
+        <div class="suite-card">
+            <h3>👤 User Workflows</h3>
+            <p>Tests complete user workflows including viewing data, forecast animation, and mobile usage.</p>
+            <button class="btn" onclick="runSuite('workflows')">Run Workflow Tests</button>
+            <div class="status" id="workflows-status"></div>
+        </div>
+
+        <div class="suite-card">
+            <h3>⚡ Performance</h3>
+            <p>Tests loading times, caching effectiveness, and concurrent user scenarios.</p>
+            <button class="btn" onclick="runSuite('performance')">Run Performance Tests</button>
+            <div class="status" id="performance-status"></div>
+        </div>
+    </div>
+
+    <div id="overall-results" class="overall-results">
+        <h2>Overall Test Results</h2>
+        
+        <div class="overall-summary">
+            <div class="summary-card total">
+                <h3>Total Tests</h3>
+                <p class="value" id="overall-total">0</p>
+            </div>
+            <div class="summary-card passed">
+                <h3>Passed</h3>
+                <p class="value" id="overall-passed">0</p>
+            </div>
+            <div class="summary-card failed">
+                <h3>Failed</h3>
+                <p class="value" id="overall-failed">0</p>
+            </div>
+            <div class="summary-card rate">
+                <h3>Success Rate</h3>
+                <p class="value" id="overall-rate">0%</p>
+            </div>
+        </div>
+
+        <div class="suite-results" id="suite-results"></div>
+    </div>
+
+    <script type="module">
+        import { runE2ETests } from './test-e2e-integration.js';
+        import { runUserWorkflowTests } from './test-user-workflows.js';
+        import { runPerformanceTests } from './test-performance-integration.js';
+
+        const suiteResults = {
+            e2e: null,
+            workflows: null,
+            performance: null
+        };
+
+        window.runSuite = async function(suiteName) {
+            const statusEl = document.getElementById(`${suiteName}-status`);
+            statusEl.className = 'status running';
+            statusEl.textContent = '⏳ Running tests...';
+
+            try {
+                let results;
+                switch(suiteName) {
+                    case 'e2e':
+                        results = await runE2ETests();
+                        break;
+                    case 'workflows':
+                        results = await runUserWorkflowTests();
+                        break;
+                    case 'performance':
+                        results = await runPerformanceTests();
+                        break;
+                }
+
+                suiteResults[suiteName] = results;
+
+                if (results.failed === 0) {
+                    statusEl.className = 'status passed';
+                    statusEl.textContent = `✓ All tests passed (${results.passed}/${results.passed + results.failed})`;
+                } else {
+                    statusEl.className = 'status failed';
+                    statusEl.textContent = `✗ ${results.failed} test(s) failed (${results.passed}/${results.passed + results.failed})`;
+                }
+
+                updateOverallResults();
+            } catch (error) {
+                statusEl.className = 'status failed';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        document.getElementById('run-all-btn').addEventListener('click', async function() {
+            this.disabled = true;
+            this.innerHTML = '<span class="loading"></span> Running All Tests...';
+
+            // Reset results
+            Object.keys(suiteResults).forEach(key => suiteResults[key] = null);
+
+            // Run all suites
+            await window.runSuite('e2e');
+            await window.runSuite('workflows');
+            await window.runSuite('performance');
+
+            this.disabled = false;
+            this.textContent = '▶ Run All Test Suites';
+
+            // Show overall results
+            document.getElementById('overall-results').classList.add('visible');
+        });
+
+        function updateOverallResults() {
+            let totalTests = 0;
+            let totalPassed = 0;
+            let totalFailed = 0;
+
+            const suiteResultsContainer = document.getElementById('suite-results');
+            suiteResultsContainer.innerHTML = '';
+
+            Object.entries(suiteResults).forEach(([name, results]) => {
+                if (results) {
+                    totalTests += results.passed + results.failed;
+                    totalPassed += results.passed;
+                    totalFailed += results.failed;
+
+                    const suiteItem = document.createElement('div');
+                    suiteItem.className = `suite-result-item ${results.failed === 0 ? 'passed' : 'failed'}`;
+                    
+                    const suiteTitles = {
+                        e2e: 'End-to-End Integration',
+                        workflows: 'User Workflows',
+                        performance: 'Performance'
+                    };
+
+                    suiteItem.innerHTML = `
+                        <h4>${results.failed === 0 ? '✓' : '✗'} ${suiteTitles[name]}</h4>
+                        <div class="stats">
+                            <span>Total: ${results.passed + results.failed}</span>
+                            <span>Passed: ${results.passed}</span>
+                            <span>Failed: ${results.failed}</span>
+                            <span>Rate: ${((results.passed / (results.passed + results.failed)) * 100).toFixed(1)}%</span>
+                        </div>
+                    `;
+                    suiteResultsContainer.appendChild(suiteItem);
+                }
+            });
+
+            if (totalTests > 0) {
+                const successRate = ((totalPassed / totalTests) * 100).toFixed(1);
+                
+                document.getElementById('overall-total').textContent = totalTests;
+                document.getElementById('overall-passed').textContent = totalPassed;
+                document.getElementById('overall-failed').textContent = totalFailed;
+                document.getElementById('overall-rate').textContent = successRate + '%';
+
+                document.getElementById('overall-results').classList.add('visible');
+            }
+        }
+    </script>
+</body>
+</html>

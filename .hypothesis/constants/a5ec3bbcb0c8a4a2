@@ -1,0 +1,4 @@
+# file: C:\Users\KassITsolutions\AppData\Roaming\Python\Python313\site-packages\IPython\core\magics\config.py
+# hypothesis_version: 6.150.3
+
+['.', '=', '^--', '^\\w+\\.\\w+$', 'cfg.']

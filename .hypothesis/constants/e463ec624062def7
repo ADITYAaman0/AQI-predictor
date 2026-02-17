@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\data\openaq_client.py
+# hypothesis_version: 6.150.3
+
+[0.5, 12.9716, 13.0827, 17.385, 18.5204, 19.076, 22.5726, 23.0225, 28.6139, 72.5714, 72.8777, 73.8567, 77.209, 77.5946, 78.4867, 80.2707, 88.3639, 100, 300, 1000, 3600, '%Y-%m-%d', 'Ahmedabad', 'Bangalore', 'Chennai', 'Delhi', 'Hyderabad', 'IN', 'Kolkata', 'Mumbai', 'OPENAQ_API_KEY', 'Pune', 'X-API-Key', 'ahmedabad', 'api_version', 'bangalore', 'bengaluru', 'bombay', 'calcutta', 'chennai', 'city', 'co', 'countries', 'country', 'date', 'datetime', 'delhi', 'hyderabad', 'id', 'kolkata', 'last_updated', 'lat', 'limit', 'location_info', 'locations', 'lon', 'madras', 'mumbai', 'name', 'new delhi', 'no2', 'note', 'o3', 'ozone', 'parameter', 'pm10', 'pm2.5', 'pm25', 'pollutants', 'pune', 'results', 'sensors', 'sensorsId', 'so2', 'station_count', 'stations', 'unknown', 'utc', 'v3', 'value']

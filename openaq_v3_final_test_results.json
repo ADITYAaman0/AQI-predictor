@@ -1,0 +1,197 @@
+{
+  "test_timestamp": "2026-02-04T20:28:47.292407",
+  "api_key_status": "present",
+  "tests": {
+    "indian_locations": {
+      "status": "success",
+      "count": 26,
+      "sample_locations": [
+        {
+          "id": 12,
+          "name": "SPARTAN - IIT Kanpur",
+          "city": "Other",
+          "sensors": [
+            "pm25"
+          ]
+        },
+        {
+          "id": 13,
+          "name": "Delhi Technological University, Delhi - CPCB",
+          "city": "Delhi",
+          "sensors": [
+            "no2",
+            "o3",
+            "pm25"
+          ]
+        },
+        {
+          "id": 15,
+          "name": "IGI Airport",
+          "city": "Other",
+          "sensors": [
+            "co",
+            "no2",
+            "o3",
+            "pm10",
+            "pm25"
+          ]
+        },
+        {
+          "id": 16,
+          "name": "Civil Lines",
+          "city": "Other",
+          "sensors": [
+            "co",
+            "no2",
+            "pm10",
+            "pm25"
+          ]
+        },
+        {
+          "id": 17,
+          "name": "R K Puram, Delhi - DPCC",
+          "city": "Delhi",
+          "sensors": [
+            "co",
+            "co",
+            "no",
+            "no2",
+            "no2",
+            "nox",
+            "o3",
+            "o3",
+            "pm10",
+            "pm10",
+            "pm25",
+            "pm25",
+            "relativehumidity",
+            "so2",
+            "so2",
+            "temperature",
+            "wind_direction",
+            "wind_speed"
+          ]
+        }
+      ]
+    },
+    "latest_data": {
+      "status": "success",
+      "locations_tested": 10,
+      "working_locations": 7,
+      "total_measurements": 70,
+      "sample_data": [
+        {
+          "timestamp": "2018-02-22T04:00:00Z",
+          "location": [
+            28.744,
+            77.12
+          ],
+          "parameter": "no2",
+          "value": 40.3,
+          "unit": "\u00b5g/m\u00b3",
+          "source": "openaq_v3",
+          "station_id": "13",
+          "location_name": "Delhi Technological University, Delhi - CPCB",
+          "city": "Delhi",
+          "provider": "CPCB",
+          "sensors_id": 13866
+        },
+        {
+          "timestamp": "2018-02-22T04:00:00Z",
+          "location": [
+            28.744,
+            77.12
+          ],
+          "parameter": "pm25",
+          "value": 451.0,
+          "unit": "\u00b5g/m\u00b3",
+          "source": "openaq_v3",
+          "station_id": "13",
+          "location_name": "Delhi Technological University, Delhi - CPCB",
+          "city": "Delhi",
+          "provider": "CPCB",
+          "sensors_id": 13864
+        },
+        {
+          "timestamp": "2018-02-21T21:15:00Z",
+          "location": [
+            28.563262,
+            77.186937
+          ],
+          "parameter": "pm10",
+          "value": 339.0,
+          "unit": "\u00b5g/m\u00b3",
+          "source": "openaq_v3",
+          "station_id": "17",
+          "location_name": "R K Puram, Delhi - DPCC",
+          "city": "Delhi",
+          "provider": "CPCB",
+          "sensors_id": 399
+        },
+        {
+          "timestamp": "2018-02-21T21:15:00Z",
+          "location": [
+            28.563262,
+            77.186937
+          ],
+          "parameter": "pm25",
+          "value": 201.0,
+          "unit": "\u00b5g/m\u00b3",
+          "source": "openaq_v3",
+          "station_id": "17",
+          "location_name": "R K Puram, Delhi - DPCC",
+          "city": "Delhi",
+          "provider": "CPCB",
+          "sensors_id": 35
+        },
+        {
+          "timestamp": "2018-01-24T09:30:00Z",
+          "location": [
+            28.563262,
+            77.186937
+          ],
+          "parameter": "o3",
+          "value": 95.33,
+          "unit": "\u00b5g/m\u00b3",
+          "source": "openaq_v3",
+          "station_id": "17",
+          "location_name": "R K Puram, Delhi - DPCC",
+          "city": "Delhi",
+          "provider": "CPCB",
+          "sensors_id": 394
+        }
+      ]
+    },
+    "data_quality": {
+      "status": "success",
+      "parameters_available": [
+        "no2",
+        "pm25",
+        "pm10",
+        "o3",
+        "co",
+        "so2",
+        "no",
+        "temperature",
+        "relativehumidity",
+        "wind_speed",
+        "wind_direction",
+        "nox"
+      ],
+      "cities_covered": [
+        "Delhi",
+        "Other"
+      ],
+      "recent_data_points": 36,
+      "data_age_analysis": "Mixed - some recent, some historical"
+    }
+  },
+  "summary": {
+    "integration_status": "excellent",
+    "indian_locations_found": 26,
+    "working_locations": 7,
+    "total_data_points": 70,
+    "recent_data_percentage": 51.42857142857142,
+    "recommendation": "OpenAQ v3 integration ready for production. Excellent data coverage."
+  }
+}

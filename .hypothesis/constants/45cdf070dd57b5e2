@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\api_keys.py
+# hypothesis_version: 6.150.3
+
+[100, 128, 365, 500, 10000, ',', 'ApiKey', 'ApiKey ', 'CASCADE', 'User', 'WWW-Authenticate', 'X-API-Key', 'api_keys', 'aqi_', 'auto', 'bcrypt', 'users.id']

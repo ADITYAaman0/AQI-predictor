@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\monitoring.py
+# hypothesis_version: 6.150.3
+
+[99.5, -100, 100, 168, 500, 1000, '/alerts', '/dashboard', '/models', '/requests', '/summary', '/system', '/system/collect', 'Days to look back', 'Filter by model name', 'Hours to look back', 'active_models', 'alert_count', 'alerts', 'application', 'avg_response_time_ms', 'critical', 'current_cpu_percent', 'current_value', 'error_rate_percent', 'error_requests', 'kpis', 'message', 'metrics', 'model_performance', 'performance', 'recent_requests', 'severity', 'status', 'success', 'summary', 'system', 'system_metrics', 'threshold', 'timestamp', 'total_requests', 'total_response_time', 'type', 'uptime_percent', 'warning', 'warning_count', 'warnings']

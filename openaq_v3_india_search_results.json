@@ -1,0 +1,6826 @@
+{
+  "test_timestamp": "2026-02-04T20:08:29.481291",
+  "api_key_status": "present",
+  "base_url": "https://api.openaq.org/v3",
+  "tests": {
+    "country_search": {
+      "status": "success",
+      "total_countries": 144,
+      "india_matches": [
+        {
+          "id": 1,
+          "code": "ID",
+          "name": "Indonesia",
+          "datetimeFirst": "2016-01-30T01:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 11,
+              "name": "bc",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 15,
+              "name": "no2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 21,
+              "name": "co2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 22,
+              "name": "wind_direction",
+              "units": "deg",
+              "displayName": null
+            },
+            {
+              "id": 23,
+              "name": "nox",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 24,
+              "name": "no",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 34,
+              "name": "wind_speed",
+              "units": "m/s",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 101,
+              "name": "so2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 102,
+              "name": "co",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 128,
+              "name": "temperature",
+              "units": "f",
+              "displayName": null
+            },
+            {
+              "id": 130,
+              "name": "um025",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "code": "AR",
+          "name": "Argentina",
+          "datetimeFirst": "2016-01-01T03:00:00Z",
+          "datetimeLast": "2026-02-05T03:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 7,
+              "name": "no2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 8,
+              "name": "co",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 27,
+              "name": "nox",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 128,
+              "name": "temperature",
+              "units": "f",
+              "displayName": null
+            },
+            {
+              "id": 19843,
+              "name": "no",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "code": "IN",
+          "name": "India",
+          "datetimeFirst": "2016-01-30T00:30:00Z",
+          "datetimeLast": "2026-02-04T14:03:57.618000Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 15,
+              "name": "no2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 22,
+              "name": "wind_direction",
+              "units": "deg",
+              "displayName": null
+            },
+            {
+              "id": 23,
+              "name": "nox",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 24,
+              "name": "no",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 34,
+              "name": "wind_speed",
+              "units": "m/s",
+              "displayName": null
+            },
+            {
+              "id": 95,
+              "name": "pressure",
+              "units": "hpa",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 101,
+              "name": "so2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 102,
+              "name": "co",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "code": "CN",
+          "name": "China",
+          "datetimeFirst": "2016-01-01T01:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 9,
+              "name": "so2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "code": "PS",
+          "name": "Palestine",
+          "datetimeFirst": "2017-08-10T23:00:00Z",
+          "datetimeLast": "2025-01-08T17:25:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 7,
+              "name": "no2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 8,
+              "name": "co",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 9,
+              "name": "so2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 15,
+              "name": "no2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 23,
+              "name": "nox",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 24,
+              "name": "no",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 32,
+              "name": "o3",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 35,
+              "name": "no",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 101,
+              "name": "so2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 19840,
+              "name": "nox",
+              "units": "ppm",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "code": "UA",
+          "name": "Ukraine",
+          "datetimeFirst": "2023-09-12T17:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 38,
+          "code": "MF",
+          "name": "Saint-Martin",
+          "datetimeFirst": "2024-01-28T23:00:00Z",
+          "datetimeLast": "2026-01-19T18:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19843,
+              "name": "no",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 55,
+          "code": "FI",
+          "name": "Finland",
+          "datetimeFirst": "2016-12-10T19:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 67,
+          "code": "ES",
+          "name": "Spain",
+          "datetimeFirst": "2016-11-17T23:00:00Z",
+          "datetimeLast": "2026-02-04T14:29:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 27,
+              "name": "nox",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 95,
+              "name": "pressure",
+              "units": "hpa",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 134,
+              "name": "humidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 19843,
+              "name": "no",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19844,
+              "name": "pm4",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 79,
+          "code": "GB",
+          "name": "United Kingdom",
+          "datetimeFirst": "2016-01-30T01:00:00Z",
+          "datetimeLast": "2026-02-04T14:06:52.528000Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 7,
+              "name": "no2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 21,
+              "name": "co2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 27,
+              "name": "nox",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 35,
+              "name": "no",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19843,
+              "name": "no",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 83,
+          "code": "GN",
+          "name": "Guinea",
+          "datetimeFirst": "2020-05-01T02:00:00Z",
+          "datetimeLast": "2025-03-04T12:00:00Z",
+          "parameters": [
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 112,
+          "code": "SM",
+          "name": "San Marino",
+          "datetimeFirst": "2017-11-01T23:00:00Z",
+          "datetimeLast": "2026-02-03T20:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 199,
+          "code": "TT",
+          "name": "Trinidad and Tobago",
+          "datetimeFirst": "2023-03-30T10:00:00Z",
+          "datetimeLast": "2026-02-04T13:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 132,
+          "code": "BA",
+          "name": "Bosnia and Herzegovina",
+          "datetimeFirst": "2016-04-26T22:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 150,
+          "code": "BF",
+          "name": "Burkina Faso",
+          "datetimeFirst": null,
+          "datetimeLast": null,
+          "parameters": null
+        },
+        {
+          "id": 183,
+          "code": "PH",
+          "name": "Philippines",
+          "datetimeFirst": "2023-09-06T21:00:00Z",
+          "datetimeLast": "2026-02-04T14:06:56.889000Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 231,
+          "code": "SG",
+          "name": "Singapore",
+          "datetimeFirst": "2016-04-05T09:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 250,
+          "code": "BH",
+          "name": "Bahrain",
+          "datetimeFirst": "2016-12-01T22:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        }
+      ],
+      "all_countries": [
+        {
+          "id": 1,
+          "code": "ID",
+          "name": "Indonesia",
+          "datetimeFirst": "2016-01-30T01:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 11,
+              "name": "bc",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 15,
+              "name": "no2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 21,
+              "name": "co2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 22,
+              "name": "wind_direction",
+              "units": "deg",
+              "displayName": null
+            },
+            {
+              "id": 23,
+              "name": "nox",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 24,
+              "name": "no",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 34,
+              "name": "wind_speed",
+              "units": "m/s",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 101,
+              "name": "so2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 102,
+              "name": "co",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 128,
+              "name": "temperature",
+              "units": "f",
+              "displayName": null
+            },
+            {
+              "id": 130,
+              "name": "um025",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "code": "MY",
+          "name": "Malaysia",
+          "datetimeFirst": "2022-11-03T21:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "code": "CL",
+          "name": "Chile",
+          "datetimeFirst": "2016-01-30T01:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "code": "PE",
+          "name": "Peru",
+          "datetimeFirst": "2016-03-04T17:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 7,
+              "name": "no2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 8,
+              "name": "co",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 9,
+              "name": "so2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "code": "AR",
+          "name": "Argentina",
+          "datetimeFirst": "2016-01-01T03:00:00Z",
+          "datetimeLast": "2026-02-05T03:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 7,
+              "name": "no2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 8,
+              "name": "co",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 27,
+              "name": "nox",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 128,
+              "name": "temperature",
+              "units": "f",
+              "displayName": null
+            },
+            {
+              "id": 19843,
+              "name": "no",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "code": "-99",
+          "name": "Dhekelia",
+          "datetimeFirst": "2023-03-19T01:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 27,
+              "name": "nox",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19843,
+              "name": "no",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "code": "CY",
+          "name": "Cyprus",
+          "datetimeFirst": "2020-04-20T16:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 27,
+              "name": "nox",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19843,
+              "name": "no",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "code": "IN",
+          "name": "India",
+          "datetimeFirst": "2016-01-30T00:30:00Z",
+          "datetimeLast": "2026-02-04T14:03:57.618000Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 15,
+              "name": "no2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 22,
+              "name": "wind_direction",
+              "units": "deg",
+              "displayName": null
+            },
+            {
+              "id": 23,
+              "name": "nox",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 24,
+              "name": "no",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 34,
+              "name": "wind_speed",
+              "units": "m/s",
+              "displayName": null
+            },
+            {
+              "id": 95,
+              "name": "pressure",
+              "units": "hpa",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 101,
+              "name": "so2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 102,
+              "name": "co",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "code": "CN",
+          "name": "China",
+          "datetimeFirst": "2016-01-01T01:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 9,
+              "name": "so2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "code": "IL",
+          "name": "Israel",
+          "datetimeFirst": "2016-01-01T01:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 7,
+              "name": "no2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 8,
+              "name": "co",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 9,
+              "name": "so2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 15,
+              "name": "no2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 23,
+              "name": "nox",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 24,
+              "name": "no",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 32,
+              "name": "o3",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 35,
+              "name": "no",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 101,
+              "name": "so2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19840,
+              "name": "nox",
+              "units": "ppm",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "code": "PS",
+          "name": "Palestine",
+          "datetimeFirst": "2017-08-10T23:00:00Z",
+          "datetimeLast": "2025-01-08T17:25:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 7,
+              "name": "no2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 8,
+              "name": "co",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 9,
+              "name": "so2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 15,
+              "name": "no2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 23,
+              "name": "nox",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 24,
+              "name": "no",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 32,
+              "name": "o3",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 35,
+              "name": "no",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 101,
+              "name": "so2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 19840,
+              "name": "nox",
+              "units": "ppm",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "code": "LB",
+          "name": "Lebanon",
+          "datetimeFirst": "2025-11-04T06:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "code": "ET",
+          "name": "Ethiopia",
+          "datetimeFirst": "2016-08-18T23:00:00Z",
+          "datetimeLast": "2026-01-20T00:00:00Z",
+          "parameters": [
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "code": "SS",
+          "name": "South Sudan",
+          "datetimeFirst": null,
+          "datetimeLast": null,
+          "parameters": null
+        },
+        {
+          "id": 17,
+          "code": "KE",
+          "name": "Kenya",
+          "datetimeFirst": "2018-04-21T00:00:00Z",
+          "datetimeLast": "2026-02-04T14:04:25.859000Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 15,
+              "name": "no2",
+              "units": "ppb",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 95,
+              "name": "pressure",
+              "units": "hpa",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 128,
+              "name": "temperature",
+              "units": "f",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "code": "MW",
+          "name": "Malawi",
+          "datetimeFirst": "2025-04-26T18:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "code": "FR",
+          "name": "France",
+          "datetimeFirst": "2016-11-21T11:00:00Z",
+          "datetimeLast": "2026-02-04T14:05:41.872000Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 3,
+              "name": "o3",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 4,
+              "name": "co",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 5,
+              "name": "no2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 6,
+              "name": "so2",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19843,
+              "name": "no",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "code": "GY",
+          "name": "Guyana",
+          "datetimeFirst": "2024-10-02T12:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "code": "KR",
+          "name": "Republic of Korea",
+          "datetimeFirst": "2020-10-12T06:00:00Z",
+          "datetimeLast": "2026-02-04T14:04:51.350000Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 7,
+              "name": "no2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 8,
+              "name": "co",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 9,
+              "name": "so2",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 10,
+              "name": "o3",
+              "units": "ppm",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "code": "MA",
+          "name": "Morocco",
+          "datetimeFirst": "2024-04-04T10:00:00Z",
+          "datetimeLast": "2026-02-04T14:00:00Z",
+          "parameters": [
+            {
+              "id": 1,
+              "name": "pm10",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 2,
+              "name": "pm25",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 19,
+              "name": "pm1",
+              "units": "\u00b5g/m\u00b3",
+              "displayName": null
+            },
+            {
+              "id": 98,
+              "name": "relativehumidity",
+              "units": "%",
+              "displayName": null
+            },
+            {
+              "id": 100,
+              "name": "temperature",
+              "units": "c",
+              "displayName": null
+            },
+            {
+              "id": 125,
+              "name": "um003",
+              "units": "particles/cm\u00b3",
+              "displayName": null
+            }
+          ]
+        }
+      ]
+    },
+    "locations_by_country_IN": {
+      "country_code": "IN",
+      "status_code": 200,
+      "status": "success",
+      "response_preview": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":50,\"found\":\">50\"},\"results\":[{\"id\":3,\"name\":\"NMA - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{\"id\":209,\"name\":\"Dr. Raphael E. Arku and Colleagues\"},\"isMobile\":false,\"isMonitor\":true,\"instruments\":[{\"id\":2,\"name\":\"Government Monitor\"}],\"sensors\":[{\"id\":6,\"name\":\"pm10 \u00b5g/m\u00b3\",\"parameter\":{\"id\":1,\"name\":\"pm10\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM10\"}},{\"id\":5,\"name\":\"pm25 \u00b5g/m\u00b3\",\"parameter\":{\"id\":2,\"name\":\"pm25\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM2.5\"}}],\"coordinates\":{\"latitude\":5.58389,\"longitude\":-0.19968},\"licenses\":null,\"bounds\":[-0.19968,5.58389,-0.19968,5.58389],\"distance\":null,\"datetimeFirst\":null,\"datetimeLast\":null},{\"id\":4,\"name\":\"NMT - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{...",
+      "total_locations": 50,
+      "indian_city_matches": 3,
+      "sample_locations": [
+        {
+          "id": 3,
+          "name": "NMA - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 6,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 5,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58389,
+            "longitude": -0.19968
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19968,
+            5.58389,
+            -0.19968,
+            5.58389
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 4,
+          "name": "NMT - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 7,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 8,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58165,
+            "longitude": -0.19898
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19898,
+            5.58165,
+            -0.19898,
+            5.58165
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 5,
+          "name": "JTA - Jamestown",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 10,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 9,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.5401139,
+            "longitude": -0.2103972
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2103972,
+            5.5401139,
+            -0.2103972,
+            5.5401139
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 6,
+          "name": "ADT - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 11,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.570722,
+            "longitude": -0.2120555
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2120555,
+            5.570722,
+            -0.2120555,
+            5.570722
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 7,
+          "name": "ADEPA - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 14,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 13,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.567833,
+            "longitude": -0.2040278
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2040278,
+            5.567833,
+            -0.2040278,
+            5.567833
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        }
+      ],
+      "indian_locations": [
+        {
+          "id": 13,
+          "name": "Delhi Technological University, Delhi - CPCB",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 13866,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 24,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 13864,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.744,
+            "longitude": 77.12
+          },
+          "licenses": null,
+          "bounds": [
+            77.12,
+            28.744,
+            77.12,
+            28.744
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-11-02T19:00:00Z",
+            "local": "2016-11-03T00:30:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2018-02-22T04:00:00Z",
+            "local": "2018-02-22T09:30:00+05:30"
+          }
+        },
+        {
+          "id": 17,
+          "name": "R K Puram, Delhi - DPCC",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 8524,
+            "name": "Delhi Pollution Control Committee"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            },
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 392,
+              "name": "co \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 4,
+                "name": "co",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "CO mass"
+              }
+            },
+            {
+              "id": 12234782,
+              "name": "co ppb",
+              "parameter": {
+                "id": 102,
+                "name": "co",
+                "units": "ppb",
+                "displayName": "CO"
+              }
+            },
+            {
+              "id": 12234783,
+              "name": "no ppb",
+              "parameter": {
+                "id": 24,
+                "name": "no",
+                "units": "ppb",
+                "displayName": "NO"
+              }
+            },
+            {
+              "id": 36,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234784,
+              "name": "no2 ppb",
+              "parameter": {
+                "id": 15,
+                "name": "no2",
+                "units": "ppb",
+                "displayName": "NO\u2082"
+              }
+            },
+            {
+              "id": 14340713,
+              "name": "nox ppb",
+              "parameter": {
+                "id": 23,
+                "name": "nox",
+                "units": "ppb",
+                "displayName": "NOX"
+              }
+            },
+            {
+              "id": 12234785,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 394,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 399,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234786,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234787,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 35,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234788,
+              "name": "relativehumidity %",
+              "parameter": {
+                "id": 98,
+                "name": "relativehumidity",
+                "units": "%",
+                "displayName": "RH"
+              }
+            },
+            {
+              "id": 12234789,
+              "name": "so2 ppb",
+              "parameter": {
+                "id": 101,
+                "name": "so2",
+                "units": "ppb",
+                "displayName": "SO\u2082"
+              }
+            },
+            {
+              "id": 393,
+              "name": "so2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 6,
+                "name": "so2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "SO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234790,
+              "name": "temperature c",
+              "parameter": {
+                "id": 100,
+                "name": "temperature",
+                "units": "c",
+                "displayName": "Temperature (C)"
+              }
+            },
+            {
+              "id": 14340714,
+              "name": "wind_direction deg",
+              "parameter": {
+                "id": 22,
+                "name": "wind_direction",
+                "units": "deg",
+                "displayName": "Wind direction"
+              }
+            },
+            {
+              "id": 14340715,
+              "name": "wind_speed m/s",
+              "parameter": {
+                "id": 34,
+                "name": "wind_speed",
+                "units": "m/s",
+                "displayName": "Wind speed"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.563262,
+            "longitude": 77.186937
+          },
+          "licenses": null,
+          "bounds": [
+            77.186937,
+            28.563262,
+            77.186937,
+            28.563262
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-02-05T14:55:00Z",
+            "local": "2016-02-05T20:25:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2026-02-04T12:30:00Z",
+            "local": "2026-02-04T18:00:00+05:30"
+          }
+        },
+        {
+          "id": 50,
+          "name": "Punjabi Bagh, Delhi - DPCC",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 8524,
+            "name": "Delhi Pollution Control Committee"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            },
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 398,
+              "name": "co \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 4,
+                "name": "co",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "CO mass"
+              }
+            },
+            {
+              "id": 12234791,
+              "name": "co ppb",
+              "parameter": {
+                "id": 102,
+                "name": "co",
+                "units": "ppb",
+                "displayName": "CO"
+              }
+            },
+            {
+              "id": 12234792,
+              "name": "no ppb",
+              "parameter": {
+                "id": 24,
+                "name": "no",
+                "units": "ppb",
+                "displayName": "NO"
+              }
+            },
+            {
+              "id": 12234793,
+              "name": "no2 ppb",
+              "parameter": {
+                "id": 15,
+                "name": "no2",
+                "units": "ppb",
+                "displayName": "NO\u2082"
+              }
+            },
+            {
+              "id": 400,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 14340716,
+              "name": "nox ppb",
+              "parameter": {
+                "id": 23,
+                "name": "nox",
+                "units": "ppb",
+                "displayName": "NOX"
+              }
+            },
+            {
+              "id": 12234794,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 71,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 395,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234795,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 396,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234796,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234797,
+              "name": "relativehumidity %",
+              "parameter": {
+                "id": 98,
+                "name": "relativehumidity",
+                "units": "%",
+                "displayName": "RH"
+              }
+            },
+            {
+              "id": 12234798,
+              "name": "so2 ppb",
+              "parameter": {
+                "id": 101,
+                "name": "so2",
+                "units": "ppb",
+                "displayName": "SO\u2082"
+              }
+            },
+            {
+              "id": 397,
+              "name": "so2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 6,
+                "name": "so2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "SO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234799,
+              "name": "temperature c",
+              "parameter": {
+                "id": 100,
+                "name": "temperature",
+                "units": "c",
+                "displayName": "Temperature (C)"
+              }
+            },
+            {
+              "id": 14340717,
+              "name": "wind_direction deg",
+              "parameter": {
+                "id": 22,
+                "name": "wind_direction",
+                "units": "deg",
+                "displayName": "Wind direction"
+              }
+            },
+            {
+              "id": 14340718,
+              "name": "wind_speed m/s",
+              "parameter": {
+                "id": 34,
+                "name": "wind_speed",
+                "units": "m/s",
+                "displayName": "Wind speed"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.674045,
+            "longitude": 77.131023
+          },
+          "licenses": null,
+          "bounds": [
+            77.131023,
+            28.674045,
+            77.131023,
+            28.674045
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-02-05T14:55:00Z",
+            "local": "2016-02-05T20:25:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2026-02-04T12:30:00Z",
+            "local": "2026-02-04T18:00:00+05:30"
+          }
+        }
+      ]
+    },
+    "locations_by_country_IND": {
+      "country_code": "IND",
+      "status_code": 200,
+      "status": "success",
+      "response_preview": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":50,\"found\":\">50\"},\"results\":[{\"id\":3,\"name\":\"NMA - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{\"id\":209,\"name\":\"Dr. Raphael E. Arku and Colleagues\"},\"isMobile\":false,\"isMonitor\":true,\"instruments\":[{\"id\":2,\"name\":\"Government Monitor\"}],\"sensors\":[{\"id\":6,\"name\":\"pm10 \u00b5g/m\u00b3\",\"parameter\":{\"id\":1,\"name\":\"pm10\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM10\"}},{\"id\":5,\"name\":\"pm25 \u00b5g/m\u00b3\",\"parameter\":{\"id\":2,\"name\":\"pm25\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM2.5\"}}],\"coordinates\":{\"latitude\":5.58389,\"longitude\":-0.19968},\"licenses\":null,\"bounds\":[-0.19968,5.58389,-0.19968,5.58389],\"distance\":null,\"datetimeFirst\":null,\"datetimeLast\":null},{\"id\":4,\"name\":\"NMT - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{...",
+      "total_locations": 50,
+      "indian_city_matches": 3,
+      "sample_locations": [
+        {
+          "id": 3,
+          "name": "NMA - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 6,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 5,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58389,
+            "longitude": -0.19968
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19968,
+            5.58389,
+            -0.19968,
+            5.58389
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 4,
+          "name": "NMT - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 7,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 8,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58165,
+            "longitude": -0.19898
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19898,
+            5.58165,
+            -0.19898,
+            5.58165
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 5,
+          "name": "JTA - Jamestown",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 10,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 9,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.5401139,
+            "longitude": -0.2103972
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2103972,
+            5.5401139,
+            -0.2103972,
+            5.5401139
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 6,
+          "name": "ADT - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 11,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.570722,
+            "longitude": -0.2120555
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2120555,
+            5.570722,
+            -0.2120555,
+            5.570722
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 7,
+          "name": "ADEPA - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 14,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 13,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.567833,
+            "longitude": -0.2040278
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2040278,
+            5.567833,
+            -0.2040278,
+            5.567833
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        }
+      ],
+      "indian_locations": [
+        {
+          "id": 13,
+          "name": "Delhi Technological University, Delhi - CPCB",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 13866,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 24,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 13864,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.744,
+            "longitude": 77.12
+          },
+          "licenses": null,
+          "bounds": [
+            77.12,
+            28.744,
+            77.12,
+            28.744
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-11-02T19:00:00Z",
+            "local": "2016-11-03T00:30:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2018-02-22T04:00:00Z",
+            "local": "2018-02-22T09:30:00+05:30"
+          }
+        },
+        {
+          "id": 17,
+          "name": "R K Puram, Delhi - DPCC",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 8524,
+            "name": "Delhi Pollution Control Committee"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            },
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 392,
+              "name": "co \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 4,
+                "name": "co",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "CO mass"
+              }
+            },
+            {
+              "id": 12234782,
+              "name": "co ppb",
+              "parameter": {
+                "id": 102,
+                "name": "co",
+                "units": "ppb",
+                "displayName": "CO"
+              }
+            },
+            {
+              "id": 12234783,
+              "name": "no ppb",
+              "parameter": {
+                "id": 24,
+                "name": "no",
+                "units": "ppb",
+                "displayName": "NO"
+              }
+            },
+            {
+              "id": 36,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234784,
+              "name": "no2 ppb",
+              "parameter": {
+                "id": 15,
+                "name": "no2",
+                "units": "ppb",
+                "displayName": "NO\u2082"
+              }
+            },
+            {
+              "id": 14340713,
+              "name": "nox ppb",
+              "parameter": {
+                "id": 23,
+                "name": "nox",
+                "units": "ppb",
+                "displayName": "NOX"
+              }
+            },
+            {
+              "id": 12234785,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 394,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 399,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234786,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234787,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 35,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234788,
+              "name": "relativehumidity %",
+              "parameter": {
+                "id": 98,
+                "name": "relativehumidity",
+                "units": "%",
+                "displayName": "RH"
+              }
+            },
+            {
+              "id": 12234789,
+              "name": "so2 ppb",
+              "parameter": {
+                "id": 101,
+                "name": "so2",
+                "units": "ppb",
+                "displayName": "SO\u2082"
+              }
+            },
+            {
+              "id": 393,
+              "name": "so2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 6,
+                "name": "so2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "SO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234790,
+              "name": "temperature c",
+              "parameter": {
+                "id": 100,
+                "name": "temperature",
+                "units": "c",
+                "displayName": "Temperature (C)"
+              }
+            },
+            {
+              "id": 14340714,
+              "name": "wind_direction deg",
+              "parameter": {
+                "id": 22,
+                "name": "wind_direction",
+                "units": "deg",
+                "displayName": "Wind direction"
+              }
+            },
+            {
+              "id": 14340715,
+              "name": "wind_speed m/s",
+              "parameter": {
+                "id": 34,
+                "name": "wind_speed",
+                "units": "m/s",
+                "displayName": "Wind speed"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.563262,
+            "longitude": 77.186937
+          },
+          "licenses": null,
+          "bounds": [
+            77.186937,
+            28.563262,
+            77.186937,
+            28.563262
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-02-05T14:55:00Z",
+            "local": "2016-02-05T20:25:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2026-02-04T12:30:00Z",
+            "local": "2026-02-04T18:00:00+05:30"
+          }
+        },
+        {
+          "id": 50,
+          "name": "Punjabi Bagh, Delhi - DPCC",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 8524,
+            "name": "Delhi Pollution Control Committee"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            },
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 398,
+              "name": "co \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 4,
+                "name": "co",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "CO mass"
+              }
+            },
+            {
+              "id": 12234791,
+              "name": "co ppb",
+              "parameter": {
+                "id": 102,
+                "name": "co",
+                "units": "ppb",
+                "displayName": "CO"
+              }
+            },
+            {
+              "id": 12234792,
+              "name": "no ppb",
+              "parameter": {
+                "id": 24,
+                "name": "no",
+                "units": "ppb",
+                "displayName": "NO"
+              }
+            },
+            {
+              "id": 12234793,
+              "name": "no2 ppb",
+              "parameter": {
+                "id": 15,
+                "name": "no2",
+                "units": "ppb",
+                "displayName": "NO\u2082"
+              }
+            },
+            {
+              "id": 400,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 14340716,
+              "name": "nox ppb",
+              "parameter": {
+                "id": 23,
+                "name": "nox",
+                "units": "ppb",
+                "displayName": "NOX"
+              }
+            },
+            {
+              "id": 12234794,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 71,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 395,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234795,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 396,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234796,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234797,
+              "name": "relativehumidity %",
+              "parameter": {
+                "id": 98,
+                "name": "relativehumidity",
+                "units": "%",
+                "displayName": "RH"
+              }
+            },
+            {
+              "id": 12234798,
+              "name": "so2 ppb",
+              "parameter": {
+                "id": 101,
+                "name": "so2",
+                "units": "ppb",
+                "displayName": "SO\u2082"
+              }
+            },
+            {
+              "id": 397,
+              "name": "so2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 6,
+                "name": "so2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "SO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234799,
+              "name": "temperature c",
+              "parameter": {
+                "id": 100,
+                "name": "temperature",
+                "units": "c",
+                "displayName": "Temperature (C)"
+              }
+            },
+            {
+              "id": 14340717,
+              "name": "wind_direction deg",
+              "parameter": {
+                "id": 22,
+                "name": "wind_direction",
+                "units": "deg",
+                "displayName": "Wind direction"
+              }
+            },
+            {
+              "id": 14340718,
+              "name": "wind_speed m/s",
+              "parameter": {
+                "id": 34,
+                "name": "wind_speed",
+                "units": "m/s",
+                "displayName": "Wind speed"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.674045,
+            "longitude": 77.131023
+          },
+          "licenses": null,
+          "bounds": [
+            77.131023,
+            28.674045,
+            77.131023,
+            28.674045
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-02-05T14:55:00Z",
+            "local": "2016-02-05T20:25:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2026-02-04T12:30:00Z",
+            "local": "2026-02-04T18:00:00+05:30"
+          }
+        }
+      ]
+    },
+    "locations_by_country_India": {
+      "country_code": "India",
+      "status_code": 200,
+      "status": "success",
+      "response_preview": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":50,\"found\":\">50\"},\"results\":[{\"id\":3,\"name\":\"NMA - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{\"id\":209,\"name\":\"Dr. Raphael E. Arku and Colleagues\"},\"isMobile\":false,\"isMonitor\":true,\"instruments\":[{\"id\":2,\"name\":\"Government Monitor\"}],\"sensors\":[{\"id\":6,\"name\":\"pm10 \u00b5g/m\u00b3\",\"parameter\":{\"id\":1,\"name\":\"pm10\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM10\"}},{\"id\":5,\"name\":\"pm25 \u00b5g/m\u00b3\",\"parameter\":{\"id\":2,\"name\":\"pm25\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM2.5\"}}],\"coordinates\":{\"latitude\":5.58389,\"longitude\":-0.19968},\"licenses\":null,\"bounds\":[-0.19968,5.58389,-0.19968,5.58389],\"distance\":null,\"datetimeFirst\":null,\"datetimeLast\":null},{\"id\":4,\"name\":\"NMT - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{...",
+      "total_locations": 50,
+      "indian_city_matches": 3,
+      "sample_locations": [
+        {
+          "id": 3,
+          "name": "NMA - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 6,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 5,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58389,
+            "longitude": -0.19968
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19968,
+            5.58389,
+            -0.19968,
+            5.58389
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 4,
+          "name": "NMT - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 7,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 8,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58165,
+            "longitude": -0.19898
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19898,
+            5.58165,
+            -0.19898,
+            5.58165
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 5,
+          "name": "JTA - Jamestown",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 10,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 9,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.5401139,
+            "longitude": -0.2103972
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2103972,
+            5.5401139,
+            -0.2103972,
+            5.5401139
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 6,
+          "name": "ADT - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 11,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.570722,
+            "longitude": -0.2120555
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2120555,
+            5.570722,
+            -0.2120555,
+            5.570722
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 7,
+          "name": "ADEPA - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 14,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 13,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.567833,
+            "longitude": -0.2040278
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2040278,
+            5.567833,
+            -0.2040278,
+            5.567833
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        }
+      ],
+      "indian_locations": [
+        {
+          "id": 13,
+          "name": "Delhi Technological University, Delhi - CPCB",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 13866,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 24,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 13864,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.744,
+            "longitude": 77.12
+          },
+          "licenses": null,
+          "bounds": [
+            77.12,
+            28.744,
+            77.12,
+            28.744
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-11-02T19:00:00Z",
+            "local": "2016-11-03T00:30:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2018-02-22T04:00:00Z",
+            "local": "2018-02-22T09:30:00+05:30"
+          }
+        },
+        {
+          "id": 17,
+          "name": "R K Puram, Delhi - DPCC",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 8524,
+            "name": "Delhi Pollution Control Committee"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            },
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 392,
+              "name": "co \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 4,
+                "name": "co",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "CO mass"
+              }
+            },
+            {
+              "id": 12234782,
+              "name": "co ppb",
+              "parameter": {
+                "id": 102,
+                "name": "co",
+                "units": "ppb",
+                "displayName": "CO"
+              }
+            },
+            {
+              "id": 12234783,
+              "name": "no ppb",
+              "parameter": {
+                "id": 24,
+                "name": "no",
+                "units": "ppb",
+                "displayName": "NO"
+              }
+            },
+            {
+              "id": 36,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234784,
+              "name": "no2 ppb",
+              "parameter": {
+                "id": 15,
+                "name": "no2",
+                "units": "ppb",
+                "displayName": "NO\u2082"
+              }
+            },
+            {
+              "id": 14340713,
+              "name": "nox ppb",
+              "parameter": {
+                "id": 23,
+                "name": "nox",
+                "units": "ppb",
+                "displayName": "NOX"
+              }
+            },
+            {
+              "id": 12234785,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 394,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 399,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234786,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234787,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 35,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234788,
+              "name": "relativehumidity %",
+              "parameter": {
+                "id": 98,
+                "name": "relativehumidity",
+                "units": "%",
+                "displayName": "RH"
+              }
+            },
+            {
+              "id": 12234789,
+              "name": "so2 ppb",
+              "parameter": {
+                "id": 101,
+                "name": "so2",
+                "units": "ppb",
+                "displayName": "SO\u2082"
+              }
+            },
+            {
+              "id": 393,
+              "name": "so2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 6,
+                "name": "so2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "SO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234790,
+              "name": "temperature c",
+              "parameter": {
+                "id": 100,
+                "name": "temperature",
+                "units": "c",
+                "displayName": "Temperature (C)"
+              }
+            },
+            {
+              "id": 14340714,
+              "name": "wind_direction deg",
+              "parameter": {
+                "id": 22,
+                "name": "wind_direction",
+                "units": "deg",
+                "displayName": "Wind direction"
+              }
+            },
+            {
+              "id": 14340715,
+              "name": "wind_speed m/s",
+              "parameter": {
+                "id": 34,
+                "name": "wind_speed",
+                "units": "m/s",
+                "displayName": "Wind speed"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.563262,
+            "longitude": 77.186937
+          },
+          "licenses": null,
+          "bounds": [
+            77.186937,
+            28.563262,
+            77.186937,
+            28.563262
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-02-05T14:55:00Z",
+            "local": "2016-02-05T20:25:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2026-02-04T12:30:00Z",
+            "local": "2026-02-04T18:00:00+05:30"
+          }
+        },
+        {
+          "id": 50,
+          "name": "Punjabi Bagh, Delhi - DPCC",
+          "locality": null,
+          "timezone": "Asia/Kolkata",
+          "country": {
+            "id": 9,
+            "code": "IN",
+            "name": "India"
+          },
+          "owner": {
+            "id": 8524,
+            "name": "Delhi Pollution Control Committee"
+          },
+          "provider": {
+            "id": 168,
+            "name": "CPCB"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            },
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 398,
+              "name": "co \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 4,
+                "name": "co",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "CO mass"
+              }
+            },
+            {
+              "id": 12234791,
+              "name": "co ppb",
+              "parameter": {
+                "id": 102,
+                "name": "co",
+                "units": "ppb",
+                "displayName": "CO"
+              }
+            },
+            {
+              "id": 12234792,
+              "name": "no ppb",
+              "parameter": {
+                "id": 24,
+                "name": "no",
+                "units": "ppb",
+                "displayName": "NO"
+              }
+            },
+            {
+              "id": 12234793,
+              "name": "no2 ppb",
+              "parameter": {
+                "id": 15,
+                "name": "no2",
+                "units": "ppb",
+                "displayName": "NO\u2082"
+              }
+            },
+            {
+              "id": 400,
+              "name": "no2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 5,
+                "name": "no2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "NO\u2082 mass"
+              }
+            },
+            {
+              "id": 14340716,
+              "name": "nox ppb",
+              "parameter": {
+                "id": 23,
+                "name": "nox",
+                "units": "ppb",
+                "displayName": "NOX"
+              }
+            },
+            {
+              "id": 12234794,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 71,
+              "name": "o3 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 3,
+                "name": "o3",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "O\u2083 mass"
+              }
+            },
+            {
+              "id": 395,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12234795,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 396,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234796,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            },
+            {
+              "id": 12234797,
+              "name": "relativehumidity %",
+              "parameter": {
+                "id": 98,
+                "name": "relativehumidity",
+                "units": "%",
+                "displayName": "RH"
+              }
+            },
+            {
+              "id": 12234798,
+              "name": "so2 ppb",
+              "parameter": {
+                "id": 101,
+                "name": "so2",
+                "units": "ppb",
+                "displayName": "SO\u2082"
+              }
+            },
+            {
+              "id": 397,
+              "name": "so2 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 6,
+                "name": "so2",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "SO\u2082 mass"
+              }
+            },
+            {
+              "id": 12234799,
+              "name": "temperature c",
+              "parameter": {
+                "id": 100,
+                "name": "temperature",
+                "units": "c",
+                "displayName": "Temperature (C)"
+              }
+            },
+            {
+              "id": 14340717,
+              "name": "wind_direction deg",
+              "parameter": {
+                "id": 22,
+                "name": "wind_direction",
+                "units": "deg",
+                "displayName": "Wind direction"
+              }
+            },
+            {
+              "id": 14340718,
+              "name": "wind_speed m/s",
+              "parameter": {
+                "id": 34,
+                "name": "wind_speed",
+                "units": "m/s",
+                "displayName": "Wind speed"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 28.674045,
+            "longitude": 77.131023
+          },
+          "licenses": null,
+          "bounds": [
+            77.131023,
+            28.674045,
+            77.131023,
+            28.674045
+          ],
+          "distance": null,
+          "datetimeFirst": {
+            "utc": "2016-02-05T14:55:00Z",
+            "local": "2016-02-05T20:25:00+05:30"
+          },
+          "datetimeLast": {
+            "utc": "2026-02-04T12:30:00Z",
+            "local": "2026-02-04T18:00:00+05:30"
+          }
+        }
+      ]
+    },
+    "city_search_Delhi": {
+      "city_name": "Delhi",
+      "status_code": 200,
+      "status": "success",
+      "response_preview": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":100,\"found\":\">100\"},\"results\":[{\"id\":3,\"name\":\"NMA - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{\"id\":209,\"name\":\"Dr. Raphael E. Arku and Colleagues\"},\"isMobile\":false,\"isMonitor\":true,\"instruments\":[{\"id\":2,\"name\":\"Government Monitor\"}],\"sensors\":[{\"id\":6,\"name\":\"pm10 \u00b5g/m\u00b3\",\"parameter\":{\"id\":1,\"name\":\"pm10\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM10\"}},{\"id\":5,\"name\":\"pm25 \u00b5g/m\u00b3\",\"parameter\":{\"id\":2,\"name\":\"pm25\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM2.5\"}}],\"coordinates\":{\"latitude\":5.58389,\"longitude\":-0.19968},\"licenses\":null,\"bounds\":[-0.19968,5.58389,-0.19968,5.58389],\"distance\":null,\"datetimeFirst\":null,\"datetimeLast\":null},{\"id\":4,\"name\":\"NMT - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\"...",
+      "locations_found": 100,
+      "sample_locations": [
+        {
+          "id": 3,
+          "name": "NMA - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 6,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 5,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58389,
+            "longitude": -0.19968
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19968,
+            5.58389,
+            -0.19968,
+            5.58389
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 4,
+          "name": "NMT - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 7,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 8,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58165,
+            "longitude": -0.19898
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19898,
+            5.58165,
+            -0.19898,
+            5.58165
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 5,
+          "name": "JTA - Jamestown",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 10,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 9,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.5401139,
+            "longitude": -0.2103972
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2103972,
+            5.5401139,
+            -0.2103972,
+            5.5401139
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 6,
+          "name": "ADT - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 11,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.570722,
+            "longitude": -0.2120555
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2120555,
+            5.570722,
+            -0.2120555,
+            5.570722
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 7,
+          "name": "ADEPA - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 14,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 13,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.567833,
+            "longitude": -0.2040278
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2040278,
+            5.567833,
+            -0.2040278,
+            5.567833
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        }
+      ]
+    },
+    "city_search_Mumbai": {
+      "city_name": "Mumbai",
+      "status_code": 200,
+      "status": "success",
+      "response_preview": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":100,\"found\":\">100\"},\"results\":[{\"id\":3,\"name\":\"NMA - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{\"id\":209,\"name\":\"Dr. Raphael E. Arku and Colleagues\"},\"isMobile\":false,\"isMonitor\":true,\"instruments\":[{\"id\":2,\"name\":\"Government Monitor\"}],\"sensors\":[{\"id\":6,\"name\":\"pm10 \u00b5g/m\u00b3\",\"parameter\":{\"id\":1,\"name\":\"pm10\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM10\"}},{\"id\":5,\"name\":\"pm25 \u00b5g/m\u00b3\",\"parameter\":{\"id\":2,\"name\":\"pm25\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM2.5\"}}],\"coordinates\":{\"latitude\":5.58389,\"longitude\":-0.19968},\"licenses\":null,\"bounds\":[-0.19968,5.58389,-0.19968,5.58389],\"distance\":null,\"datetimeFirst\":null,\"datetimeLast\":null},{\"id\":4,\"name\":\"NMT - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\"...",
+      "locations_found": 100,
+      "sample_locations": [
+        {
+          "id": 3,
+          "name": "NMA - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 6,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 5,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58389,
+            "longitude": -0.19968
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19968,
+            5.58389,
+            -0.19968,
+            5.58389
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 4,
+          "name": "NMT - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 7,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 8,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58165,
+            "longitude": -0.19898
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19898,
+            5.58165,
+            -0.19898,
+            5.58165
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 5,
+          "name": "JTA - Jamestown",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 10,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 9,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.5401139,
+            "longitude": -0.2103972
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2103972,
+            5.5401139,
+            -0.2103972,
+            5.5401139
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 6,
+          "name": "ADT - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 11,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.570722,
+            "longitude": -0.2120555
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2120555,
+            5.570722,
+            -0.2120555,
+            5.570722
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 7,
+          "name": "ADEPA - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 14,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 13,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.567833,
+            "longitude": -0.2040278
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2040278,
+            5.567833,
+            -0.2040278,
+            5.567833
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        }
+      ]
+    },
+    "city_search_Bangalore": {
+      "city_name": "Bangalore",
+      "status_code": 200,
+      "status": "success",
+      "response_preview": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":100,\"found\":\">100\"},\"results\":[{\"id\":3,\"name\":\"NMA - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{\"id\":209,\"name\":\"Dr. Raphael E. Arku and Colleagues\"},\"isMobile\":false,\"isMonitor\":true,\"instruments\":[{\"id\":2,\"name\":\"Government Monitor\"}],\"sensors\":[{\"id\":6,\"name\":\"pm10 \u00b5g/m\u00b3\",\"parameter\":{\"id\":1,\"name\":\"pm10\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM10\"}},{\"id\":5,\"name\":\"pm25 \u00b5g/m\u00b3\",\"parameter\":{\"id\":2,\"name\":\"pm25\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM2.5\"}}],\"coordinates\":{\"latitude\":5.58389,\"longitude\":-0.19968},\"licenses\":null,\"bounds\":[-0.19968,5.58389,-0.19968,5.58389],\"distance\":null,\"datetimeFirst\":null,\"datetimeLast\":null},{\"id\":4,\"name\":\"NMT - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\"...",
+      "locations_found": 100,
+      "sample_locations": [
+        {
+          "id": 3,
+          "name": "NMA - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 6,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 5,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58389,
+            "longitude": -0.19968
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19968,
+            5.58389,
+            -0.19968,
+            5.58389
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 4,
+          "name": "NMT - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 7,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 8,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58165,
+            "longitude": -0.19898
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19898,
+            5.58165,
+            -0.19898,
+            5.58165
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 5,
+          "name": "JTA - Jamestown",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 10,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 9,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.5401139,
+            "longitude": -0.2103972
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2103972,
+            5.5401139,
+            -0.2103972,
+            5.5401139
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 6,
+          "name": "ADT - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 11,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.570722,
+            "longitude": -0.2120555
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2120555,
+            5.570722,
+            -0.2120555,
+            5.570722
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 7,
+          "name": "ADEPA - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 14,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 13,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.567833,
+            "longitude": -0.2040278
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2040278,
+            5.567833,
+            -0.2040278,
+            5.567833
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        }
+      ]
+    },
+    "city_search_Chennai": {
+      "city_name": "Chennai",
+      "status_code": 200,
+      "status": "success",
+      "response_preview": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":100,\"found\":\">100\"},\"results\":[{\"id\":3,\"name\":\"NMA - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{\"id\":209,\"name\":\"Dr. Raphael E. Arku and Colleagues\"},\"isMobile\":false,\"isMonitor\":true,\"instruments\":[{\"id\":2,\"name\":\"Government Monitor\"}],\"sensors\":[{\"id\":6,\"name\":\"pm10 \u00b5g/m\u00b3\",\"parameter\":{\"id\":1,\"name\":\"pm10\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM10\"}},{\"id\":5,\"name\":\"pm25 \u00b5g/m\u00b3\",\"parameter\":{\"id\":2,\"name\":\"pm25\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM2.5\"}}],\"coordinates\":{\"latitude\":5.58389,\"longitude\":-0.19968},\"licenses\":null,\"bounds\":[-0.19968,5.58389,-0.19968,5.58389],\"distance\":null,\"datetimeFirst\":null,\"datetimeLast\":null},{\"id\":4,\"name\":\"NMT - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\"...",
+      "locations_found": 100,
+      "sample_locations": [
+        {
+          "id": 3,
+          "name": "NMA - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 6,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 5,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58389,
+            "longitude": -0.19968
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19968,
+            5.58389,
+            -0.19968,
+            5.58389
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 4,
+          "name": "NMT - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 7,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 8,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58165,
+            "longitude": -0.19898
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19898,
+            5.58165,
+            -0.19898,
+            5.58165
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 5,
+          "name": "JTA - Jamestown",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 10,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 9,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.5401139,
+            "longitude": -0.2103972
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2103972,
+            5.5401139,
+            -0.2103972,
+            5.5401139
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 6,
+          "name": "ADT - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 11,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.570722,
+            "longitude": -0.2120555
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2120555,
+            5.570722,
+            -0.2120555,
+            5.570722
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 7,
+          "name": "ADEPA - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 14,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 13,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.567833,
+            "longitude": -0.2040278
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2040278,
+            5.567833,
+            -0.2040278,
+            5.567833
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        }
+      ]
+    },
+    "city_search_Kolkata": {
+      "city_name": "Kolkata",
+      "status_code": 200,
+      "status": "success",
+      "response_preview": "{\"meta\":{\"name\":\"openaq-api\",\"website\":\"/\",\"page\":1,\"limit\":100,\"found\":\">100\"},\"results\":[{\"id\":3,\"name\":\"NMA - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\":{\"id\":209,\"name\":\"Dr. Raphael E. Arku and Colleagues\"},\"isMobile\":false,\"isMonitor\":true,\"instruments\":[{\"id\":2,\"name\":\"Government Monitor\"}],\"sensors\":[{\"id\":6,\"name\":\"pm10 \u00b5g/m\u00b3\",\"parameter\":{\"id\":1,\"name\":\"pm10\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM10\"}},{\"id\":5,\"name\":\"pm25 \u00b5g/m\u00b3\",\"parameter\":{\"id\":2,\"name\":\"pm25\",\"units\":\"\u00b5g/m\u00b3\",\"displayName\":\"PM2.5\"}}],\"coordinates\":{\"latitude\":5.58389,\"longitude\":-0.19968},\"licenses\":null,\"bounds\":[-0.19968,5.58389,-0.19968,5.58389],\"distance\":null,\"datetimeFirst\":null,\"datetimeLast\":null},{\"id\":4,\"name\":\"NMT - Nima\",\"locality\":null,\"timezone\":\"Africa/Accra\",\"country\":{\"id\":152,\"code\":\"GH\",\"name\":\"Ghana\"},\"owner\":{\"id\":4,\"name\":\"Unknown Governmental Organization\"},\"provider\"...",
+      "locations_found": 100,
+      "sample_locations": [
+        {
+          "id": 3,
+          "name": "NMA - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 6,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 5,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58389,
+            "longitude": -0.19968
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19968,
+            5.58389,
+            -0.19968,
+            5.58389
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 4,
+          "name": "NMT - Nima",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 7,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 8,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.58165,
+            "longitude": -0.19898
+          },
+          "licenses": null,
+          "bounds": [
+            -0.19898,
+            5.58165,
+            -0.19898,
+            5.58165
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 5,
+          "name": "JTA - Jamestown",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 10,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 9,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.5401139,
+            "longitude": -0.2103972
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2103972,
+            5.5401139,
+            -0.2103972,
+            5.5401139
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 6,
+          "name": "ADT - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 11,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 12,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.570722,
+            "longitude": -0.2120555
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2120555,
+            5.570722,
+            -0.2120555,
+            5.570722
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        },
+        {
+          "id": 7,
+          "name": "ADEPA - Asylum Down",
+          "locality": null,
+          "timezone": "Africa/Accra",
+          "country": {
+            "id": 152,
+            "code": "GH",
+            "name": "Ghana"
+          },
+          "owner": {
+            "id": 4,
+            "name": "Unknown Governmental Organization"
+          },
+          "provider": {
+            "id": 209,
+            "name": "Dr. Raphael E. Arku and Colleagues"
+          },
+          "isMobile": false,
+          "isMonitor": true,
+          "instruments": [
+            {
+              "id": 2,
+              "name": "Government Monitor"
+            }
+          ],
+          "sensors": [
+            {
+              "id": 14,
+              "name": "pm10 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 1,
+                "name": "pm10",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM10"
+              }
+            },
+            {
+              "id": 13,
+              "name": "pm25 \u00b5g/m\u00b3",
+              "parameter": {
+                "id": 2,
+                "name": "pm25",
+                "units": "\u00b5g/m\u00b3",
+                "displayName": "PM2.5"
+              }
+            }
+          ],
+          "coordinates": {
+            "latitude": 5.567833,
+            "longitude": -0.2040278
+          },
+          "licenses": null,
+          "bounds": [
+            -0.2040278,
+            5.567833,
+            -0.2040278,
+            5.567833
+          ],
+          "distance": null,
+          "datetimeFirst": null,
+          "datetimeLast": null
+        }
+      ]
+    },
+    "measurements_endpoints": {
+      "https://api.openaq.org/v3/measurements": {
+        "status_code": 404,
+        "status": "error",
+        "response_preview": "{\"detail\":\"Not Found\"}"
+      },
+      "https://api.openaq.org/v3/measurements/latest": {
+        "status_code": 404,
+        "status": "error",
+        "response_preview": "{\"detail\":\"Not Found\"}"
+      },
+      "https://api.openaq.org/v3/latest": {
+        "status_code": 404,
+        "status": "error",
+        "response_preview": "{\"detail\":\"Not Found\"}"
+      },
+      "https://api.openaq.org/v3/sensors/measurements": {
+        "status_code": 422,
+        "status": "error",
+        "response_preview": "\"[{'type': 'int_parsing', 'loc': ('path', 'sensors_id'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'measurements'}]\""
+      },
+      "https://api.openaq.org/v3/data/measurements": {
+        "status_code": 404,
+        "status": "error",
+        "response_preview": "{\"detail\":\"Not Found\"}"
+      }
+    }
+  },
+  "summary": {
+    "india_country_found": true,
+    "working_measurements_endpoints": 0,
+    "working_endpoint_names": [],
+    "recommendation": "Found India with ID 1. Use this ID to query Indian locations."
+  }
+}

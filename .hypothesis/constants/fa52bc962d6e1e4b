@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\ab_testing_middleware.py
+# hypothesis_version: 6.150.3
+
+[200, 300, 1000, ',', '/', '24h', 'User-Agent', 'X-AB-Experiment-ID', 'X-AB-Model-Version', 'X-AB-Variant-ID', 'X-User-ID', 'ab_experiment', 'applicable_endpoints', 'assignment_context', 'city', 'configuration', 'current', 'east', 'endpoint', 'error', 'error_code', 'experiment_id', 'extraction_error', 'id', 'is_control', 'lat', 'latest', 'location', 'lon', 'method', 'model_name', 'model_version', 'north', 'request_context', 'south', 'spatial', 'status_code', 'success', 'timestamp', 'user', 'user_agent', 'user_id', 'variant', 'variant_id', 'west']

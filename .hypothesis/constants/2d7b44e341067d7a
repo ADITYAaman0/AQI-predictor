@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\auth.py
+# hypothesis_version: 6.150.3
+
+[100, '/change-password', '/login', '/me', '/refresh', '/register', '/users', '/users/{user_id}', 'Bearer', 'Change password', 'Delete user account', 'Email already in use', 'Refresh access token', 'Register new user', 'Update user profile', 'User login', 'User not found', 'WWW-Authenticate', 'activated', 'admin', 'deactivated', 'message', 'moderator', 'user']

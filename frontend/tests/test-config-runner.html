@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration Property Tests</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+        }
+        
+        .header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .test-controls {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .test-controls button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+        
+        .test-controls button:hover {
+            background: #5568d3;
+        }
+        
+        .test-controls button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        #output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 600px;
+            overflow-y: auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .success {
+            color: #4ade80;
+        }
+        
+        .error {
+            color: #f87171;
+        }
+        
+        .warning {
+            color: #fbbf24;
+        }
+        
+        .info {
+            color: #60a5fa;
+        }
+        
+        .test-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .test-info h2 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        
+        .test-info ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .test-info li {
+            margin: 5px 0;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔧 Configuration Management Property Tests</h1>
+        <p>Property-Based Testing for Environment Configuration Consistency and Validation</p>
+    </div>
+    
+    <div class="test-info">
+        <h2>Test Coverage</h2>
+        <p>These tests validate the following properties:</p>
+        <ul>
+            <li><strong>Property 20: Configuration Consistency</strong> - Ensures configurations are internally consistent across all environments</li>
+            <li><strong>Property 21: Environment Configuration Validation</strong> - Validates that all required fields are present and valid</li>
+            <li><strong>Configuration Overrides</strong> - Tests that environment overrides maintain validity</li>
+            <li><strong>Cross-Environment Compatibility</strong> - Ensures configurations are compatible when switching environments</li>
+        </ul>
+        <p><strong>Requirements Validated:</strong> 10.1, 10.2, 10.3, 10.4, 10.5</p>
+    </div>
+    
+    <div class="test-controls">
+        <button id="runAllBtn" onclick="runAllTests()">Run All Tests</button>
+        <button id="runProperty20Btn" onclick="runProperty20()">Run Property 20</button>
+        <button id="runProperty21Btn" onclick="runProperty21()">Run Property 21</button>
+        <button id="clearBtn" onclick="clearOutput()">Clear Output</button>
+    </div>
+    
+    <div id="output">Waiting to run tests...</div>
+    
+    <script type="module">
+        import {
+            runAllTests,
+            testConfigurationConsistency,
+            testEnvironmentConfigValidation,
+            testConfigurationOverrides,
+            testCrossEnvironmentCompatibility,
+        } from './test-config-properties.js';
+        
+        // Make functions available globally
+        window.testConfigFunctions = {
+            runAllTests,
+            testConfigurationConsistency,
+            testEnvironmentConfigValidation,
+            testConfigurationOverrides,
+            testCrossEnvironmentCompatibility,
+        };
+        
+        // Override console methods to capture output
+        const output = document.getElementById('output');
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        const appendOutput = (message, className = '') => {
+            const span = document.createElement('span');
+            span.className = className;
+            span.textContent = message + '\n';
+            output.appendChild(span);
+            output.scrollTop = output.scrollHeight;
+        };
+        
+        console.log = (...args) => {
+            originalLog(...args);
+            const message = args.join(' ');
+            let className = '';
+            if (message.includes('✓') || message.includes('PASSED')) {
+                className = 'success';
+            } else if (message.includes('===')) {
+                className = 'info';
+            }
+            appendOutput(message, className);
+        };
+        
+        console.error = (...args) => {
+            originalError(...args);
+            const message = args.join(' ');
+            appendOutput(message, 'error');
+        };
+        
+        console.warn = (...args) => {
+            originalWarn(...args);
+            const message = args.join(' ');
+            appendOutput(message, 'warning');
+        };
+        
+        window.runAllTests = async () => {
+            clearOutput();
+            disableButtons();
+            try {
+                await window.testConfigFunctions.runAllTests();
+            } finally {
+                enableButtons();
+            }
+        };
+        
+        window.runProperty20 = async () => {
+            clearOutput();
+            disableButtons();
+            try {
+                await window.testConfigFunctions.testConfigurationConsistency();
+            } finally {
+                enableButtons();
+            }
+        };
+        
+        window.runProperty21 = async () => {
+            clearOutput();
+            disableButtons();
+            try {
+                await window.testConfigFunctions.testEnvironmentConfigValidation();
+            } finally {
+                enableButtons();
+            }
+        };
+        
+        window.clearOutput = () => {
+            output.innerHTML = 'Output cleared. Ready to run tests...';
+        };
+        
+        const disableButtons = () => {
+            document.querySelectorAll('button').forEach(btn => btn.disabled = true);
+        };
+        
+        const enableButtons = () => {
+            document.querySelectorAll('button').forEach(btn => btn.disabled = false);
+        };
+        
+        // Auto-run tests on load
+        console.log('Configuration property tests loaded. Click "Run All Tests" to begin.');
+    </script>
+</body>
+</html>

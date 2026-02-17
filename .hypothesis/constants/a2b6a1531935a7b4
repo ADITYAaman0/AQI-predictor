@@ -1,0 +1,4 @@
+# file: C:\Users\KassITsolutions\AppData\Roaming\Python\Python313\site-packages\IPython\core\magics\pylab.py
+# hypothesis_version: 6.150.3
+
+['--list', '--no-import-all', '-l', '?', 'auto', 'gui', 'store_true']

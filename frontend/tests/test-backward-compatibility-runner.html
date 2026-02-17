@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backward Compatibility Property Tests</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .test-controls {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .results {
+            margin-top: 30px;
+        }
+        
+        .property-test {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ddd;
+        }
+        
+        .property-test.passed {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        
+        .property-test.failed {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+        }
+        
+        .property-test.running {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+        
+        .property-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .property-status {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .error-message {
+            margin-top: 10px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #d32f2f;
+        }
+        
+        .summary {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .summary.show {
+            display: block;
+        }
+        
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .stat-card {
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .passed-stat { color: #28a745; }
+        .failed-stat { color: #dc3545; }
+        .total-stat { color: #667eea; }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .requirements {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            border-radius: 4px;
+        }
+        
+        .requirements h3 {
+            margin-top: 0;
+            color: #1976D2;
+        }
+        
+        .requirements ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .requirements li {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Backward Compatibility Property Tests</h1>
+        <p class="subtitle">Property 16: Backward Compatibility Preservation</p>
+        
+        <div class="requirements">
+            <h3>Validates Requirements:</h3>
+            <ul>
+                <li><strong>8.1:</strong> Streamlit dashboard remains fully functional</li>
+                <li><strong>8.2:</strong> Existing API endpoint contracts are preserved</li>
+            </ul>
+        </div>
+        
+        <div class="test-controls">
+            <button id="runTests" onclick="runTests()">
+                Run Property Tests
+            </button>
+            <span id="loadingIndicator"></span>
+        </div>
+        
+        <div class="results" id="results"></div>
+        
+        <div class="summary" id="summary">
+            <h2>Test Summary</h2>
+            <div class="summary-stats">
+                <div class="stat-card">
+                    <div class="stat-value total-stat" id="totalTests">0</div>
+                    <div class="stat-label">Total Properties</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value passed-stat" id="passedTests">0</div>
+                    <div class="stat-label">Passed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value failed-stat" id="failedTests">0</div>
+                    <div class="stat-label">Failed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module">
+        import { properties, runBackwardCompatibilityTests } from './test-backward-compatibility-properties.js';
+        
+        window.runTests = async function() {
+            const button = document.getElementById('runTests');
+            const resultsDiv = document.getElementById('results');
+            const summaryDiv = document.getElementById('summary');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            
+            // Disable button and show loading
+            button.disabled = true;
+            loadingIndicator.innerHTML = '<div class="loading"></div>';
+            resultsDiv.innerHTML = '';
+            summaryDiv.classList.remove('show');
+            
+            // Create property test elements
+            const propertyNames = Object.keys(properties);
+            propertyNames.forEach(name => {
+                const div = document.createElement('div');
+                div.className = 'property-test running';
+                div.id = `test-${name}`;
+                div.innerHTML = `
+                    <div class="property-name">${name}</div>
+                    <div class="property-status">Running...</div>
+                `;
+                resultsDiv.appendChild(div);
+            });
+            
+            // Run tests with delay for visual feedback
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            try {
+                const results = runBackwardCompatibilityTests();
+                
+                // Update UI with results
+                propertyNames.forEach(name => {
+                    const div = document.getElementById(`test-${name}`);
+                    const error = results.errors.find(e => e.property === name);
+                    
+                    if (error) {
+                        div.className = 'property-test failed';
+                        div.innerHTML = `
+                            <div class="property-name">✗ ${name}</div>
+                            <div class="property-status">Failed</div>
+                            <div class="error-message">${error.error}</div>
+                        `;
+                    } else {
+                        div.className = 'property-test passed';
+                        div.innerHTML = `
+                            <div class="property-name">✓ ${name}</div>
+                            <div class="property-status">Passed (20 test cases)</div>
+                        `;
+                    }
+                });
+                
+                // Update summary
+                document.getElementById('totalTests').textContent = results.passed + results.failed;
+                document.getElementById('passedTests').textContent = results.passed;
+                document.getElementById('failedTests').textContent = results.failed;
+                summaryDiv.classList.add('show');
+                
+            } catch (error) {
+                console.error('Test execution error:', error);
+                resultsDiv.innerHTML = `
+                    <div class="property-test failed">
+                        <div class="property-name">Test Execution Error</div>
+                        <div class="error-message">${error.message}</div>
+                    </div>
+                `;
+            } finally {
+                button.disabled = false;
+                loadingIndicator.innerHTML = '';
+            }
+        };
+    </script>
+</body>
+</html>

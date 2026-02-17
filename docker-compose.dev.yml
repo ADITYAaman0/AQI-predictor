@@ -1,0 +1,204 @@
+# Docker Compose configuration for development environment
+version: '3.8'
+
+services:
+  # TimescaleDB with PostGIS
+  timescaledb:
+    image: timescale/timescaledb-ha:pg15-latest
+    container_name: aqi_timescaledb_dev
+    environment:
+      POSTGRES_DB: aqi_predictor_dev
+      POSTGRES_USER: aqi_user
+      POSTGRES_PASSWORD: aqi_password
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - timescale_data_dev:/home/postgres/pgdata/data
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - aqi_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aqi_user -d aqi_predictor_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis for caching and Celery broker
+  redis:
+    image: redis:7-alpine
+    container_name: aqi_redis_dev
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data_dev:/data
+    networks:
+      - aqi_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+
+  # FastAPI backend service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: application
+    container_name: aqi_api_dev
+    environment:
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql+asyncpg://aqi_user:aqi_password@timescaledb:5432/aqi_predictor_dev
+      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=dev_secret_key_change_in_production
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+      - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
+      - ENFORCE_HTTPS=false
+      - RATE_LIMIT_ANONYMOUS=1000
+      - RATE_LIMIT_AUTHENTICATED=5000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - api_logs_dev:/app/logs
+    networks:
+      - aqi_network
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # Streamlit dashboard
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: aqi_dashboard_dev
+    environment:
+      - ENVIRONMENT=development
+      - API_BASE_URL=http://api:8000
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+      - dashboard_logs_dev:/app/logs
+    networks:
+      - aqi_network
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Leaflet frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: aqi_frontend_dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend:/usr/share/nginx/html/map
+    networks:
+      - aqi_network
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Celery worker for background tasks
+  celery_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.celery
+    container_name: aqi_celery_worker_dev
+    environment:
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql+asyncpg://aqi_user:aqi_password@timescaledb:5432/aqi_predictor_dev
+      - REDIS_URL=redis://redis:6379/0
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+      - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
+      - CPCB_API_KEY=${CPCB_API_KEY}
+    volumes:
+      - .:/app
+      - celery_logs_dev:/app/logs
+      - model_data_dev:/app/models
+    networks:
+      - aqi_network
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: celery -A src.tasks.celery_app worker --loglevel=info --concurrency=2
+
+  # Celery Beat scheduler
+  celery_beat:
+    build:
+      context: .
+      dockerfile: Dockerfile.celery
+    container_name: aqi_celery_beat_dev
+    environment:
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql+asyncpg://aqi_user:aqi_password@timescaledb:5432/aqi_predictor_dev
+      - REDIS_URL=redis://redis:6379/0
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+      - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
+      - CPCB_API_KEY=${CPCB_API_KEY}
+    volumes:
+      - .:/app
+      - celery_logs_dev:/app/logs
+    networks:
+      - aqi_network
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: celery -A src.tasks.celery_app beat --loglevel=info
+
+  # Flower for Celery monitoring
+  flower:
+    build:
+      context: .
+      dockerfile: Dockerfile.celery
+    container_name: aqi_flower_dev
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - FLOWER_PORT=5555
+    ports:
+      - "5555:5555"
+    networks:
+      - aqi_network
+    depends_on:
+      - redis
+    command: celery -A src.tasks.celery_app flower --port=5555
+
+volumes:
+  timescale_data_dev:
+  redis_data_dev:
+  api_logs_dev:
+  dashboard_logs_dev:
+  celery_logs_dev:
+  model_data_dev:
+
+networks:
+  aqi_network:
+    driver: bridge

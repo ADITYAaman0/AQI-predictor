@@ -1,0 +1,111 @@
+version: '3.8'
+
+services:
+  # TimescaleDB with PostGIS for staging
+  timescaledb:
+    image: timescale/timescaledb-ha:pg15-latest
+    container_name: aqi-timescaledb-staging
+    environment:
+      POSTGRES_DB: aqi_predictor_staging
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - timescale_staging_data:/home/postgres/pgdata/data
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - aqi-staging-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d aqi_predictor_staging"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis for staging
+  redis:
+    image: redis:7-alpine
+    container_name: aqi-redis-staging
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_staging_data:/data
+    networks:
+      - aqi-staging-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes
+
+  # FastAPI Backend Service for staging
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aqi-api-staging
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@timescaledb:5432/aqi_predictor_staging
+      - REDIS_URL=redis://redis:6379/0
+      - ENVIRONMENT=staging
+      - SECRET_KEY=${SECRET_KEY}
+    ports:
+      - "8001:8000"
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - aqi-staging-network
+    restart: unless-stopped
+
+  # Leaflet frontend for staging
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: aqi-frontend-staging
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./frontend:/usr/share/nginx/html/map
+    networks:
+      - aqi-staging-network
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Celery Worker for staging
+  celery-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aqi-celery-worker-staging
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@timescaledb:5432/aqi_predictor_staging
+      - REDIS_URL=redis://redis:6379/0
+      - ENVIRONMENT=staging
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - aqi-staging-network
+    command: celery -A src.tasks.celery_app worker --loglevel=info
+    restart: unless-stopped
+
+volumes:
+  timescale_staging_data:
+  redis_staging_data:
+
+networks:
+  aqi-staging-network:
+    driver: bridge

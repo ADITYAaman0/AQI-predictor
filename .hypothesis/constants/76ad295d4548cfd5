@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\prometheus_metrics.py
+# hypothesis_version: 6.150.3
+
+['/', '1.0.0', 'Cache size in bytes', 'Total Celery tasks', 'Total HTTP requests', 'Total alerts sent', 'Total cache hits', 'Total cache misses', 'alert_type', 'aqi-predictor-api', 'aqi_application', 'aqi_cache_hits_total', 'aqi_cache_size_bytes', 'aqi_db_queries_total', 'aqi_model_mae', 'aqi_model_rmse', 'cache_type', 'channel', 'data_type', 'endpoint', 'environment', 'error_type', 'forecast_type', 'issue_type', 'location_type', 'method', 'model_name', 'model_version', 'operation', 'production', 'query_type', 'service', 'source', 'status', 'task_name', 'version']

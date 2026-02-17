@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\cities.py
+# hypothesis_version: 6.150.3
+
+[100, 365, 404, 500, '/', '/api/v1/cities', '/best-worst/current', '/compare', '/detect', '/rankings/{metric}', '/{city_code}', '/{city_code}/trends', 'Error detecting city', 'avg_aqi', 'best', 'best_city', 'cities', 'latitude', 'longitude', 'name', 'parameters', 'period_days', 'station_id', 'worst', 'worst_city']

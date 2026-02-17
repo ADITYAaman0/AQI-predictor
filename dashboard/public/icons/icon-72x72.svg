@@ -1,0 +1,16 @@
+<svg width="72" height="72" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#3b82f6" rx="96"/>
+  <rect x="32" y="32" width="448" height="448" fill="rgba(255, 255, 255, 0.1)" rx="80" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2"/>
+  <text x="256" y="200" font-family="system-ui" font-size="120" font-weight="bold" fill="white" text-anchor="middle">AQI</text>
+  <g fill="none" stroke="white" stroke-width="16" stroke-linecap="round">
+    <path d="M 128 280 Q 160 260, 192 280"/>
+    <path d="M 192 280 Q 224 260, 256 280"/>
+    <path d="M 256 280 Q 288 260, 320 280"/>
+    <path d="M 320 280 Q 352 260, 384 280"/>
+    <path d="M 128 340 Q 160 320, 192 340"/>
+    <path d="M 192 340 Q 224 320, 256 340"/>
+    <path d="M 256 340 Q 288 320, 320 340"/>
+    <path d="M 320 340 Q 352 320, 384 340"/>
+  </g>
+  <circle cx="256" cy="400" r="12" fill="#10b981"/>
+</svg>

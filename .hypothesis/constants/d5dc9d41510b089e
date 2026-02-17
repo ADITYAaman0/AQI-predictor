@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\utils\aqi_calculator.py
+# hypothesis_version: 6.150.3
+
+[0.0, 4.4, 4.5, 9.4, 9.5, 12.0, 12.1, 12.4, 12.5, 15.4, 15.5, 30.4, 30.5, 35.4, 35.5, 40.4, 40.5, 50.4, 55.4, 55.5, 150.4, 150.5, 250.4, 250.5, 350.4, 350.5, 500.4, 100, 101, 105, 106, 150, 151, 154, 155, 185, 186, 200, 201, 254, 255, 300, 301, 304, 305, 354, 355, 360, 361, 400, 401, 424, 425, 500, 504, 505, 604, 605, 649, 650, 804, 805, 1004, 1249, 1250, 1649, 1650, 2049, '#00E400', '#4ADE80', '#7C2D12', '#7E0023', '#8F3F97', '#A855F7', '#EF4444', '#FB923C', '#FBBF24', '#FF0000', '#FF7E00', '#FFFF00', 'Good', 'Hazardous', 'Moderate', 'Unhealthy', 'Very Unhealthy', 'category', 'co', 'description', 'good', 'hazardous', 'health_advice', 'moderate', 'no2', 'no_data', 'o3', 'pm10', 'pm25', 'so2', 'unhealthy', 'unhealthy_sensitive', 'unknown', 'very_unhealthy']

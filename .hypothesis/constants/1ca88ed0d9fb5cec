@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\routers\health.py
+# hypothesis_version: 6.150.3
+
+[500, 503, '/', '/cache', '/cache/stats', '/database', '/detailed', '/liveness', '/readiness', '1.0.0', '3.13.6', 'AQI Predictor API', 'ENVIRONMENT', 'Redis', 'alive', 'cache', 'components', 'connection', 'database', 'development', 'environment', 'error', 'extensions', 'healthy', 'hypertables', 'info', 'python_version', 'ready', 'service', 'statistics', 'status', 'tables', 'timestamp', 'type', 'unhealthy', 'unknown', 'version']

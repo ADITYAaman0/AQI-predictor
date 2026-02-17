@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\utils\city_comparator.py
+# hypothesis_version: 6.150.3
+
+[0.0, 100, 'avg_aqi', 'avg_completeness', 'avg_pm25', 'avg_value', 'best', 'city_code', 'city_name', 'data_completeness', 'date', 'good_hours', 'max_aqi', 'min_aqi', 'moderate_hours', 'rank', 'unhealthy_hours', 'value', 'worst']

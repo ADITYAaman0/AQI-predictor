@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\delivery_tracker.py
+# hypothesis_version: 6.150.3
+
+[0.0, 100, '%Y-%m-%d', 'alert_id', 'aqi_value', 'channel_performance', 'channels_failed', 'channels_sent', 'daily_stats', 'date', 'delivered', 'delivery_rate', 'delivery_status', 'end_date', 'error', 'failed', 'location_name', 'partial', 'period_days', 'sent', 'sent_at', 'start_date', 'status_breakdown', 'subscription_id', 'successful', 'successful_alerts', 'threshold', 'total_alerts', 'total_attempts']

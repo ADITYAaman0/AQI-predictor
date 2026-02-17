@@ -1,0 +1,40 @@
+{
+  "properties": {
+    "total": 46,
+    "passed": 46,
+    "failed": []
+  },
+  "e2e": {
+    "total": 7,
+    "passed": 7,
+    "failed": []
+  },
+  "categories": {
+    "unit": {
+      "total": 5,
+      "passed": 5,
+      "failed": []
+    },
+    "integration": {
+      "total": 4,
+      "passed": 4,
+      "failed": []
+    },
+    "visual": {
+      "total": 5,
+      "passed": 5,
+      "failed": []
+    },
+    "accessibility": {
+      "total": 5,
+      "passed": 5,
+      "failed": []
+    },
+    "performance": {
+      "total": 5,
+      "passed": 5,
+      "failed": []
+    }
+  },
+  "timestamp": "2026-02-16T17:27:38.365Z"
+}

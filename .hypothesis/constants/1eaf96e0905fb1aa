@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\api\crud.py
+# hypothesis_version: 6.150.3
+
+[5.0, 10.0, 50.0, 100, 1000, 4326, 'India', 'aqi', 'coordinates', 'measurements', 'pm25', 'quality_flag', 'station_id', 'timestamp', 'user', 'valid', 'value']

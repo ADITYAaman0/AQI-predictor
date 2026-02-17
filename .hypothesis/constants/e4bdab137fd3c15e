@@ -1,0 +1,4 @@
+# file: X:\AQI Predictor\src\models\gnn_spatial.py
+# hypothesis_version: 6.150.3
+
+[0.0, 1e-10, 0.01, 0.2, 0.3, 0.4, 0.5, 0.6, 1.0, 200, '.pth', '_metadata.pkl', 'adjacency_matrix', 'cpu', 'cuda', 'edge_index', 'edge_weights', 'epochs', 'epochs_trained', 'euclidean', 'feature_names', 'features', 'final_loss', 'gnn', 'hidden_dim', 'historical_data', 'idw', 'index', 'learning_rate', 'mlflow_run_id', 'n_edges', 'n_features', 'n_samples', 'n_stations', 'num_layers', 'period', 'pm25', 'rb', 'scaler', 'station_id', 'station_ids', 'stations', 'targets', 'timestamp', 'timestamps', 'train_rmse', 'wb']

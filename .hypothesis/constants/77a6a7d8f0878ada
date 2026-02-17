@@ -1,0 +1,4 @@
+# file: C:\Users\KassITsolutions\AppData\Roaming\Python\Python313\site-packages\jedi\inference\compiled\__init__.py
+# hypothesis_version: 6.150.3
+
+['<%s: %s>', 'False', 'None', 'True', 'access_handle', 'execute_operation', 'get_safe_value', 'is_compiled', 'negate', 'py__bool__', 'str', 'tensorflow.']
