@@ -19,10 +19,7 @@ services:
           name: aqi-db
           property: connectionString
       - key: REDIS_URL
-        fromService:
-          name: aqi-redis
-          type: redis
-          property: connectionString
+        value: ""  # Add Upstash Redis URL here if needed
       - key: ENVIRONMENT
         value: production
       - key: LOG_LEVEL
@@ -69,10 +66,7 @@ services:
           name: aqi-db
           property: connectionString
       - key: REDIS_URL
-        fromService:
-          name: aqi-redis
-          type: redis
-          property: connectionString
+        value: ""  # Add Upstash Redis URL here if needed
       - key: ENVIRONMENT
         value: production
     autoDeploy: true
@@ -93,10 +87,7 @@ services:
           name: aqi-db
           property: connectionString
       - key: REDIS_URL
-        fromService:
-          name: aqi-redis
-          type: redis
-          property: connectionString
+        value: ""  # Add Upstash Redis URL here if needed
       - key: ENVIRONMENT
         value: production
     autoDeploy: true
@@ -110,9 +101,9 @@ databases:
     plan: free  # 256 MB storage, expires after 90 days
     ipAllowList: []  # Allow connections from all services
 
-  # Redis Cache (Free for 30 days)
-  - name: aqi-redis
-    type: redis
-    region: oregon
-    plan: free  # 25 MB storage, expires after 30 days
-    ipAllowList: []
+# Note: Redis is not available in Render's free tier via YAML
+# Use external Redis service instead:
+# 1. Sign up for Upstash (free): https://upstash.com
+# 2. Create Redis database
+# 3. Add REDIS_URL to environment variables for each service
+# 4. Or set REDIS_URL=redis://localhost:6379 to disable caching (app will work without Redis)
