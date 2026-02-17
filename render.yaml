@@ -43,7 +43,6 @@ services:
           name: aqi-api
           type: web
           property: host
-          envVarKey: API_URL
       - key: DATABASE_URL
         fromDatabase:
           name: aqi-db
